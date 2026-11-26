@@ -1,0 +1,6 @@
+@import '../foundations.css';
+.tkc-sm { display: inline-grid; place-items: center; width: var(--sz); height: var(--sz); flex: none; color: var(--success-ink); }   /* statusmark-accent = success-ink (898) */
+.tkc-sm[data-tone="muted"] { color: var(--ink-2); }   /* statusmark-muted */
+.tkc-sm .tkc-icon { width: 100%; height: 100%; }
+.tkc-sm__ring { display: block; width: 88%; height: 88%; border: 1.5px solid currentColor; border-radius: 50%; box-sizing: border-box; }
+.tkc-sm[data-mark="part"] .tkc-sm__ring { background: linear-gradient(90deg, currentColor 50%, transparent 50%); }

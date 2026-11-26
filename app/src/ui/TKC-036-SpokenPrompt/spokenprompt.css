@@ -1,0 +1,9 @@
+@import '../foundations.css';
+/* TKC-036 SpokenPrompt (C, G): sentence 12 under the instruction line, helper 12 under it, cues 32 under that and 48 above the foot. The prompt carries the side margins. */
+.tkc-sp-say { margin: var(--space-3) 0 0; font: 400 calc(22px*var(--ts))/calc(36px*var(--ts)) var(--f-reading); color: var(--ink); }   /* spoken-sentence */
+.tkc-sp-blank { display: inline-block; width: 5.2em; border-bottom: 1.5px solid var(--ink-2); height: 1.1em; vertical-align: -2px; }
+.tkc-sp-help { margin: var(--space-3) 0 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-sp-cues { margin: var(--space-8) 0 var(--space-12); }
+.tkc-sp-lab { display: block; margin-bottom: var(--space-2); font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--accent-ink); letter-spacing: .02em; }
+.tkc-sp-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.tkc-sp-prompt { padding: 0 var(--margin-page); }

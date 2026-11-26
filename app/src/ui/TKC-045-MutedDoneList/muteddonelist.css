@@ -1,0 +1,9 @@
+@import '../foundations.css';
+/* TKC-045 MutedDoneList (C, G): 32 px below the line above, two CSS columns (16 apart) filled top to bottom; marks 16 px growing to 24; names body in ink-2, 8 px after the mark. Walks: one centered row 24 apart. */
+.tkc-mdl { list-style: none; margin: var(--space-8) 0 0; padding: 0; columns: 2; column-gap: var(--space-4); color: var(--ink-2); font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); }
+.tkc-mdl li { position: relative; display: flex; align-items: center; gap: var(--space-2); min-height: 32px; break-inside: avoid; }
+.tkc-mdl .tkc-sm { --sz: calc(16px*min(var(--ts), 1.5)) !important; }   /* grows with the text up to 1.5x (881), over the mark's own scaled size */
+.tkc-mdl.is-one { columns: 1; }
+.tkc-mdl.is-row { columns: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-6); margin-top: var(--space-6); }
+.tkc-mdl.is-stack { columns: auto; display: flex; flex-direction: column; align-items: center; gap: 0; margin-top: var(--space-6); }
+.tkc-mdl__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

@@ -1,0 +1,41 @@
+/* Step screen (frame). Numbers from the Review's Morning steps (.hd-src space-6, .ap margin space-4, .pw margin space-3, .pw-ref space-2/space-12,
+   .hy-w space-6/space-12) and TKC-038 C (the line `reading`, space-3 under the SourceLine, space-12 below). */
+@import './screen.css';
+@import '../foundations.css';
+.tkc-step > [data-tkc="TKC-002"] { position: sticky; top: 0; z-index: 5; }
+.tkc-step > [data-tkc="TKC-003"] { position: sticky; bottom: 0; z-index: 4; }
+.tkc-step__main { flex: 1; min-width: 0; padding-bottom: var(--space-8); }   /* 0.9 (Build 7d, 3012): the bar's 24 px fade sits over the page's last line when scrolled to the end; 32 px keeps it clear */
+.tkc-step__src { padding: var(--space-6) var(--margin-page) 0; }
+.tkc-step__player { margin: var(--space-4) var(--margin-page) 0; }
+.tkc-step__words { margin: var(--space-3) var(--margin-page) 0; }
+.tkc-step__srcunder { margin: var(--space-2) var(--margin-page) var(--space-12); }
+.tkc-step__writer { margin: 0 var(--margin-page); }
+.tkc-step__about { margin: 0 0 var(--space-12); }   /* 0.3 (118): "About This Hymn ›" under the credit */
+.tkc-step__own { margin: var(--space-3) var(--margin-page) var(--space-12); font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); }
+
+/* Respond (C3): today's readings sit under the card; the chips carry their own label. */
+.tkc-step__readings { padding: 0 calc(var(--space-3) + var(--space-4)); }
+.tkc-step__readings .tkc-sp-cues { margin: var(--space-6) 0 0; }
+
+/* Respond, Memorize and Proverb (Review .ms-vcw, .sp-say/.sp-cues, TKC-014 G, TKC-037 G). */
+.tkc-step__prompt { margin: 0; }
+.tkc-step__verse { padding: var(--space-4) var(--margin-page) 0; }
+.tkc-step__tips { margin: var(--space-4) var(--margin-page) var(--space-12); }
+.tkc-step__extras { margin: var(--space-8) var(--margin-page) var(--space-12); }
+.tkc-step__main [data-kind="title"] { scroll-margin-top: 96px; }   /* the new chapter's title lands under the TopBar (TKC-037 E) */
+
+/* Evening steps (Review .er-note, .er-anc, .ev-credit; TKC-031 G): the line under the header, the SourceLine tucked under it, the credit at the page margin. */
+.tkc-step__rows { margin: var(--space-6) var(--margin-page) 0; }
+.tkc-step__ask { padding-top: var(--space-4); }
+.tkc-step__note { margin: var(--space-4) var(--margin-page) 0; }
+.tkc-step__src[data-after="note"] { padding-top: var(--space-2); }
+.tkc-step__src[data-after="anchor"] { padding-top: var(--space-1); }
+.tkc-step__credit { margin: 0 var(--margin-page); }
+
+/* Turn to God: the meaning line sits under the SourceLine (574; TKC-035 0.4), margin-page at the sides, space-12 below. */
+.tkc-step__meaning { margin: calc(-1*var(--space-12) + var(--space-3)) var(--margin-page) var(--space-12); }
+
+.tkc-step__missing { margin: var(--space-6) var(--margin-page) var(--space-12); }
+
+/* M1: a step's body arrives from the side; nothing may make the page wider while it does (a clip, not a scroll area, so the bars stay sticky). */
+.tkc-step { overflow-x: clip; }

@@ -1,0 +1,20 @@
+/* TKC-023 WeekStrip 0.2. Cell: label, space-1, 36 px numeral disc, space-1, 12 px mark slot (G). */
+@import '../foundations.css';
+.tkc-ws { --disc: calc(36px*min(var(--ts), 1.3)); display: grid; grid-template-columns: repeat(7, 1fr); }
+.tkc-ws__li { display: contents; }
+.tkc-ws__cell { appearance: none; background: none; border: 0; margin: 0; padding: 0; font-family: var(--f-sans); color: var(--ink); min-height: 64px; min-width: 0;
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-1); border-radius: 12px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.tkc-ws__wd { color: var(--ink-2); }
+.tkc-ws__one { display: none; }
+.tkc-ws__wn { width: var(--disc); height: var(--disc); border-radius: 50%; display: grid; place-items: center; transition: background var(--motion-quick); }
+.tkc-ws__cell[data-today] .tkc-ws__wn { background: var(--accent-fill); color: var(--on-accent); font-weight: 600; }
+.tkc-ws__cell[data-today] .tkc-ws__wd { color: var(--accent-ink); font-weight: 600; }
+.tkc-ws__cell[data-viewed] .tkc-ws__wn { outline: 1.5px solid var(--ring-active); outline-offset: 2px; }   /* 0.3 (584): the selected day wears the active ring, outside its disc */
+@media (max-width: 359px) { .tkc-ws__cell[data-viewed] .tkc-ws__wn { outline-offset: 1.5px; } }
+.tkc-ws__cell:active .tkc-ws__wn, .tkc-ws__cell.is-pressed .tkc-ws__wn { background: var(--surface-tint); }
+.tkc-ws__cell[data-today]:active .tkc-ws__wn, .tkc-ws__cell[data-today].is-pressed .tkc-ws__wn { background: var(--button-pressed); }
+.tkc-ws__cell:focus-visible, .tkc-ws__cell.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-ws__wm { height: calc(12px*var(--ts)); display: grid; place-items: center; }
+/* 200% text: one-letter weekdays (E) */
+[data-text-large] .tkc-ws__full { display: none; }
+[data-text-large] .tkc-ws__one { display: inline; }

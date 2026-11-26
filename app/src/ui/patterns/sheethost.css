@@ -1,0 +1,4 @@
+/* Scrim and placement for a bottom sheet (pattern part). The sheet is TKC-004's; this only holds it at the foot. */
+@import '../foundations.css';
+.tkc-host { position: fixed; inset: 0; z-index: 20; background: var(--scrim); display: flex; flex-direction: column; justify-content: flex-end; }
+.tkc-host__sheet { --sheet-max: 88dvh; }

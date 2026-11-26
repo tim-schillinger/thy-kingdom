@@ -1,0 +1,13 @@
+@import '../foundations.css';
+/* TKC-052 AnchorLine: the row is one button, full width, min 44 tall, 6 px padding (the Creator's Prayer value, anchorline-pad). */
+.tkc-anc { appearance: none; border: 0; background: none; display: flex; align-items: flex-start; gap: var(--space-2); width: 100%; min-height: 44px; margin: 0; padding: 6px 0; text-align: left; cursor: pointer; color: var(--ink-2); border-radius: var(--radius-sm); transition: background var(--motion-quick); }
+.tkc-anc:active, .tkc-anc.is-pressed { background: var(--surface-tint); }
+.tkc-anc:focus-visible, .tkc-anc.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-anc__t { flex: 1; min-width: 0; margin-block: auto; font: italic 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-reading); font-synthesis: none; }   /* anchorline-quote */
+.tkc-anc[data-kind="reference"] .tkc-anc__t { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); }   /* anchorline-text, upright */
+.tkc-anc__vr { font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); font-synthesis: none; white-space: nowrap; margin-left: 4px; }
+.tkc-anc__nw { white-space: nowrap; }
+.tkc-anc .tkc-icon { flex: none; width: calc(14px*min(var(--ts), 1.5)); height: calc(14px*min(var(--ts), 1.5));
+  margin-top: calc(max(0px, (32px - 22px*var(--ts))/2) + (22px*var(--ts) - 14px*min(var(--ts), 1.5))/2); }
+.tkc-anc.is-multi .tkc-icon { margin-top: calc((22px*var(--ts) - 14px*min(var(--ts), 1.5))/2); }
+.tkc-anc-note { margin: 0; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }

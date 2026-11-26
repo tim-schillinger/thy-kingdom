@@ -1,0 +1,12 @@
+/* TKC-055 GrowthPlant 0.1: stem and outlines success-ink, filled leaves success-fill, canopy success-fill at 28%, fruit success-ink, water ink-2 at 55%. */
+@import '../foundations.css';
+.tkc-plant { color: var(--success-ink); display: block; flex: 0 0 auto; transform-origin: 50% 92%; }
+.tkc-plant .lf { fill: var(--success-fill); }
+.tkc-plant .lf2 { fill: color-mix(in srgb, var(--success-fill) 28%, transparent); }
+.tkc-plant .fr { fill: var(--success-ink); stroke: none; }
+.tkc-plant .wt { stroke: var(--ink-2); opacity: .55; }
+@keyframes tkc-plant-grow { from { opacity: 0; transform: scale(.55); } to { opacity: 1; transform: none; } }
+@keyframes tkc-plant-sway { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-2.5deg); } 75% { transform: rotate(2.5deg); } }
+@keyframes tkc-plant-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) { .tkc-plant.is-play { animation: tkc-plant-grow 700ms var(--ease-gentle) both, tkc-plant-sway 1000ms ease-in-out 700ms 3; } }
+@media (prefers-reduced-motion: reduce) { .tkc-plant.is-play { animation: tkc-plant-fade 150ms ease both; } }

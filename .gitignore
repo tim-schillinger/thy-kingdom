@@ -1,0 +1,5 @@
+node_modules/
+app/dist*/
+app/shots/
+app/library-artifact.html
+app/public/audio/

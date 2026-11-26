@@ -1,0 +1,16 @@
+@import '../foundations.css';
+/* TKC-041 NationRow (C, G): a hairline list, rows min 72, 8 px top and bottom, 2 px sides, 14 px gap. Name 17/24 SemiBold, line 14/20 ink-2, chevron 18. */
+.tkc-nl { list-style: none; margin: var(--space-4) 0 0; padding: 0; border-top: 1px solid var(--line); }
+.tkc-nr { appearance: none; border: 0; background: none; width: 100%; display: flex; align-items: center; gap: 14px; min-height: 72px; padding: 8px 2px; border-bottom: 1px solid var(--line); color: var(--ink); text-align: left; font: inherit; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-nr:active, .tkc-nr.is-pressed { background: var(--surface-tint); }
+.tkc-nr:focus-visible, .tkc-nr.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-nr__t { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.tkc-nr__t b { font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); overflow-wrap: break-word; }
+.tkc-nr__t > span { font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); overflow-wrap: break-word; }
+.tkc-nr__cv { flex: none; display: grid; color: var(--ink-2); }
+.tkc-nr__cv .tkc-icon { width: calc(18px*min(var(--ts), 1.5)); height: calc(18px*min(var(--ts), 1.5)); }
+.tkc-nr.top { align-items: flex-start; }
+.tkc-nr.top .tkc-nr__cv { margin-top: calc((24px*var(--ts) - 18px*min(var(--ts), 1.5))/2); }
+@media (prefers-reduced-motion: reduce) { .tkc-nr { transition: none; } }
+
+.tkc-nl > li:last-child > .tkc-nr { border-bottom: 0; }   /* 3-6c: the last nation has no line under it, as the last person has none (3434) */

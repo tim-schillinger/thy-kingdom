@@ -1,0 +1,14 @@
+/* 0.2 (Nov 18, 2026, 3310 y, 3312 A): the plate is left-aligned on the same edge as the card's question and move; spacing top 24, name 12, meaning line 16, bottom 24 (the bottom is the card top's padding). */
+/* TKC-061 WordMeaning 0.1, plate kind (frame-lock-7 R6). Values from the Name nights lock's drawing (name-lock/stop3). `display-name` is 40/44 display 500, grows to 1.2× at most and never wider than its card (1875 y, 1003). */
+@import '../foundations.css';
+.tkc-wmean { container-type: inline-size; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding-top: var(--space-4); }
+.tkc-wmean p, .tkc-wmean h2 { margin: 0; }
+.tkc-wmean__eye { font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--accent-ink); }   /* plate-eyebrow */
+.tkc-wmean__mark { margin-top: var(--space-1); font: 400 calc(30px*var(--ts))/1.3 var(--f-hebrew); color: var(--ink-2); direction: rtl; }
+.tkc-wmean__name { margin-top: var(--space-3); max-width: 100%; font: 500 min(calc(40px*min(var(--ts), 1.2)), 17.5cqi)/1.1 var(--f-display); color: var(--ink); text-wrap: balance; overflow-wrap: normal; hyphens: none; }   /* display-name */
+.tkc-wmean__plain { margin-top: var(--space-1); font: 500 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-wmean__mean { margin: var(--space-4) 0 0; max-width: 32ch; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink-2); text-wrap: pretty; }
+.tkc-wmean__verse { margin-top: var(--space-4); display: flex; flex-direction: column; align-items: flex-start; width: 100%; }
+.tkc-wmean__verse .tkc-ask-verse { padding: 0; text-align: left; }
+.tkc-wmean__verse .tkc-src { margin-top: var(--space-2); text-align: left; }
+.tkc-wmean__kjv { margin: var(--space-2) 0 0; max-width: 34ch; font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); text-wrap: pretty; }

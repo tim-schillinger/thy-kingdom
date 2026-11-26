@@ -1,0 +1,34 @@
+/* The library page's own frame: neutral, so the components are what you see. Not shipped. */
+body { margin: 0; background: #e9e6e1; font: 14px/1.4 system-ui, sans-serif; color: #222; -webkit-font-smoothing: antialiased; }
+.lib { padding: 24px; }
+.lib-head h1 { font-size: 20px; margin: 0; } .lib-head p { margin: 4px 0 16px; color: #555; }
+.lib-cols { display: flex; gap: 16px; align-items: flex-start; }
+.lib-col { width: 390px; padding: 16px 20px; background: var(--bg-plain); color: var(--ink); border-radius: 12px; }
+.lib-colhead { font-weight: 600; margin: 0 0 12px; }
+.lib-cell { margin-bottom: 16px; }
+.lib-name { font: 12px/1.3 system-ui, sans-serif; color: var(--ink-2); margin: 0 0 6px; }
+.lib-host { display: flex; flex-direction: column; align-items: flex-start; }
+.lib-host > .tkc-btn[data-width="full"] { align-self: stretch; }
+
+/* Solo mode (the parity checker): no transitions, so a picture never catches a fade. */
+.lib-solo *, .lib-solo *::before, .lib-solo *::after { transition: none !important; animation: none !important; }
+.lib-host > [data-tkc]:not([data-width="fit"]):not([data-kind="chip"]) { align-self: stretch; }
+.lib-host[data-wash] { margin: 0 -20px; background: var(--wash-top); padding-top: 28px; }
+.lib-comp { margin-bottom: 28px; }
+.lib-cid { font: 600 13px/1.3 system-ui, sans-serif; margin: 0 0 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+.lib-h2 { font: 600 18px/1.3 system-ui, sans-serif; margin: 28px 0 4px; } .lib-sub { margin: 0 0 16px; color: #555; }
+.lib-cols { flex-wrap: wrap; }
+.lib-phones { display: flex; flex-wrap: wrap; gap: 20px; }
+.lib-phone-fig { margin: 0; width: 390px; max-width: 100%; display: grid; gap: 8px; }
+.lib-phone-fig figcaption { display: grid; gap: 2px; font-size: 13px; color: #444; min-height: 52px; }
+.lib-phone { width: 390px; max-width: 100%; height: 844px; overflow: auto; border-radius: 28px; border: 1px solid #cfc8bc; background: var(--bg-plain); color: var(--ink); }
+.lib-phone .tkc-screen { min-height: 100%; }
+@media (max-width: 460px) { .lib { padding: 16px; } .lib-col { width: 100%; padding: 16px; } }
+.lib-phone-fig, .lib-phone { width: min(390px, 100%); }
+.lib-phones > * { min-width: 0; }
+@media (max-width: 460px) { .lib-phones { display: grid; } }
+
+.lib-phone--sheet { position: relative; overflow: hidden; }
+.lib-phone--sheet .tkc-host { position: absolute; }
+.lib-phone--sheet .tkc-host__sheet { --sheet-max: 700px; }
+.lib-shot { display: block; width: 390px; max-width: 100%; height: auto; border-radius: 28px; border: 1px solid #cfc8bc; }

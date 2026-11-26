@@ -1,0 +1,1149 @@
+{
+ "version": 1,
+ "checkin": {
+  "burnt": {
+   "sections": [
+    "What It Is",
+    "Ways to Use It"
+   ],
+   "items": [
+    {
+     "word": "Energy",
+     "a": "God gives you strength for each day. Where you spend it matters.",
+     "b": [
+      "Get the rest you need so you can show up for others.",
+      "Give an hour of your energy to someone who’s worn out.",
+      "Share a meal with someone who would eat alone."
+     ],
+     "ref": {
+      "b": "ISA",
+      "c": 40,
+      "v": 29
+     },
+     "web": "He gives power to the weak. He increases the strength of him who has no might.",
+     "kjv": "He giveth power to the faint; and to them that have no might he increaseth strength."
+    },
+    {
+     "word": "Imagination",
+     "a": "God made you able to picture what isn’t here yet. You can dream up good for someone.",
+     "b": [
+      "Picture what would make someone’s week easier, then do one part.",
+      "Make something for someone: a meal, a note, or a drawing.",
+      "Imagine how someone else sees things before you answer."
+     ],
+     "ref": {
+      "b": "EPH",
+      "c": 2,
+      "v": 10
+     },
+     "web": "For we are his workmanship, created in Christ Jesus for good works…",
+     "kjv": "For we are his workmanship, created in Christ Jesus unto good works…"
+    },
+    {
+     "word": "Choices",
+     "a": "God lets you choose. Small choices add up to the person you become.",
+     "b": [
+      "Choose one kind thing to do before your next meal.",
+      "Choose to let go of one small hurt.",
+      "Say no to something so you can say yes to someone."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 3,
+      "v": 27
+     },
+     "web": "Don’t withhold good from those to whom it is due, when it is in the power of your hand to do it.",
+     "kjv": "Withhold not good from them to whom it is due, when it is in the power of thine hand to do it."
+    },
+    {
+     "word": "Body",
+     "a": "God gave you hands and feet. They can do what words can’t.",
+     "b": [
+      "Help someone carry, fix, or clean something.",
+      "Show up in person for someone who’s struggling.",
+      "Sit with someone who feels alone."
+     ],
+     "ref": {
+      "b": "1JN",
+      "c": 3,
+      "v": 18
+     },
+     "web": "Let’s not love in word only, or with the tongue only, but in deed and truth.",
+     "kjv": "Let us not love in word, neither in tongue; but in deed and in truth."
+    },
+    {
+     "word": "Memory",
+     "a": "God gave you a memory. You can hold on to what He’s done and to the people who need you.",
+     "b": [
+      "Remember someone’s name, and use it next time.",
+      "Check on someone who had a hard week.",
+      "Remember one good thing God did today, and thank Him."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 143,
+      "v": 5
+     },
+     "web": "I remember the days of old. I meditate on all your doings. I contemplate the work of your hands.",
+     "kjv": "I remember the days of old; I meditate on all thy works; I muse on the work of thy hands."
+    },
+    {
+     "word": "Words",
+     "a": "God gave you a voice. What you say can lift someone up or knock them down.",
+     "b": [
+      "Thank someone for something specific.",
+      "Say sorry where you owe it.",
+      "Speak up for someone who isn’t in the room."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 16,
+      "v": 24
+     },
+     "web": "Pleasant words are a honeycomb, sweet to the soul, and health to the bones.",
+     "kjv": "Pleasant words are as an honeycomb, sweet to the soul, and health to the bones."
+    },
+    {
+     "word": "Eyes and ears",
+     "a": "God gave you eyes to notice and ears to listen. Paying attention is a way to love.",
+     "b": [
+      "Notice someone others overlook, and say hello.",
+      "Listen to someone without fixing or interrupting.",
+      "Turn away from what pulls you away from God."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 20,
+      "v": 12
+     },
+     "web": "The hearing ear, and the seeing eye, Yahweh has made even both of them.",
+     "kjv": "The hearing ear, and the seeing eye, the LORD hath made even both of them."
+    },
+    {
+     "word": "Thinking",
+     "a": "God gave you a mind to learn and understand. What you learn can help others.",
+     "b": [
+      "Learn something that would help someone you know.",
+      "Ask what someone meant before you decide.",
+      "Help someone think through a problem they’re stuck on."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 18,
+      "v": 15
+     },
+     "web": "The heart of the discerning gets knowledge. The ear of the wise seeks knowledge.",
+     "kjv": "The heart of the prudent getteth knowledge; and the ear of the wise seeketh knowledge."
+    },
+    {
+     "word": "Personality",
+     "a": "God made you who you are. The way you are can help someone feel at home.",
+     "b": [
+      "Welcome someone who’s new or left out.",
+      "Use your humor, calm, or energy to lift a room.",
+      "Be a real friend to someone who needs one."
+     ],
+     "ref": {
+      "b": "1PE",
+      "c": 4,
+      "v": 10
+     },
+     "web": "As each has received a gift, employ it in serving one another, as good managers of the grace of God in its various forms.",
+     "kjv": "As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God."
+    },
+    {
+     "word": "Emotions",
+     "a": "God gave you feelings. They help you care about what He cares about.",
+     "b": [
+      "Sit with someone who’s sad, and let them be sad.",
+      "Celebrate something good in someone else’s life.",
+      "Tell God honestly how you feel tonight."
+     ],
+     "ref": {
+      "b": "ROM",
+      "c": 12,
+      "v": 15
+     },
+     "web": "Rejoice with those who rejoice. Weep with those who weep.",
+     "kjv": "Rejoice with them that do rejoice, and weep with them that weep."
+    },
+    {
+     "word": "Conscience",
+     "a": "God gave you a sense of right and wrong. It’s a quiet nudge worth listening to.",
+     "b": [
+      "Do the right thing you’ve been putting off.",
+      "Make it right with someone you’ve hurt.",
+      "Ask God to show you what you can’t see in yourself."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 139,
+      "v": 23
+     },
+     "web": "Search me, God, and know my heart. Try me, and know my thoughts.",
+     "kjv": "Search me, O God, and know my heart: try me, and know my thoughts…"
+    },
+    {
+     "word": "Soul",
+     "a": "God made you to know Him. Your soul is the part of you that talks with Him.",
+     "b": [
+      "Talk to God for a minute before your day starts.",
+      "Thank Him for one thing as you fall asleep.",
+      "Notice where He’s at work in someone else."
+     ],
+     "ref": {
+      "b": "JER",
+      "c": 29,
+      "v": 13
+     },
+     "web": "You shall seek me and find me, when you search for me with all your heart.",
+     "kjv": "And ye shall seek me, and find me, when ye shall search for me with all your heart."
+    }
+   ]
+  },
+  "grain": {
+   "sections": [
+    "Who They Are",
+    "Ways to Give"
+   ],
+   "items": [
+    {
+     "word": "Relatives",
+     "a": "Aunts, uncles, cousins, grandparents, and in-laws. Family you don’t see every day can still need you.",
+     "b": [
+      "Call a relative you haven’t talked to in a while.",
+      "Help a relative with a need they can’t cover right now.",
+      "Give an older relative an afternoon: a visit, a ride, or a repair."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 17,
+      "v": 17
+     },
+     "web": "A friend loves at all times; and a brother is born for adversity.",
+     "kjv": "A friend loveth at all times, and a brother is born for adversity."
+    },
+    {
+     "word": "Widows",
+     "a": "Women whose husbands have died. Many are lonely, and some struggle to get by on their own.",
+     "b": [
+      "Invite a widow to share a meal.",
+      "Help with a job that’s hard to do alone: a repair, the yard, or paperwork.",
+      "Give toward a widow’s groceries, rent, or rides."
+     ],
+     "ref": {
+      "b": "JAS",
+      "c": 1,
+      "v": 27
+     },
+     "web": "Pure religion and undefiled before our God and Father is this: to visit the fatherless and widows in their affliction…",
+     "kjv": "Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction…"
+    },
+    {
+     "word": "Disabled people",
+     "a": "People whose bodies or minds work differently. Many get left out of things others take for granted.",
+     "b": [
+      "Ask what would help, and do that instead of guessing.",
+      "Give to a group that helps people with disabilities live, work, and get around.",
+      "Offer a ride or your company, and stay a while."
+     ],
+     "ref": {
+      "b": "LUK",
+      "c": 14,
+      "v": 13
+     },
+     "web": "But when you make a feast, ask the poor, the maimed, the lame, or the blind…",
+     "kjv": "But when thou makest a feast, call the poor, the maimed, the lame, the blind…"
+    },
+    {
+     "word": "The poor",
+     "a": "People without enough: food, a safe place to live, or money for the basics. Some will sleep outside tonight.",
+     "b": [
+      "Give to a food bank or shelter near you.",
+      "Give an hour serving at a place that hands out meals.",
+      "Carry a few snacks or gift cards to give when someone asks."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 19,
+      "v": 17
+     },
+     "web": "He who has pity on the poor lends to Yahweh…",
+     "kjv": "He that hath pity upon the poor lendeth unto the LORD…"
+    },
+    {
+     "word": "Immigrants",
+     "a": "People who left home to start over in a new country. Some ran from war or danger, and many are far from everyone they know.",
+     "b": [
+      "Give to a group that helps new families settle in.",
+      "Help someone practice English, fill out a form, or find their way around.",
+      "Bring a meal to a new family, and learn their names."
+     ],
+     "ref": {
+      "b": "LEV",
+      "c": 19,
+      "v": 34
+     },
+     "web": "The stranger who lives as a foreigner with you shall be to you as the native-born among you, and you shall love him as yourself…",
+     "kjv": "But the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am the LORD your God."
+    },
+    {
+     "word": "The persecuted",
+     "a": "People who are hurt, jailed, or pushed out for what they believe about God.",
+     "b": [
+      "Give to a group that helps people jailed for their faith, and their families.",
+      "Write a letter to someone in prison for their faith.",
+      "Learn about one place where believing is dangerous, and give there."
+     ],
+     "ref": {
+      "b": "1CO",
+      "c": 12,
+      "v": 26
+     },
+     "web": "When one member suffers, all the members suffer with it.",
+     "kjv": "Whether one member suffer, all the members suffer with it…"
+    },
+    {
+     "word": "Charities",
+     "a": "Groups that feed, house, heal, and care for people in need. Together, they can help more people than one person can alone.",
+     "b": [
+      "Pick one charity near you, and give to it every month.",
+      "Give a few hours of your time, and see the work up close.",
+      "Ask a charity what it needs most, and give that."
+     ],
+     "ref": {
+      "b": "2CO",
+      "c": 9,
+      "v": 7
+     },
+     "web": "Let each man give according as he has determined in his heart, not grudgingly or under compulsion, for God loves a cheerful giver.",
+     "kjv": "Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for God loveth a cheerful giver."
+    },
+    {
+     "word": "Outcasts",
+     "a": "People others push out and forget. They can be in prison, sick, old, or treated as not good enough by the people around them.",
+     "b": [
+      "Give to a group that stands up for people no one else will.",
+      "Visit someone in prison, a nursing home, or a hospital.",
+      "When someone is put down for who they are, stand with them."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 82,
+      "v": 3
+     },
+     "web": "Defend the weak, the poor, and the fatherless. Maintain the rights of the poor and oppressed.",
+     "kjv": "Defend the poor and fatherless: do justice to the afflicted and needy."
+    },
+    {
+     "word": "Aid workers",
+     "a": "People who left home to feed, heal, teach, and build in another country. Your gift can help them keep serving.",
+     "b": [
+      "Give every month to someone serving far from home.",
+      "Send a note from home to cheer them on.",
+      "Give to a group that sends doctors, teachers, or builders where they’re needed."
+     ],
+     "ref": {
+      "b": "ISA",
+      "c": 58,
+      "v": 10
+     },
+     "web": "If you pour out your soul to the hungry, and satisfy the afflicted soul, then your light will rise in darkness…",
+     "kjv": "If thou draw out thy soul to the hungry, and satisfy the afflicted soul; then shall thy light rise in obscurity…"
+    },
+    {
+     "word": "A local church",
+     "a": "People near you who meet to worship God and care for each other and their town.",
+     "b": [
+      "Ask what a church near you needs this month, and help with that.",
+      "Give to a church that serves people in your town.",
+      "Help with one thing it does for others: a meal, a class, or a ride."
+     ],
+     "ref": {
+      "b": "ACT",
+      "c": 2,
+      "v": 44
+     },
+     "web": "All who believed were together, and had all things in common.",
+     "kjv": "And all that believed were together, and had all things common…"
+    },
+    {
+     "word": "Orphans",
+     "a": "Children who’ve lost their parents, or can’t live with them. Every child needs someone who stays.",
+     "b": [
+      "Give to a group that helps foster and adoptive families.",
+      "Bring a meal or a gift card to a foster family.",
+      "Give your time to mentor a child who needs a steady adult."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 68,
+      "v": 6
+     },
+     "web": "God sets the lonely in families.",
+     "kjv": "God setteth the solitary in families…"
+    },
+    {
+     "word": "The earth",
+     "a": "God made the earth and every creature on it, and called it good. Caring for it helps the people who live on it, too.",
+     "b": [
+      "Give to a group that cleans up land, water, or air near you.",
+      "Plant something, or help care for a park.",
+      "Waste less: fix, share, or give away what you don’t need."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 24,
+      "v": 1
+     },
+     "web": "The earth is Yahweh’s, with its fullness; the world, and those who dwell in it.",
+     "kjv": "The earth is the LORD’s, and the fulness thereof; the world, and they that dwell therein."
+    }
+   ]
+  },
+  "peace": {
+   "sections": [
+    "Who They Are",
+    "First Steps Toward Peace"
+   ],
+   "items": [
+    {
+     "word": "Family",
+     "a": "The people you grew up with or live with now. They can hurt you most, and need you most.",
+     "b": [
+      "If you were short with someone at home, tell them you’re sorry.",
+      "Let go of an old hurt you keep bringing up.",
+      "If someone at home has harmed you, peace doesn’t mean staying in harm’s way. Tell someone you trust."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 133,
+      "v": 1
+     },
+     "web": "See how good and how pleasant it is for brothers to live together in unity!",
+     "kjv": "Behold, how good and how pleasant it is for brethren to dwell together in unity!"
+    },
+    {
+     "word": "Debts",
+     "a": "People you owe money to, or who owe money to you. Money between people can quietly turn into a grudge.",
+     "b": [
+      "If you owe someone, tell them your plan to pay it back.",
+      "If someone owes you, ask God whether to let some of it go.",
+      "Talk about it face to face, kindly, before it grows."
+     ],
+     "ref": {
+      "b": "MAT",
+      "c": 6,
+      "v": 12
+     },
+     "web": "Forgive us our debts, as we also forgive our debtors.",
+     "kjv": "And forgive us our debts, as we forgive our debtors."
+    },
+    {
+     "word": "Pastors",
+     "a": "The people who lead and care for a church. They carry a lot, and they can get things wrong too.",
+     "b": [
+      "If you’ve held a grudge against a pastor, tell God about it honestly.",
+      "Thank a pastor for one specific thing.",
+      "If a pastor harmed you, peace doesn’t mean going back. Tell someone you trust."
+     ],
+     "ref": {
+      "b": "EPH",
+      "c": 4,
+      "v": 32
+     },
+     "web": "And be kind to one another, tender hearted, forgiving each other, just as God also in Christ forgave you.",
+     "kjv": "And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ’s sake hath forgiven you."
+    },
+    {
+     "word": "Church",
+     "a": "The people you worship with. Being close means you’ll sometimes rub each other the wrong way.",
+     "b": [
+      "If you’ve been avoiding someone at church, say hello this week.",
+      "Talk to the person, not about them.",
+      "If you caused a hurt, own your part."
+     ],
+     "ref": {
+      "b": "JHN",
+      "c": 13,
+      "v": 35
+     },
+     "web": "By this everyone will know that you are my disciples, if you have love for one another.",
+     "kjv": "By this shall all men know that ye are my disciples, if ye have love one to another."
+    },
+    {
+     "word": "Neighbors",
+     "a": "The people who live near you, from next door to down the street. You share walls, roads, and noise.",
+     "b": [
+      "Wave, say hello, and learn one neighbor’s name.",
+      "If something about them bugs you, talk to them kindly before you complain to others.",
+      "Help with something small: a package, a shovel, or a ride."
+     ],
+     "ref": {
+      "b": "MAT",
+      "c": 22,
+      "v": 39
+     },
+     "web": "You shall love your neighbor as yourself.",
+     "kjv": "Thou shalt love thy neighbour as thyself."
+    },
+    {
+     "word": "Rivals",
+     "a": "People on the other side of a vote, a game, a deal, or an argument. You can disagree with them and still treat them with love.",
+     "b": [
+      "Ask how they came to see things the way they do, and listen.",
+      "If you said something unkind, tell them you’re sorry.",
+      "Let go of something hurtful they said, and pray for them."
+     ],
+     "ref": {
+      "b": "ROM",
+      "c": 12,
+      "v": 18
+     },
+     "web": "If it is possible, as much as it is up to you, be at peace with all men.",
+     "kjv": "If it be possible, as much as lieth in you, live peaceably with all men."
+    },
+    {
+     "word": "Friends",
+     "a": "The people you choose to share life with. Small hurts between friends can grow if no one says anything.",
+     "b": [
+      "If you let a friend down, tell them you’re sorry.",
+      "If a friend hurt you, tell them gently, then let it go.",
+      "Reach out to a friend you’ve drifted from."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 17,
+      "v": 9
+     },
+     "web": "He who covers an offense promotes love; but he who repeats a matter separates best friends.",
+     "kjv": "He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends."
+    },
+    {
+     "word": "Clubs and teams",
+     "a": "Groups you’re part of for fun or a cause: teams, clubs, classes, and online groups.",
+     "b": [
+      "Make peace with someone you’ve been competing with.",
+      "Welcome someone who seems left out.",
+      "If you’ve been part of the gossip, stop, and make it right."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 15,
+      "v": 1
+     },
+     "web": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+     "kjv": "A soft answer turneth away wrath: but grievous words stir up anger."
+    },
+    {
+     "word": "Strangers",
+     "a": "People you don’t know: a driver, a cashier, or someone online. A short moment can still leave a mark.",
+     "b": [
+      "If you were rude to a stranger, do a kindness for the next one.",
+      "Be patient with someone who’s slow or having a hard day.",
+      "Think before you post about someone you don’t know."
+     ],
+     "ref": {
+      "b": "LUK",
+      "c": 6,
+      "v": 31
+     },
+     "web": "As you would like people to do to you, do exactly so to them.",
+     "kjv": "And as ye would that men should do to you, do ye also to them likewise."
+    },
+    {
+     "word": "Coworkers",
+     "a": "The people you work or study with. You spend hours together, and pressure brings out the worst in everyone.",
+     "b": [
+      "If you blamed someone for your mistake, set it straight.",
+      "Let go of a slight, and greet them like normal tomorrow.",
+      "Give credit to someone who earned it."
+     ],
+     "ref": {
+      "b": "JAS",
+      "c": 1,
+      "v": 19
+     },
+     "web": "Let every man be swift to hear, slow to speak, and slow to anger…",
+     "kjv": "Let every man be swift to hear, slow to speak, slow to wrath…"
+    },
+    {
+     "word": "Other cultures",
+     "a": "People whose race, language, or customs are different from yours. Hurts between groups run deep, and healing starts with how you treat one person.",
+     "b": [
+      "Get to know someone from another culture: ask about their family or their food.",
+      "If you’ve laughed at a joke about their people, stop, and don’t pass it on.",
+      "If you hurt someone, ask them to forgive you, and listen to how it felt."
+     ],
+     "ref": {
+      "b": "GAL",
+      "c": 3,
+      "v": 28
+     },
+     "web": "There is neither Jew nor Greek, there is neither slave nor free man, there is neither male nor female; for you are all one in Christ Jesus.",
+     "kjv": "There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus."
+    },
+    {
+     "word": "Enemies",
+     "a": "People who wish you harm, or who you wish harm on. Jesus asks something hard here, and He helps you do it.",
+     "b": [
+      "Pray for them, even if it’s one sentence.",
+      "Turn down one chance to get back at them.",
+      "If someone has harmed you, peace doesn’t mean going back. You can forgive from a safe distance."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 25,
+      "v": 21
+     },
+     "web": "If your enemy is hungry, give him food to eat. If he is thirsty, give him water to drink…",
+     "kjv": "If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink…"
+    }
+   ]
+  },
+  "sin": {
+   "sections": [
+    "What It Is",
+    "Ways to Turn From It"
+   ],
+   "items": [
+    {
+     "word": "Idols",
+     "a": "Anything you put ahead of God: money, success, a person, or your phone. It’s whatever you trust or want most.",
+     "b": [
+      "Notice what you reach for first when you’re worried, and bring that worry to God instead.",
+      "Give God the first few minutes of your day, before your screen.",
+      "Hold one good thing more loosely: thank God for it instead of chasing more."
+     ],
+     "ref": {
+      "b": "MAT",
+      "c": 6,
+      "v": 21
+     },
+     "web": "Where your treasure is, there your heart will be also.",
+     "kjv": "Where your treasure is, there will your heart be also."
+    },
+    {
+     "word": "Pride",
+     "a": "Thinking you’re better than others, or that you don’t need God or anyone else. It makes it hard to say “I was wrong.”",
+     "b": [
+      "Say “I was wrong” to someone this week.",
+      "Let someone else get the credit.",
+      "Ask for help with something you’ve been doing alone."
+     ],
+     "ref": {
+      "b": "JAS",
+      "c": 4,
+      "v": 6
+     },
+     "web": "God resists the proud, but gives grace to the humble.",
+     "kjv": "God resisteth the proud, but giveth grace unto the humble."
+    },
+    {
+     "word": "Lying",
+     "a": "Saying what isn’t true, or leaving out what is, so things go your way. It makes it hard for people to trust you.",
+     "b": [
+      "Tell the whole story, even the part that makes you look bad.",
+      "Say “I don’t know” when you don’t know.",
+      "If you stretched the truth this week, set it straight."
+     ],
+     "ref": {
+      "b": "EPH",
+      "c": 4,
+      "v": 25
+     },
+     "web": "Therefore, putting away falsehood, speak truth each one with his neighbor, for we are members of one another.",
+     "kjv": "Wherefore putting away lying, speak every man truth with his neighbour: for we are members one of another."
+    },
+    {
+     "word": "Hatred",
+     "a": "Wishing someone harm, or treating them like they don’t matter. It often starts small, with contempt or an insult.",
+     "b": [
+      "Name the person you resent, and ask God to help you see them as He does.",
+      "Stop yourself before you insult someone, even in your head.",
+      "Do one kind thing for someone you can’t stand."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 10,
+      "v": 12
+     },
+     "web": "Hatred stirs up strife, but love covers all wrongs.",
+     "kjv": "Hatred stirreth up strifes: but love covereth all sins."
+    },
+    {
+     "word": "Overdoing it",
+     "a": "Letting drink, screens, shopping, or anything else take more of you than it should. Self-control means you’re in charge, not the habit.",
+     "b": [
+      "Pick one thing you overdo, and set a small limit for this week.",
+      "When you feel the pull, pause and pray one sentence first.",
+      "If you can’t stop on your own, tell someone you trust and get help."
+     ],
+     "ref": {
+      "b": "2TI",
+      "c": 1,
+      "v": 7
+     },
+     "web": "For God didn’t give us a spirit of fear, but of power, love, and self-control.",
+     "kjv": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind."
+    },
+    {
+     "word": "Lust",
+     "a": "Looking at someone as something to use, instead of a whole person God made. Sexual integrity means keeping your promises and treating people with respect.",
+     "b": [
+      "Turn away from what feeds it: a show, a site, or a habit.",
+      "When you notice someone, remember they’re a whole person with a story.",
+      "Keep the promises you’ve made to the people you love."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 51,
+      "v": 10
+     },
+     "web": "Create in me a clean heart, O God. Renew a right spirit within me.",
+     "kjv": "Create in me a clean heart, O God; and renew a right spirit within me."
+    },
+    {
+     "word": "Disrespect",
+     "a": "Treating people in charge, like a boss, a teacher, or a leader, as if they don’t deserve basic respect. You can disagree and still be respectful.",
+     "b": [
+      "Disagree with a boss or leader to their face, kindly, instead of behind their back.",
+      "Stop mocking a leader, even one you didn’t choose.",
+      "Pray for someone in charge whose choices worry you."
+     ],
+     "ref": {
+      "b": "COL",
+      "c": 4,
+      "v": 6
+     },
+     "web": "Let your speech always be with grace, seasoned with salt, that you may know how you ought to answer each one.",
+     "kjv": "Let your speech be alway with grace, seasoned with salt, that ye may know how ye ought to answer every man."
+    },
+    {
+     "word": "Betrayal",
+     "a": "Breaking the trust someone gave you: telling a secret, breaking a promise, or turning on someone who counted on you.",
+     "b": [
+      "Keep a secret someone trusted you with.",
+      "If you broke a promise, own it, and make it right.",
+      "Stand by a friend when it would be easier not to."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 11,
+      "v": 13
+     },
+     "web": "One who brings gossip betrays a confidence, but one who is of a trustworthy spirit is one who keeps a secret.",
+     "kjv": "A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter."
+    },
+    {
+     "word": "Envy",
+     "a": "Wanting what someone else has, and feeling worse because they have it. It steals the joy from what God already gave you.",
+     "b": [
+      "Thank God for three things you already have.",
+      "Be glad out loud for someone who got what you wanted.",
+      "Take a break from what feeds it, like scrolling through other people’s lives."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 14,
+      "v": 30
+     },
+     "web": "The life of the body is a heart at peace, but envy rots the bones.",
+     "kjv": "A sound heart is the life of the flesh: but envy the rottenness of the bones."
+    },
+    {
+     "word": "Selfishness",
+     "a": "Putting what you want ahead of what others need, again and again. Love looks out for other people.",
+     "b": [
+      "Let someone else choose this time.",
+      "Notice one need around you today, and meet it.",
+      "Give up something you want so someone else can have it."
+     ],
+     "ref": {
+      "b": "GAL",
+      "c": 6,
+      "v": 2
+     },
+     "web": "Bear one another’s burdens, and so fulfill the law of Christ.",
+     "kjv": "Bear ye one another’s burdens, and so fulfil the law of Christ."
+    },
+    {
+     "word": "Greed",
+     "a": "Always wanting more, even when you have enough, or wanting what belongs to someone else.",
+     "b": [
+      "Give away something you don’t need this week.",
+      "Before you buy, ask: do I need this, or do I just want more?",
+      "Return anything you’ve kept that isn’t yours."
+     ],
+     "ref": {
+      "b": "ECC",
+      "c": 5,
+      "v": 10
+     },
+     "web": "He who loves silver shall not be satisfied with silver, nor he who loves abundance, with increase…",
+     "kjv": "He that loveth silver shall not be satisfied with silver; nor he that loveth abundance with increase…"
+    },
+    {
+     "word": "Waste",
+     "a": "Using up or throwing away what God made as if it didn’t matter: food, water, things, and the earth itself.",
+     "b": [
+      "Use what you have before you buy more.",
+      "Pick up trash you didn’t drop.",
+      "Turn off, unplug, or save one thing you usually waste."
+     ],
+     "ref": {
+      "b": "PSA",
+      "c": 104,
+      "v": 24
+     },
+     "web": "Yahweh, how many are your works! In wisdom, you have made them all. The earth is full of your riches.",
+     "kjv": "O LORD, how manifold are thy works! in wisdom hast thou made them all: the earth is full of thy riches."
+    }
+   ]
+  },
+  "trespass": {
+   "sections": [
+    "What It Is",
+    "Ways to Make It Right"
+   ],
+   "items": [
+    {
+     "word": "Hoarding",
+     "a": "Keeping for yourself what God gave you to share: money, time, skills, or things you never use.",
+     "b": [
+      "Give away something you’ve been holding onto for no reason.",
+      "Share a skill with someone who could use it.",
+      "Set aside part of what you earn to give, before you spend the rest."
+     ],
+     "ref": {
+      "b": "ACT",
+      "c": 20,
+      "v": 35
+     },
+     "web": "It is more blessed to give than to receive.",
+     "kjv": "It is more blessed to give than to receive."
+    },
+    {
+     "word": "Copying",
+     "a": "Using someone’s art, music, photos, or writing without asking. A real person made it, and it’s theirs to share.",
+     "b": [
+      "Ask before you use someone’s photo, art, or words, and say who made it.",
+      "If you used someone’s work without asking, ask now, or take it down.",
+      "When you can, pay the person who made it: a local artist, a friend’s band, or a writer you love."
+     ],
+     "ref": {
+      "b": "1TI",
+      "c": 5,
+      "v": 18
+     },
+     "web": "The laborer is worthy of his wages.",
+     "kjv": "The labourer is worthy of his reward."
+    },
+    {
+     "word": "Gossip",
+     "a": "Passing on something about someone that hurts their good name, true or not. A rumor or a cruel joke can take a good name away.",
+     "b": [
+      "If you passed on a rumor, go back and set it straight.",
+      "Say something good about them to the people who heard it.",
+      "If they know what you said, ask them to forgive you."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 22,
+      "v": 1
+     },
+     "web": "A good name is more desirable than great riches…",
+     "kjv": "A good name is rather to be chosen than great riches…"
+    },
+    {
+     "word": "Cheating",
+     "a": "Taking money that isn’t yours by a trick: on taxes, a bill, a bet, or a deal. It can feel small, but someone always pays.",
+     "b": [
+      "If you underpaid someone, go back and pay what you owe.",
+      "Fix a mistake in your favor, like extra change or a missed charge.",
+      "Pay people fairly and on time."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 16,
+      "v": 8
+     },
+     "web": "Better is a little with righteousness, than great revenues with injustice.",
+     "kjv": "Better is a little with righteousness than great revenues without right."
+    },
+    {
+     "word": "Dividing people",
+     "a": "Turning people against someone, or pulling a friend away from another, so you come out on top.",
+     "b": [
+      "Stop passing on complaints that drive people apart.",
+      "Speak well of the person you’ve been turning others against.",
+      "Help two people who’ve drifted apart find their way back."
+     ],
+     "ref": {
+      "b": "MAT",
+      "c": 5,
+      "v": 9
+     },
+     "web": "Blessed are the peacemakers, for they shall be called children of God.",
+     "kjv": "Blessed are the peacemakers: for they shall be called the children of God."
+    },
+    {
+     "word": "False ads",
+     "a": "Selling something by saying it’s better than it is, or by hiding what’s wrong with it.",
+     "b": [
+      "If you sold something with a problem, tell the buyer and make it right.",
+      "Describe what you sell honestly, flaws and all.",
+      "Before you share an ad or a deal, check that it’s true."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 21,
+      "v": 6
+     },
+     "web": "Getting treasures by a lying tongue is a fleeting vapor…",
+     "kjv": "The getting of treasures by a lying tongue is a vanity tossed to and fro…"
+    },
+    {
+     "word": "Stealing",
+     "a": "Taking something that belongs to someone else, or borrowing it and never giving it back.",
+     "b": [
+      "Return what you borrowed, even if it’s been a long time.",
+      "Pay back what you took, and add something extra.",
+      "Ask forgiveness from the person you took from."
+     ],
+     "ref": {
+      "b": "EPH",
+      "c": 4,
+      "v": 28
+     },
+     "web": "Let him who stole steal no more; but rather let him labor, producing with his hands something that is good, that he may have something to give to him who has need.",
+     "kjv": "Let him that stole steal no more: but rather let him labour, working with his hands the thing which is good, that he may have to give to him that needeth."
+    },
+    {
+     "word": "Deceiving",
+     "a": "Leading someone to believe what isn’t true, by what you say or what you leave out, so you get something from them.",
+     "b": [
+      "Tell the person what really happened.",
+      "Fix the wrong idea you gave them, even if it costs you.",
+      "Make good on anything you got by misleading them."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 12,
+      "v": 19
+     },
+     "web": "Truth’s lips will be established forever, but a lying tongue is only momentary.",
+     "kjv": "The lip of truth shall be established for ever: but a lying tongue is but for a moment."
+    },
+    {
+     "word": "Bad example",
+     "a": "Giving people a wrong picture of God by how you treat them: harsh, unfair, or unkind in His name.",
+     "b": [
+      "Apologize to someone you treated badly while talking about God.",
+      "Show someone what God is like with a kindness, not a lecture.",
+      "Let people see you own your mistakes."
+     ],
+     "ref": {
+      "b": "MAT",
+      "c": 5,
+      "v": 16
+     },
+     "web": "Let your light shine before men, that they may see your good works and glorify your Father who is in heaven.",
+     "kjv": "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven."
+    },
+    {
+     "word": "Taking credit",
+     "a": "Passing off someone else’s idea or work as your own, or letting people think you did what they did.",
+     "b": [
+      "Tell people whose idea it really was.",
+      "Thank them in front of the people who heard.",
+      "Share the credit next time, even when no one would notice."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 27,
+      "v": 2
+     },
+     "web": "Let another man praise you, and not your own mouth; a stranger, and not your own lips.",
+     "kjv": "Let another man praise thee, and not thine own mouth; a stranger, and not thine own lips."
+    },
+    {
+     "word": "Disloyalty",
+     "a": "Walking away from someone who counted on you, or going after what was theirs: their place, their partner, or their friends.",
+     "b": [
+      "Go back to someone you left without a word, and make it right.",
+      "Keep showing up for someone, even when it costs you.",
+      "Ask forgiveness from someone who felt you left them behind."
+     ],
+     "ref": {
+      "b": "PRO",
+      "c": 18,
+      "v": 24
+     },
+     "web": "There is a friend who sticks closer than a brother.",
+     "kjv": "There is a friend that sticketh closer than a brother."
+    },
+    {
+     "word": "Accidents",
+     "a": "Harm you didn’t mean to cause: something broken, lost, or forgotten. It still matters to the person it happened to.",
+     "b": [
+      "Own it out loud: “That was my fault.”",
+      "Fix it, replace it, or pay for it.",
+      "Ask what would help, then do it."
+     ],
+     "ref": {
+      "b": "JAS",
+      "c": 5,
+      "v": 16
+     },
+     "web": "Confess your sins to one another and pray for one another, that you may be healed.",
+     "kjv": "Confess your faults one to another, and pray one for another, that ye may be healed."
+    }
+   ]
+  }
+ },
+ "lists": [
+  {
+   "name": "Faith Family",
+   "sections": [
+    "Who They Are",
+    "Who You Might Add"
+   ],
+   "a": "The people you grow with: anyone you can talk with about God and what matters most.",
+   "b": [
+    "A friend you can talk with about God.",
+    "Someone you pray with, or who prays for you.",
+    "Someone who helped you know God better."
+   ],
+   "ref": {
+    "b": "PHP",
+    "c": 1,
+    "v": 3
+   },
+   "web": "I thank my God whenever I remember you…",
+   "kjv": "I thank my God upon every remembrance of you…"
+  },
+  {
+   "name": "Family & Friends",
+   "sections": [
+    "Who They Are",
+    "Who You Might Add"
+   ],
+   "a": "The people closest to you: the family you live with or grew up with, and the friends you count on.",
+   "b": [
+    "The people you live with, or the family you call most.",
+    "A friend you’d call on a hard day.",
+    "Someone close you haven’t talked to in a while."
+   ],
+   "ref": {
+    "b": "ECC",
+    "c": 4,
+    "v": 10
+   },
+   "web": "If they fall, the one will lift up his fellow…",
+   "kjv": "If they fall, the one will lift up his fellow…"
+  },
+  {
+   "name": "Neighbors",
+   "sections": [
+    "Who They Are",
+    "Who You Might Add"
+   ],
+   "a": "The people around you, from next door to the checkout line. You see them often, but you may not know them well.",
+   "b": [
+    "Someone who lives on your street or in your building.",
+    "A coworker, a classmate, or someone at the gym.",
+    "Someone who serves you: a cashier, a driver, or a mail carrier."
+   ],
+   "ref": {
+    "b": "PRO",
+    "c": 27,
+    "v": 10
+   },
+   "web": "A neighbor who is near is better than a distant brother.",
+   "kjv": "Better is a neighbour that is near than a brother far off."
+  },
+  {
+   "name": "Leaders",
+   "sections": [
+    "Who They Are",
+    "Who You Might Add"
+   ],
+   "a": "People with a say over your life: at work, at school, at church, and in your town or country. Their choices touch many people.",
+   "b": [
+    "A boss, a teacher, or a coach.",
+    "A pastor, or someone who leads a group you’re in.",
+    "A leader in your town or country, even one whose choices worry you."
+   ],
+   "ref": {
+    "b": "1TI",
+    "c": 2,
+    "v": 1,
+    "v2": 2
+   },
+   "web": "…prayers… be made for all men, for kings and all who are in high places, that we may lead a tranquil and quiet life…",
+   "kjv": "…prayers… be made for all men; for kings, and for all that are in authority; that we may lead a quiet and peaceable life…"
+  },
+  {
+   "name": "The Hurting",
+   "sections": [
+    "Who They Are",
+    "Who You Might Add"
+   ],
+   "a": "People who are grieving, sick, forgotten, or alone. Some will tell you. Others keep it quiet.",
+   "b": [
+    "Someone who is sick, or caring for someone who is.",
+    "Someone who lost a person they love.",
+    "Someone who seems lonely, or who hasn’t been around lately."
+   ],
+   "ref": {
+    "b": "PSA",
+    "c": 34,
+    "v": 18
+   },
+   "web": "Yahweh is near to those who have a broken heart, and saves those who have a crushed spirit.",
+   "kjv": "The LORD is nigh unto them that are of a broken heart…"
+  },
+  {
+   "name": "Difficult People",
+   "sections": [
+    "Who They Are",
+    "Who You Might Add"
+   ],
+   "a": "People it’s hard to love right now: someone who hurt you, works against you, or gets under your skin. Praying for them doesn’t mean letting them hurt you.",
+   "b": [
+    "Someone you’re upset with right now.",
+    "Someone who works against you, or who you compete with.",
+    "Someone who hurt you. You can pray for them from a safe distance."
+   ],
+   "ref": {
+    "b": "LUK",
+    "c": 6,
+    "v": 27,
+    "v2": 28
+   },
+   "web": "Love your enemies, do good to those who hate you, bless those who curse you, and pray for those who mistreat you.",
+   "kjv": "Love your enemies, do good to them which hate you, bless them that curse you, and pray for them which despitefully use you."
+  },
+  {
+   "name": "Your Requests",
+   "sections": [
+    "What It Is",
+    "What You Might Bring"
+   ],
+   "a": "What you’re asking God for yourself, big or small. You can bring Him anything.",
+   "b": [
+    "Something you’re worried about.",
+    "A choice you need help making.",
+    "A change you’d like to see in yourself."
+   ],
+   "ref": {
+    "b": "PSA",
+    "c": 55,
+    "v": 22
+   },
+   "web": "Cast your burden on Yahweh and he will sustain you.",
+   "kjv": "Cast thy burden upon the LORD, and he shall sustain thee…"
+  }
+ ]
+}

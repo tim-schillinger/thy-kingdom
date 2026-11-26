@@ -1,0 +1,21 @@
+/* Evening Walk Complete and Day Complete (Review wd- and es-): the foot is pinned like a step's; the badge sits space-4 under the line; the walks row
+   starts space-6 under the line (steps: space-8); the day's verse ends space-6 above the foot; the nudge is space-12 under the list and space-8 above the foot. */
+/* Walk Complete (Review wd-): .wd-cx centered, space-6 above, margin-page at the sides; heading space-4 under the mark, line space-8 under the heading;
+   the done list space-8 under, the verse card space-12 under it, Coming Up space-6 under that, and 40 px of rest at the end. */
+@import './screen.css';
+@import '../foundations.css';
+.tkc-wc > [data-tkc="TKC-002"] { position: sticky; top: 0; z-index: 5; }
+.tkc-wc__main { flex: 1; min-width: 0; padding-bottom: var(--space-8); }   /* note 7 (3-6a): the last link's room above the pinned foot and its 24 px fade, as a step's main (stepscreen.css 0.9) */
+.tkc-wc__head { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--space-6) var(--margin-page) 0; }
+.tkc-wc__h { margin: var(--space-4) 0 0; text-wrap: balance; }
+.tkc-wc__line { margin: var(--space-2) 0 0; color: var(--ink-2); }
+.tkc-wc__done { margin: var(--space-8) var(--margin-page) 0; }
+.tkc-wc__verse { margin: var(--space-12) var(--margin-page) 0; }
+.tkc-wc__cu { margin: var(--space-6) var(--margin-page) 0; }
+.tkc-wc__end { height: 40px; }
+
+.tkc-wc > [data-tkc="TKC-003"] { position: sticky; bottom: 0; z-index: 4; }
+.tkc-wc__badge { margin-top: var(--space-4); max-width: 100%; display: flex; justify-content: center; }
+.tkc-wc__done[data-content="walks"] { margin-top: var(--space-6); }
+.tkc-wc__verse[data-day] { margin-bottom: var(--space-6); }
+.tkc-wc__nudge { margin: var(--space-12) var(--margin-page) var(--space-8); font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }

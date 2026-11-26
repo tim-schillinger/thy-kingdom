@@ -1,0 +1,8 @@
+/* TKC-037 ProverbsExtras 0.1 (C, G). The offer is TKC-059's card as it is on Today. The compact row: the same edge and corner, space-3 above and below,
+   space-4 at the sides, the mark and the words on one line, space-3 apart. At 200% the words wrap beside the mark, the mark top-aligned (E). */
+@import '../foundations.css';
+.tkc-px { margin: 0; }
+.tkc-px--row { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-card);
+  background: var(--surface); box-shadow: var(--card-edge); color: var(--ink-2); font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); }
+.tkc-px--row .tkc-sm { margin-top: calc((24px*var(--ts) - 12px*var(--ts)) / 2); }   /* the mark sits on the first line's middle */
+.tkc-px__words { min-width: 0; }

@@ -1,0 +1,27 @@
+/* TKC-025 WalkLine 0.2.1. Circle 32, space-3, text, chevron 20; min height 60; a line hairline below (C, G).
+   Settings' studio drew an 18 px chevron; the spec's 20 wins (D-WL1). */
+@import '../foundations.css';
+.tkc-wl { display: flex; align-items: center; gap: var(--space-3); min-height: 60px; padding: 4px 0; box-sizing: border-box; border-bottom: 1px solid var(--line);
+  color: var(--ink); text-decoration: none; border-radius: 4px; -webkit-tap-highlight-color: transparent; transition: background var(--motion-quick); }
+.tkc-wl__circle { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--surface-tint); display: grid; place-items: center; }
+.tkc-wl__text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.tkc-wl__text > span { color: var(--ink-2); }
+.tkc-wl__chev { color: var(--ink-2); }
+.tkc-wl:active, .tkc-wl.is-pressed { background: var(--surface-tint); }
+.tkc-wl:focus-visible, .tkc-wl.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+[data-text-large] .tkc-wl { align-items: flex-start; padding-top: 12px; }   /* E 200%: the circle stays top-aligned with the name (Review .big .wl) */
+
+/* M11 (Back on Today after a walk): the ✓ grows in, 450 ms (a `motion-calm` and a half), with a settle. With Reduce Motion, a fade. */
+@keyframes tkc-wl-grow { from { transform: scale(0); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes tkc-wl-fade { from { opacity: 0; } to { opacity: 1; } }
+.tkc-wl__circle.is-play .tkc-sm { animation: tkc-wl-grow calc(var(--motion-calm) * 1.5) var(--ease-settle) both; }
+@media (prefers-reduced-motion: reduce) { .tkc-wl__circle.is-play .tkc-sm { animation: tkc-wl-fade var(--motion-quick) both; } }
+
+/* 0.4 (frame-lock-12 §5, 3427 y): the Evening Walk's row before her evening starts: "Tonight starting at 6 pm · Change". The row's link is stretched over the whole row; Change sits above it as its own target, its 44 px padded past the line so the row keeps its content height. */
+.tkc-wl--split { position: relative; cursor: pointer; }
+.tkc-wl__open { color: inherit; text-decoration: none; }
+.tkc-wl__open::after { content: ""; position: absolute; inset: 0; border-radius: 4px; }
+.tkc-wl__open:focus-visible { outline: none; }
+.tkc-wl__open:focus-visible::after { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-wl--split:has(.tkc-wl__open:active) { background: var(--surface-tint); }
+.tkc-wl--split [data-part="count"] .tkc-link { position: relative; z-index: 1; display: inline; min-height: 0; padding: 13px 2px; margin: -13px 0; font: inherit; }

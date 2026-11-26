@@ -1,0 +1,31 @@
+/* TKC-054 MonthCalendar 0.2. Month row: 8 under the sheet header, EB Garamond 22/28 Medium, plain 44 px round arrows (no fill at rest). Grid: seven equal columns, 4 between rows, 12 under the month row.
+   Day cell: min 52, 4 on top, 12 radius for the pressed fill, a 32 px numeral circle (grows with the text up to the cell), a 14 px mark slot. Walk kind: today is the honey disc. Date kind: today ringed, the picked day honey, no marks. */
+@import '../foundations.css';
+.tkc-cal__row { display: flex; align-items: center; justify-content: space-between; margin-top: var(--space-2); gap: var(--space-2); }
+.tkc-cal__month { font: 500 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-display); color: var(--ink); }
+.tkc-cal__nav { display: flex; gap: 4px; flex: 0 0 auto; }
+.tkc-cal__arr { appearance: none; border: 0; background: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--ink); cursor: pointer; transition: background var(--motion-quick); }
+.tkc-cal__arr:active, .tkc-cal__arr.is-pressed { background: var(--surface-tint); }
+.tkc-cal__arr:focus-visible, .tkc-cal__arr.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-cal__arr.is-off { color: var(--ink-2); opacity: .45; cursor: default; }
+.tkc-cal__arr > svg, .tkc-cal__arr > span { width: 20px; height: 20px; display: block; }
+.tkc-cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 4px; margin-top: var(--space-3); }
+.tkc-cal__wd { font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); text-align: center; padding-bottom: 6px; }
+.tkc-cal__d { appearance: none; border: 0; background: none; min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 2px; padding: 4px 0 0; border-radius: var(--radius-sm, 12px); cursor: pointer; color: var(--ink); min-width: 0; font: inherit; transition: background var(--motion-quick); }
+.tkc-cal__d:active, .tkc-cal__d.is-pressed { background: var(--surface-tint); }
+.tkc-cal__d.is-focus, .tkc-cal__d:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.tkc-cal__d.is-out { cursor: default; color: var(--ink-2); opacity: .45; }
+.tkc-cal__n { display: grid; place-items: center; width: min(calc(32px*var(--ts)), 100%); aspect-ratio: 1 / 1; border-radius: 50%; font: 500 calc(16px*var(--ts))/1 var(--f-sans); font-variant-numeric: tabular-nums; }
+.tkc-cal__d.is-today .tkc-cal__n { background: var(--accent-fill); color: var(--on-accent); font-weight: 600; }
+.tkc-cal__m { display: grid; place-items: center; min-width: calc(14px*var(--ts)); height: calc(14px*var(--ts)); color: var(--success-ink); flex: 0 0 auto; }
+.tkc-cal__m > svg { width: calc(14px*var(--ts)); height: calc(14px*var(--ts)); }
+.tkc-cal__half { display: block; flex: 0 0 auto; width: calc(13px*var(--ts)); height: calc(13px*var(--ts)); aspect-ratio: 1 / 1; border-radius: 50%; box-shadow: inset 0 0 0 1.5px currentColor; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
+.tkc-cal__key { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: var(--space-4); font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-cal__key > span { display: inline-flex; align-items: center; gap: 6px; }
+/* date kind (0.2): no marks, today ringed, the picked day honey */
+.tkc-cal[data-kind="date"] .tkc-cal__m { display: none; }
+.tkc-cal[data-kind="date"] .tkc-cal__d .tkc-cal__n { background: none; color: inherit; font-weight: 500; box-shadow: none; }
+.tkc-cal[data-kind="date"] .tkc-cal__d.is-out .tkc-cal__n { color: var(--ink-2); }
+.tkc-cal[data-kind="date"] .tkc-cal__d.is-today .tkc-cal__n { background: none; color: var(--ink); font-weight: 500; box-shadow: inset 0 0 0 1.5px var(--ink); }
+.tkc-cal[data-kind="date"] .tkc-cal__d.is-pick .tkc-cal__n { background: var(--accent-fill); color: var(--on-accent); font-weight: 600; box-shadow: none; }
+.tkc-cal[data-kind="date"] .tkc-cal__d.is-today.is-pick .tkc-cal__n { box-shadow: inset 0 0 0 1.5px var(--ink); }

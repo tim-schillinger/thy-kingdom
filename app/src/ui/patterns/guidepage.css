@@ -1,0 +1,61 @@
+/* The Guide's pages (pattern). Numbers from the Review's "7 Guide" phones and Guide Studio v1.0 (locked 1218): `margin-page` sides; the title under the bar; heads 14/20 600 `ink-2`;
+   a step's page parts with 22/28 display heads; the verse in TKC-033; Start Here's foot as a walk's (Back quiet, the primary beside it). No component styles here. */
+@import './screen.css';
+.tkc-guide { padding: 0 var(--margin-page) 40px; display: flex; flex-direction: column; min-width: 0; }
+.tkc-guide__title { margin: var(--space-6) 0 0; text-wrap: balance; }
+.tkc-guide:not(.tkc-guide--run) > :first-child:is(.tkc-guide__title) { margin-top: calc(var(--space-6) + 32px); }   /* the home has no bar: the title clears the phone's top as Lists and Settings do */
+.tkc-guide__line { margin: var(--space-2) 0 0; color: var(--ink-2); }
+.tkc-guide__eyebrow { margin: var(--space-4) 0 0; color: var(--accent-ink); letter-spacing: .02em; }
+.tkc-guide__eyebrow + .tkc-guide__title { margin-top: var(--space-1); }
+.tkc-guide > [data-tkc="TKC-059"] { margin-top: var(--space-5); }
+.tkc-guide__head { margin: var(--space-8) 0 var(--space-1); font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); letter-spacing: .02em; color: var(--ink-2); }
+.tkc-guide__block { display: flex; flex-direction: column; min-width: 0; }
+.tkc-guide__rows { display: flex; flex-direction: column; border-top: 1px solid var(--line); margin-top: var(--space-2); }
+.tkc-guide__title + .tkc-guide__line + .tkc-guide__rows { margin-top: var(--space-5); }
+.tkc-guide__block > .tkc-guide__rows { margin-top: var(--space-2); }
+
+/* A step's page: label, title, then the four parts (What You Do and Why It Matters are prose, Tips a list, In the Bible a verse card with its line under it). */
+.tkc-guide__sec { margin-top: var(--space-8); display: flex; flex-direction: column; min-width: 0; }
+.tkc-guide__sec:first-of-type { margin-top: var(--space-6); }
+.tkc-guide__sech { margin: 0; font: 500 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-display); color: var(--ink); }
+.tkc-guide__text { margin: var(--space-2) 0 0; }
+.tkc-guide__tips { margin: var(--space-2) 0 0; padding: 0 0 0 calc(20px*var(--ts)); display: flex; flex-direction: column; gap: var(--space-2); font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); }
+.tkc-guide__tips li::marker { color: var(--ink-2); }
+.tkc-guide__vn { margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.tkc-guide__vl { margin: 0; color: var(--ink-2); }
+.tkc-guide__foot-gap { height: var(--space-8); }
+
+/* Your Whole Year and Start Here's facts: rows with a hairline above the first; a section's own line under its head. */
+.tkc-guide__facts { display: flex; flex-direction: column; border-top: 1px solid var(--line); margin-top: var(--space-2); }
+.tkc-guide__sub { margin: var(--space-1) 0 0; color: var(--ink-2); }
+.tkc-guide__sub + .tkc-guide__facts { margin-top: var(--space-2); }
+/* a list that continues the facts shares their last hairline: no second line, no gap (Nov 19, 2026: "double lines in the middle of the list") */
+.tkc-guide__facts + .tkc-guide__rows { border-top: 0; margin-top: 0; }
+.tkc-guide > [data-tkc="TKC-033"] { margin-top: var(--space-5); }
+.tkc-guide__note { margin: var(--space-6) 0 0; color: var(--ink-2); }
+
+/* Start Here, page 1: two walk tiles (the Review's .g7wt). The morning is dawn; the evening is dusk. Their words stay readable in both themes (692). */
+.tkc-guide__tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: var(--space-5); }
+.tkc-guide__tile { border-radius: 20px; padding: 16px 14px; display: flex; flex-direction: column; gap: 2px; min-height: calc(124px*min(var(--ts), 1.5)); min-width: 0; }
+.tkc-guide__tile b { margin-top: auto; font: 500 calc(20px*var(--ts))/calc(26px*var(--ts)) var(--f-display); overflow-wrap: break-word; }
+.tkc-guide__tile span { font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); }
+.tkc-guide__tile svg { color: var(--accent-fill); }
+.tkc-guide__tile[data-walk="morning"] { background: linear-gradient(180deg, var(--peach-100), var(--cream-50)); box-shadow: inset 0 0 0 1px var(--line); color: var(--brown-900); }
+.tkc-guide__tile[data-walk="morning"] span { color: var(--brown-700); }
+.tkc-guide__tile[data-walk="evening"] { background: linear-gradient(180deg, var(--ember-800), var(--navy-900)); color: var(--parchment-100); }
+.tkc-guide__tile[data-walk="evening"] span { color: var(--parchment-300); }
+/* Page 5: the plant in its five stages, in a tinted band. */
+.tkc-guide__plants { display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-5); padding: 14px 28px; border-radius: 16px; background: var(--surface-tint); color: var(--success-ink); }
+
+/* A run's page scrolls under its foot; the foot is a walk's (spec TKC-003): Back quiet at the left, the primary beside it. */
+.tkc-guide--run { padding-bottom: var(--space-6); }
+.tkc-guide--run .tkc-stp { margin-top: var(--space-5); }
+.tkc-guide__foot { position: sticky; bottom: 0; z-index: 4; background: var(--bg-plain); padding: 8px var(--margin-page) calc(var(--space-3) + var(--safe-bottom, env(safe-area-inset-bottom, 0px))); }
+.tkc-guide__foot::before { content: ""; position: absolute; left: 0; right: 0; top: -24px; height: 24px; pointer-events: none; background: linear-gradient(180deg, color-mix(in srgb, var(--bg-plain) 0%, transparent), var(--bg-plain)); }
+.tkc-guide__nav { display: flex; align-items: center; gap: var(--space-3); }
+.tkc-guide__nav > [data-kind="primary"] { flex: 1 1 0; min-width: 0; }
+[data-text-large] .tkc-guide__nav { flex-wrap: wrap; }
+
+/* frame-lock-12 §4 (3426 y): every Guide page's top bar is pinned as a step's is, with the scrolled hairline. */
+.tkc-screen[data-screen="guide"] > [data-tkc="TKC-002"] { position: sticky; top: 0; z-index: 5; }
+.tkc-screen[data-screen="guide"][data-scrolled] > [data-tkc="TKC-002"] { box-shadow: 0 1px 0 var(--line); }

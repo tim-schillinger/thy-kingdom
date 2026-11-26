@@ -1,0 +1,18 @@
+/* TKC-003 ActionBar 0.7 (52 px edged Back and Skip, the primary's arrow); 0.5 (claude/design-system/specs/TKC-003-ActionBar.md). Layout only: the buttons are TKC-006's. */
+@import '../foundations.css';
+.tkc-ab { position: relative; background: var(--actionbar-fill); color: var(--ink); box-sizing: border-box;
+  padding: var(--space-3) var(--margin-page) calc(var(--space-3) + var(--safe-bottom, env(safe-area-inset-bottom, 0px)));
+  display: flex; flex-direction: column; gap: 0; }
+.tkc-ab[data-foot="two"] { gap: 2px; }   /* 895: 2 px apart as drawn */
+.tkc-ab::before { content: ""; position: absolute; left: 0; right: 0; top: -24px; height: 24px; pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--actionbar-fill) 0%, transparent), var(--actionbar-fill)); }
+.tkc-ab__row { display: flex; align-items: center; gap: var(--space-2); }   /* 0.7: 8 px between buttons */
+.tkc-ab__row > [data-kind="quiet"] { flex: none; }
+.tkc-ab__row > [data-kind="primary"] { flex: 1; width: auto; }
+.tkc-ab[data-stacked] .tkc-ab__row { flex-wrap: wrap; row-gap: var(--space-1); }
+.tkc-ab[data-stacked] .tkc-ab__row > [data-kind="primary"] { order: 3; flex: 1 1 100%; }
+.tkc-ab[data-stacked] .tkc-ab__row > [data-which="back"] { margin-right: auto; }   /* 0.9 (C4): Back at the left edge… */
+.tkc-ab[data-stacked] .tkc-ab__row > [data-which="skip"] { margin-left: auto; }   /* …Skip at the right edge */
+/* Feet with a button under the primary: space-5 plus the safe area (910) */
+.tkc-ab[data-foot="two"], .tkc-ab:has(> [data-kind="quiet"]) { padding-bottom: calc(var(--space-5) + var(--safe-bottom, env(safe-area-inset-bottom, 0px))); }
+.tkc-ab:has(> [data-kind="quiet"])[data-stacked] .tkc-ab__row { row-gap: var(--space-1); }   /* a link under the primary: the row stacks as drawn, the link is its own full-width row below */

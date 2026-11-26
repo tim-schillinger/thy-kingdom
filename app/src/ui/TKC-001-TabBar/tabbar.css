@@ -1,0 +1,10 @@
+/* TKC-001 TabBar 0.2.1. Spec G: padding 8 top, 4 sides, 24 bottom plus the safe area (the Review drew 6 and 22: the spec wins, D-TB1). */
+@import '../foundations.css';
+.tkc-tabs { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--tabbar-fill); border-top: 1px solid var(--line); box-sizing: border-box;
+  padding: var(--space-2) var(--space-1) calc(var(--space-6) + env(safe-area-inset-bottom, 0px)); }
+.tkc-tabs__tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 52px; border-radius: 12px;
+  color: var(--ink-2); text-decoration: none; -webkit-tap-highlight-color: transparent; transition: background var(--motion-quick); }
+.tkc-tabs__tab[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.tkc-tabs__tab:active, .tkc-tabs__tab.is-pressed { background: var(--surface-tint); }
+.tkc-tabs__tab:focus-visible, .tkc-tabs__tab.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 0; }
+.tkc-tabs__tab > span:last-child { white-space: nowrap; }

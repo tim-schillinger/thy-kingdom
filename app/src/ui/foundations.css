@@ -1,0 +1,113 @@
+/* Thy Kingdom foundations: tokens from claude/design-system/foundations.md 1.5, checked against the
+   Component Review's own values by script (Sprint 1a: 95 of 95 color and font tokens equal).
+   Every component imports this file; components use semantic tokens only.
+   Dark applies when the phone is dark (unless Appearance says Light) or when Appearance says Dark (1241). */
+*, *::before, *::after { box-sizing: border-box; }  /* as the Review (Sprint 1b): components never depend on the app's stylesheet */
+:root {
+  --cream-50:#FFFDF8; --cream-100:#FBF6EC; --cream-200:#F1E4C6; --cream-300:#E8DFCC; --brown-900:#40342C; --brown-700:#6B5E52;
+  --honey-300:#F0D58C; --bronze-700:#7E5B0F; --peach-100:#FDEEDC; --rose-100:#FBE9E0; --night-900:#1C1815; --night-800:#3A3129;
+  --night-700:#3F3326; --night-600:#4A4036; --parchment-100:#E5DBCA; --parchment-300:#B5A998; --honey-500:#D4B46A; --honey-400:#E2C27A;
+  --umber-950:#2A2119; --amber-600:#A87B22; --amber-700:#8F6A1F; --amber-400:#B8893A; --amber-900:#2A2219; --ember-800:#33201A;
+  --navy-900:#1E2233; --wheat-200:#F5E2AE; --ember-700:#3E2A20; --amber-850:#4A3B22;
+
+  --bg-plain: var(--cream-100);
+  --dawn-top: var(--peach-100); --dusk-top: var(--rose-100); --wash-bottom: var(--cream-100);
+  --surface: var(--cream-50); --surface-tint: var(--cream-200); --line: var(--cream-300);
+  --ink: var(--brown-900); --ink-2: var(--brown-700); --ink-jesus: #A3301F;
+  --accent-fill: var(--honey-300); --on-accent: var(--brown-900); --accent-ink: var(--bronze-700);
+  --success-fill: var(--amber-600); --on-success: var(--cream-50); --success-mark: var(--bronze-700); --success-ink: var(--bronze-700);
+  --focus-ring: var(--bronze-700); --inverse: var(--brown-900); --on-inverse: var(--cream-100); --scrim: rgba(28,24,21,.45);
+  --button-pressed: #E6C97D; --shadow-soft: 0 8px 24px rgba(64,52,44,.10);
+  --glow-sunrise: radial-gradient(120% 90% at 100% 0%, var(--peach-100) 0%, transparent 60%);
+  --progress-wash: linear-gradient(165deg, var(--peach-100), color-mix(in srgb, var(--cream-200) 58%, transparent) 58%, var(--wheat-200));
+
+  --f-display: "EB Garamond", Garamond, Georgia, serif;
+  --f-reading: "Literata", Georgia, serif;
+  --f-hebrew: "Noto Serif Hebrew", "Times New Roman", serif;   /* Psalm 119's letter and the Names' marks: bundled, Hebrew subset only (frame-lock-5-names-2 §E7) */
+  --f-sans: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif;
+  --ts: 1; /* Text Size (1241, 1249); Match My Phone keeps 1 */
+  /* Motion tokens (motion-lock §3, 603, 610): C · Lively. Components call these, never their own numbers. */
+  --motion-quick: 150ms; --motion-short: 200ms; --motion-calm: 300ms; --motion-sheet: 420ms; --motion-win: 700ms;
+  --ease-gentle: cubic-bezier(.2,.7,.2,1); --ease-exit: cubic-bezier(.4,0,1,1); --ease-settle: cubic-bezier(.34,1.56,.64,1); --ease-sheet: cubic-bezier(.3,1.25,.5,1);
+  --move-page: 48px; --move-rise: 16px; --stagger: 90ms; --press-scale: .97;
+  --ring-active: var(--ink);   /* "you are here" (570): ink in light, white in dark; the walk path, the week strip and anything else marking the current place */
+  color-scheme: light;
+
+  /* Spacing, radius and size tokens (foundations 1.5; values read from the Component Review by script, Sprint 1a). */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-12: 48px;
+  --margin-page: 20px; --radius-pill: 999px; --tap: 44px;
+}
+
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg-plain: var(--night-900); --dawn-top: var(--amber-900); --dusk-top: var(--ember-800); --wash-bottom: var(--night-900);
+  --surface: var(--night-800); --surface-tint: var(--night-700); --line: var(--night-600);
+  --ink: var(--parchment-100); --ink-2: var(--parchment-300); --ink-jesus: #E8907F;
+  --accent-fill: var(--honey-500); --on-accent: var(--umber-950); --accent-ink: var(--honey-400);
+  --success-fill: var(--amber-700); --on-success: var(--cream-100); --success-mark: var(--amber-700); --success-ink: var(--amber-400);
+  --focus-ring: var(--honey-400); --inverse: var(--parchment-100); --on-inverse: var(--night-900); --scrim: rgba(28,24,21,.60);
+  --button-pressed: #C6A761; --shadow-soft: none;
+  --glow-sunrise: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--honey-500) 15%, transparent) 0%, transparent 60%);
+  --progress-wash: linear-gradient(165deg, var(--ember-700), color-mix(in srgb, var(--night-700) 58%, transparent) 58%, var(--amber-850));
+  --ring-active: #FFFFFF;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"], :root.dark, [data-theme="dark"] {
+  --bg-plain: var(--night-900); --dawn-top: var(--amber-900); --dusk-top: var(--ember-800); --wash-bottom: var(--night-900);
+  --surface: var(--night-800); --surface-tint: var(--night-700); --line: var(--night-600);
+  --ink: var(--parchment-100); --ink-2: var(--parchment-300); --ink-jesus: #E8907F;
+  --accent-fill: var(--honey-500); --on-accent: var(--umber-950); --accent-ink: var(--honey-400);
+  --success-fill: var(--amber-700); --on-success: var(--cream-100); --success-mark: var(--amber-700); --success-ink: var(--amber-400);
+  --focus-ring: var(--honey-400); --inverse: var(--parchment-100); --on-inverse: var(--night-900); --scrim: rgba(28,24,21,.60);
+  --button-pressed: #C6A761; --shadow-soft: none;
+  --glow-sunrise: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--honey-500) 15%, transparent) 0%, transparent 60%);
+  --progress-wash: linear-gradient(165deg, var(--ember-700), color-mix(in srgb, var(--night-700) 58%, transparent) 58%, var(--amber-850));
+  --ring-active: #FFFFFF;
+  color-scheme: dark;
+}
+
+/* Component tokens (Sprint 1b): read from the Component Review's core block by script (Nov 1, 2026).
+   A screen sets its wash with data-wash on its root; bars take their fill from the wash's stops. */
+:root, [data-theme] {
+  --radius-card: 20px; --radius-sm: 12px;
+  --bg-dawn: linear-gradient(180deg, var(--dawn-top) 0%, var(--wash-bottom) 100%);
+  --bg-dusk: linear-gradient(180deg, var(--dusk-top) 0%, var(--wash-bottom) 100%);
+  --wash-top: var(--bg-plain); --wash: var(--bg-plain);
+  --topbar-fill: var(--wash-top); --actionbar-fill: var(--wash-bottom);
+  --iconbutton-fill: color-mix(in srgb, var(--surface) 70%, transparent);
+  --walkpath-done: var(--ink-2); --walkpath-now-fill: var(--accent-fill); --walkpath-now-edge: var(--accent-ink);
+  --walkpath-open-edge: var(--ink-2); --walkpath-skipped: var(--ink-2); --walkpath-glow: var(--success-fill);
+  --readingline-track: var(--line); --readingline-fill: var(--ink-2);
+  --tabbar-fill: var(--surface);
+  --starthere-raised: 0 1px 2px color-mix(in srgb, var(--brown-900) 6%, transparent), 0 8px 20px color-mix(in srgb, var(--brown-900) 7%, transparent);
+}
+:root[data-theme="dark"], :root.dark, [data-theme="dark"] { --starthere-raised: 0 0 0 0 transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --starthere-raised: 0 0 0 0 transparent; } }
+[data-wash] { --wash-base: var(--bg-plain); --wash-top: var(--bg-plain); --wash: var(--bg-plain); --topbar-fill: var(--wash-top); --actionbar-fill: var(--wash-bottom); }
+[data-wash="dawn"] { --wash-top: var(--dawn-top); --wash: var(--bg-dawn); }
+[data-wash="dusk"] { --wash-top: var(--dusk-top); --wash: var(--bg-dusk); }
+
+/* Type styles (foundations 1.5; equal to the Review's t- classes). Components use these, never their own sizes. */
+.ty-display-l { font: 500 calc(34px*var(--ts))/calc(40px*var(--ts)) var(--f-display); }
+.ty-display-m { font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); }
+.ty-label { font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); }
+.ty-body { font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); }
+.ty-body-strong { font: 600 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); }
+.ty-body-small { font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); }
+.ty-caption { font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); }
+.ty-reading-verse { font: 400 calc(22px*var(--ts))/calc(32px*var(--ts)) var(--f-reading); }
+.ty-starthere-title { font: 500 calc(24px*var(--ts))/calc(30px*var(--ts)) var(--f-display); }
+.ty-tabbar-label { font: 500 calc(13px*min(var(--ts), 1.5))/calc(16px*min(var(--ts), 1.5)) var(--f-sans); }
+.tkc-icon { display: inline-grid; place-items: center; flex: none; width: var(--sz, 20px); height: var(--sz, 20px); }
+.tkc-icon svg { width: 100%; height: 100%; fill: currentColor; }
+
+/* Toast tokens (TKC-018 C): a shadow in light, none in dark; the focus ring takes the other theme's value so it shows on the inverse fill. */
+:root, [data-theme] { --toast-shadow: 0 6px 18px color-mix(in srgb, var(--night-900) 25%, transparent); --toast-ring: var(--honey-400); }
+:root[data-theme="dark"], :root.dark, [data-theme="dark"] { --toast-shadow: none; --toast-ring: var(--bronze-700); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --toast-shadow: none; --toast-ring: var(--bronze-700); } }
+
+/* Card tokens (TKC-062, frame-lock-7 R1, 2015 H, 2016 a): the card's top half. Light: Linen with a deeper card shadow. Dark: #463D33 on the usual lower half (surface), no shadow. `surface-tint`'s pressed states are untouched. */
+:root, [data-theme] { --card-edge: 0 1px 2px rgba(64,52,44,.10), 0 0 0 1px var(--line); --card-top: #EFE5D4; --card-shadow: var(--card-edge), 0 10px 28px rgba(64,52,44,.14); }
+:root[data-theme="dark"], :root.dark, [data-theme="dark"] { --card-edge: 0 0 0 1px color-mix(in srgb, var(--ink-2) 30%, var(--line)); --card-top: #463D33; --card-shadow: var(--card-edge); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --card-edge: 0 0 0 1px color-mix(in srgb, var(--ink-2) 30%, var(--line)); --card-top: #463D33; --card-shadow: var(--card-edge); } }
+/* TKC-009 0.4: the switch (the iOS 26 picture, the Creator, Nov 18; replaces 1251's ink track): a green on track sampled from his picture, a cream knob in both themes. */
+:root, [data-theme] { --toggle-knob: var(--cream-50); --toggle-on: #65C568; }

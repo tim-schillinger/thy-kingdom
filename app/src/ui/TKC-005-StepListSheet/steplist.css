@@ -1,0 +1,29 @@
+/* TKC-005 StepListSheet, spec 0.2 (`look`: a plain row), 0.1 (C, G): rows min 64, padding 8 / 2, a 1 px line under each, gap 14; number ring 28 (grows to 1.5×);
+   done disc 24; "Skipped" then a 14 × 2 dash; current = honey number + Tag; word marks drop under the name when they would squeeze it (1091). */
+@import '../foundations.css';
+.tkc-steps { list-style: none; margin: var(--space-2) 0 0; padding: 0; border-top: 1px solid var(--line); }
+.tkc-steps__row { appearance: none; border: 0; background: none; width: 100%; display: flex; align-items: center; gap: 14px; min-height: 64px; padding: var(--space-2) 2px; border-bottom: 1px solid var(--line);
+  color: var(--ink); text-align: left; cursor: pointer; font-family: var(--f-sans); transition: background var(--motion-quick); }
+.tkc-steps__row[data-look] { cursor: default; }
+.tkc-steps__row:not([data-look]):active, .tkc-steps__row.is-pressed { background: var(--surface-tint); }
+.tkc-steps__row:focus-visible, .tkc-steps__row.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-steps__num { flex: none; display: grid; place-items: center; width: calc(28px*min(var(--ts), 1.5)); height: calc(28px*min(var(--ts), 1.5)); border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2); font: 600 calc(14px*var(--ts))/1 var(--f-sans); color: var(--ink-2); }
+.tkc-steps__num[data-now] { background: var(--accent-fill); color: var(--on-accent); box-shadow: inset 0 0 0 1.5px var(--accent-ink); }
+.tkc-steps__rb { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 14px; row-gap: var(--space-1); }
+.tkc-steps__tn { flex: 1 1 min-content; min-width: 0; display: flex; flex-direction: column; }
+.tkc-steps__tn b { font: 500 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); overflow-wrap: break-word; }
+.tkc-steps__row[data-mark="current"] .tkc-steps__tn b { font-weight: 600; }
+.tkc-steps__ref { font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); overflow-wrap: break-word; }
+.tkc-steps__mk { flex: none; display: flex; align-items: center; }
+.tkc-steps__mk [data-tkc="TKC-017"] { align-self: center; }
+.tkc-steps__done { display: grid; place-items: center; width: calc(24px*min(var(--ts), 1.5)); height: calc(24px*min(var(--ts), 1.5)); border-radius: 50%; background: var(--success-fill); color: var(--on-success); }
+.tkc-steps__skip { display: inline-flex; align-items: center; gap: 6px; font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); white-space: nowrap; }
+.tkc-steps__dash { display: inline-block; width: calc(14px*min(var(--ts), 1.5)); height: calc(2px*min(var(--ts), 1.5)); background: var(--ink-2); border-radius: 1px; }
+/* Today's foot: pinned at the sheet's bottom on a band of surface with a 1 px line above (6a Check) */
+[data-tkc="TKC-005"]:has(> .tkc-steps__fband) { padding-bottom: 0; }
+.tkc-steps__fband { position: sticky; bottom: 0; z-index: 2; margin: var(--space-6) calc(-1*var(--margin-page)) 0; padding: var(--space-3) var(--margin-page) var(--space-8); background: var(--surface); border-top: 1px solid var(--line); }
+@media (prefers-reduced-motion: reduce) { .tkc-steps__row { transition: none; } }
+
+/* At 200% text "Skipped —" takes its own line under the name block (1091; the Review's rule for text size 2) */
+[data-text-xl] .tkc-steps__mk:has(.tkc-steps__skip) { flex-basis: 100%; }

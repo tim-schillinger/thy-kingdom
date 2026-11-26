@@ -1,0 +1,17 @@
+/* TKC-056 MilestonePath 0.1: one progress card; four 40 px discs (growing to 48 with the text), a 3 px track from the first disc's center to the last. */
+@import '../foundations.css';
+.tkc-mp { padding: 14px 16px 16px; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--card-edge); }
+.tkc-mp__h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; column-gap: var(--space-2); }
+.tkc-mp__h b { font: 600 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-mp__far { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); text-align: right; margin-left: auto; }
+.tkc-mp__path { --md: min(calc(40px*var(--ts)), 48px); list-style: none; margin: 12px 0 0; padding: 0; display: flex; justify-content: space-between; position: relative; }
+.tkc-mp__trk { position: absolute; left: calc(var(--md)/2); right: calc(var(--md)/2); top: calc(var(--md)/2 - 1.5px); height: 3px; border-radius: 2px; background: var(--line); }
+.tkc-mp__trk i { display: block; height: 100%; background: var(--success-fill); border-radius: 2px; }
+.tkc-mp__d { position: relative; width: var(--md); height: var(--md); border-radius: 50%; display: grid; place-items: center; font: 600 calc(14px*min(var(--ts), 1.5))/1 var(--f-sans); font-variant-numeric: tabular-nums; background: var(--surface); color: var(--ink-2); box-shadow: inset 0 0 0 1.5px var(--ink-2); }
+.tkc-mp__d.is-got { background: var(--success-fill); color: var(--on-success); box-shadow: none; }
+.tkc-mp__d.is-next { color: var(--ink); box-shadow: none; border: 1.5px dashed var(--success-ink); }
+.tkc-mp__pls { position: absolute; inset: -5px; border-radius: 50%; box-shadow: 0 0 0 2px var(--success-fill); opacity: 0; }
+@keyframes tkc-mp-pulse { 0% { opacity: 0; transform: scale(.85); } 35% { opacity: 1; } 100% { opacity: 0; transform: scale(1.35); } }
+.tkc-mp__trk i { transition: width 600ms var(--ease-gentle); }
+@media (prefers-reduced-motion: no-preference) { .tkc-mp.is-play .tkc-mp__pls { animation: tkc-mp-pulse 900ms var(--ease-gentle) 1100ms both; } }
+@media (prefers-reduced-motion: reduce) { .tkc-mp__trk i { transition: none; } }

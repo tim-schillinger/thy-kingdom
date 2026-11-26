@@ -1,0 +1,28 @@
+@import '../foundations.css';
+/* TKC-051 AudioPlayer (C, G): a pill, padding 6 left and top and bottom, space-5 right, a 44 px honey circle, label over a 3 px track 8 apart. 58 tall. */
+:root, [data-theme="light"] { --player-shadow: 0 1px 2px color-mix(in srgb, var(--brown-900) 6%, transparent), 0 6px 16px color-mix(in srgb, var(--brown-900) 7%, transparent); --player-track: var(--surface-tint); }
+[data-theme="dark"] { --player-shadow: none; --player-track: var(--line); }
+.tkc-ap { position: relative; display: flex; align-items: center; gap: var(--space-3); width: 100%; padding: 6px var(--space-5) 6px 6px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-pill); box-shadow: var(--player-shadow); color: var(--ink); }
+.tkc-ap__pp { appearance: none; border: 0; flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--accent-fill); color: var(--on-accent); display: grid; place-items: center; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-ap__pp .tkc-icon { width: 18px; height: 18px; }
+.tkc-ap__pp:active, .tkc-ap__pp.is-pressed { background: var(--button-pressed); }
+.tkc-ap__pp:focus-visible, .tkc-ap__pp.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-ap__meta { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.tkc-ap__row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; column-gap: var(--space-2); }
+.tkc-ap__lab { font: 500 calc(15px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink); }   /* player-label */
+.tkc-ap__time { font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tkc-ap__track { height: 3px; border-radius: var(--radius-pill); background: var(--player-track); overflow: hidden; }
+.tkc-ap__track i { display: block; height: 100%; width: 0; background: var(--accent-ink); }
+/* 0.2: loading is a quiet ring turning in the button (an arc of the on-accent colour); with Reduce Motion it holds still */
+.tkc-ap__spin { width: 18px; height: 18px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--on-accent) 28%, transparent); border-top-color: var(--on-accent); box-sizing: border-box; }
+@media (prefers-reduced-motion: no-preference) { .tkc-ap__spin { animation: tkc-ap-spin 900ms linear infinite; } }
+@keyframes tkc-ap-spin { to { transform: rotate(360deg); } }
+/* 0.2 (381): the note under the pill (frame-lock-9 2b): space-2 below the pill, left at the margin, caption type, ink-2 */
+.tkc-ap-note { margin: var(--space-2) 0 0; color: var(--ink-2); }
+/* 0.3 (frame-lock-13 §5 B): the link after the note, as the source line's own links (TKC-031): underlined, ink-2, inline so it wraps under at 390 and 320; the padding makes the tap area 44 px tall without moving the line. */
+.tkc-ap-note__lk { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; display: inline-block; padding: 13px 0; margin: -13px 0; cursor: pointer; }
+.tkc-ap-note__lk:active { color: var(--ink); }
+.tkc-ap-note__lk:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+/* radius-card past 64 px tall */
+.tkc-ap.is-tall { border-radius: var(--radius-card); }
+@media (prefers-reduced-motion: no-preference) { .tkc-ap__pp { transition: background var(--motion-quick); } }

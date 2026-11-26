@@ -1,0 +1,5 @@
+@import '../foundations.css';
+/* TKC-044 PrayerKey 0.2 (frame-lock-6 §5, 1814): the count line (16/24, ink), then "Learn More ›" on its own line in the shared link look (TKC-007 more, 1733). */
+.tkc-pk__sel { margin: var(--space-4) 0 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-pk__sel p { margin: 0; }
+.tkc-pk__sel .tkc-link { margin-top: var(--space-1); }

@@ -1,0 +1,11 @@
+/* TKC-010 Checkbox, spec 0.1 (C, E): row min 48; box 24 (grows to 36 at 200%, the 1.5x cap), radius 6, 1.5 px ink-2 inner edge;
+   checked = accent-ink fill with a 16 px check in surface; label `body` ink, 12 px right of the box. Both centre in 48 until they outgrow it. */
+@import '../foundations.css';
+.tkc-cb { appearance: none; border: 0; background: none; display: flex; align-items: flex-start; gap: var(--space-3); width: 100%; min-height: 48px; margin: 0; padding: 0;
+  text-align: left; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); cursor: pointer; border-radius: var(--radius-sm); transition: background var(--motion-quick); }
+.tkc-cb__box { --bs: calc(24px*min(var(--ts), 1.5)); flex: none; width: var(--bs); height: var(--bs); border-radius: 6px; box-shadow: inset 0 0 0 1.5px var(--ink-2);
+  display: grid; place-items: center; color: var(--surface); margin-block: max(0px, calc((48px - var(--bs))/2)); }
+.tkc-cb__label { margin-block: max(0px, calc((48px - 24px*var(--ts))/2)); }
+.tkc-cb[aria-checked="true"] .tkc-cb__box { background: var(--accent-ink); box-shadow: none; }
+.tkc-cb:active, .tkc-cb.is-pressed { background: var(--surface-tint); }
+.tkc-cb:focus-visible, .tkc-cb.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }

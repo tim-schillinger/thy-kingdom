@@ -1,0 +1,10 @@
+/* Nation page (Review .pr-pgbar, .pr-nmap, .pr-nh, .pr-facts, .pr-vc, .pr-fsrc): the spacing between the library's parts. No component styles here. */
+@import '../foundations.css';
+.tkc-np { background: var(--wash) top / 100% 640px no-repeat, var(--wash-base, var(--bg-plain)); }
+.tkc-np > .tkc-pb { position: sticky; top: 0; z-index: 5; }
+.tkc-np__map { margin: var(--space-1) var(--margin-page) 0; }
+.tkc-np__h { margin: var(--space-5) var(--margin-page) 0; color: var(--ink); text-wrap: balance; }
+.tkc-np__facts { margin: var(--space-4) var(--margin-page) 0; border-top: 1px solid var(--line); }
+.tkc-np__verse { margin: var(--space-8) var(--margin-page) 0; }
+.tkc-np__src { margin: var(--space-4) var(--margin-page) 0; color: var(--ink-2); }
+.tkc-np__end { height: var(--space-12); flex: none; }

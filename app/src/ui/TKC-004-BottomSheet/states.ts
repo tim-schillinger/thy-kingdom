@@ -1,0 +1,34 @@
+import type { SheetSpec } from './Demo';
+export const ID = 'TKC-004', NAME = 'BottomSheet', VERSION = '0.7 (form, pick one, read, menu, confirm, thanks)';
+const LISTS = [['Faith Family', 'Sundays · The people you grow with'], ['Family & Friends', 'Mondays · The people closest to you'], ['Neighbors', 'Tuesdays · The people around you, from next door to the checkout line'], ['Leaders', 'Wednesdays · People with a say over your life', 'Tonight'], ['The Hurting', 'Thursdays · People who are grieving, sick, forgotten, or alone'], ['Difficult People', 'Fridays · People it’s hard to love right now']];
+export const STATES: Array<{ name: string; props: SheetSpec }> = [
+  { name: 'pick one, header only', props: { kind: 'pick', title: 'Pick a Day' } },
+  { name: 'pick one, ✕ pressed', props: { kind: 'pick', title: 'Pick a Day', closeShow: 'pressed' } },
+  { name: 'pick one, ✕ focus', props: { kind: 'pick', title: 'Pick a Day', closeShow: 'focus' } },
+  { name: 'pick one, line and full choices', props: { kind: 'pick', title: 'Choose Your Bible', line: 'Every reading in the app uses the Bible you choose.',
+    choices: { kind: 'full', label: 'Bible', rows: [{ name: 'World English Bible', line: 'Modern, plain English', sample: 'Yahweh is my shepherd: I shall lack nothing.', reference: 'Psalm 23:1', chosen: true }, { name: 'King James Version', line: 'The classic wording', sample: 'The LORD is my shepherd; I shall not want.', reference: 'Psalm 23:1' }] } } },
+  { name: 'pick one, compact choices', props: { kind: 'pick', title: 'Choose a List', line: 'Where does Linda fit in your life?',
+    choices: { kind: 'compact', label: 'List', rows: LISTS.map(([name, line, tag]) => ({ name, line, tag, chosen: name === 'Neighbors' })) } } },
+  { name: 'pick one, names only', props: { kind: 'pick', title: 'Backup Reminder', choices: { kind: 'compact', label: 'Backup Reminder', rows: ['Off', 'Every Week', 'Every Month'].map((name) => ({ name, chosen: name === 'Every Week' })) } } },
+  { name: 'read, Learn More', props: { kind: 'read', title: 'Psalm', read: { parts: [{ head: 'What You Do', body: 'Read today’s psalm. Let it turn your heart toward God.' }, { head: 'Why It Matters', body: 'Worship is the right place to start a day with God. The Psalms give you words for every feeling you have.' }] } } },
+  { name: 'menu, from Prayer', props: { kind: 'menu', title: 'Pastor James', line: 'Wisdom for his sermon', actions: [{ label: 'Mark Answered', kind: 'primary' }, { label: 'Edit', kind: 'secondary' }, { label: 'Remove', kind: 'quiet' }] } },
+  { name: 'menu, on the record', props: { kind: 'menu', title: 'Linda', line: 'Her knee surgery', actions: [{ label: 'Edit Answer', kind: 'secondary' }, { label: 'Undo Answered', kind: 'quiet' }, { label: 'Remove', kind: 'quiet' }] } },
+  { name: 'thanks (Mark Answered)', props: { kind: 'thanks', title: 'Moved to Answered Prayers.', line: 'Take a moment to thank God.', thanks: { button: 'Amen' } } },
+  { name: 'confirm, Skip', props: { kind: 'confirm', title: 'Skip 3 Open Days?', line: 'They’ll count as done, the same as skipping a walk. Your streak will include them.', buttons: [{ label: 'Skip All', kind: 'primary' }, { label: 'Cancel', kind: 'quiet' }] } },
+  { name: 'confirm, Clear', props: { kind: 'confirm', title: 'Clear 3 Open Days?', line: 'Start fresh. These days won’t be listed again. Nothing is marked done or skipped, so your streak stays the same.', buttons: [{ label: 'Clear All', kind: 'secondary' }, { label: 'Cancel', kind: 'quiet' }] } },
+  { name: 'confirm, Erase Everything', props: { kind: 'confirm', title: 'Erase everything on this phone?', line: 'This removes your lists, answered prayers, progress, and settings. It can’t be undone.', buttons: [{ label: 'Save a Backup First', kind: 'secondary' }, { label: 'Erase Everything', kind: 'secondary' }, { label: 'Cancel', kind: 'quiet' }] } },
+];
+
+const DAYS = (pick?: number) => Array.from({ length: 31 }, (_, k) => ({ n: k + 1, today: k + 1 === 14 || undefined, out: k + 1 > 14 || undefined, pick: k + 1 === pick || undefined }));
+const WALK_DAYS = Array.from({ length: 31 }, (_, k) => ({ n: k + 1, today: k + 1 === 14 || undefined, out: k + 1 > 14 || undefined, mark: k + 1 === 3 || k + 1 === 13 ? ('one' as const) : k + 1 < 14 && k + 1 !== 7 ? ('both' as const) : undefined }));
+export const FORM_STATES: Array<{ name: string; props: SheetSpec }> = [
+  { name: 'form, Add Person', props: { kind: 'form', title: 'Add Person', form: { primary: 'Add', items: [{ t: 'field', label: 'Name', value: 'Sam' }, { t: 'field', label: 'What to pray for', optional: true }, { t: 'list', name: 'Leaders', line: 'Wednesdays · People with a say over your life' }] } } },
+  { name: 'form, Add Person, already on a list', props: { kind: 'form', title: 'Add Person', form: { primary: 'Add', items: [{ t: 'field', label: 'Name', value: 'Marcus', focus: true }, { t: 'notice', name: 'Marcus', list: 'Neighbors' }, { t: 'field', label: 'What to pray for', optional: true }, { t: 'list', name: 'Leaders', line: 'Wednesdays · People with a say over your life' }] } } },
+  { name: 'form, Edit Person, moved to another list', props: { kind: 'form', title: 'Edit Person', form: { primary: 'Save', items: [{ t: 'field', label: 'Name', value: 'Linda' }, { t: 'field', label: 'What to pray for', optional: true, value: 'Her knee surgery', focus: true }, { t: 'list', name: 'Family & Friends', line: 'Mondays · The people closest to you', note: 'Moving keeps Linda’s prayer count.' }] } } },
+  { name: 'form, Saturday Add Request', props: { kind: 'form', title: 'Add Request', form: { primary: 'Add', items: [{ t: 'field', label: 'What to pray for', value: 'A new job by spring' }] } } },
+  { name: 'form, Mark Answered', props: { kind: 'form', title: 'Mark Answered', form: { primary: 'Save', items: [{ t: 'question', question: 'How did God answer your prayer for Linda?', helper: 'In a few words, if you like.' }, { t: 'field', value: 'Surgery went well.', focus: true }, { t: 'when', text: 'Answered today · Wed, Oct 14 ·' }] } } },
+  { name: 'form, Edit Answer', props: { kind: 'form', title: 'Edit Answer', form: { primary: 'Save', items: [{ t: 'question', question: 'How did God answer your prayer for Linda?', helper: 'In a few words, if you like.' }, { t: 'field', value: 'Surgery went well.' }, { t: 'when', text: 'Answered Wed, Oct 14 ·' }] } } },
+  { name: 'pick one, Pick a Day (walk calendar)', props: { kind: 'pick', title: 'Pick a Day', calendar: { kind: 'walk', month: 'October 2026', lead: 4, days: WALK_DAYS, nextOff: true } } },
+  { name: 'pick one, Pick a Day (date, over Mark Answered)', props: { kind: 'pick', title: 'Pick a Day', line: 'The day God answered your prayer for Linda.', calendar: { kind: 'date', month: 'October 2026', lead: 4, days: DAYS(12), nextOff: true } } },
+];
+STATES.push(...FORM_STATES);

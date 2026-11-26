@@ -1,0 +1,19 @@
+@import './screen.css';
+/* Today's layout (pattern). Numbers: F18's Today (padding 8 20 40; the strip 12 under the title; the first card 20
+   under the strip), TKC-059 G (20 between Start Here and the walk; the reminder 20 under the walks, 24 above Coming Up),
+   TKC-027 G (24 above Coming Up), the Settings Today (12 from the hero to the WalkLine). No component styles here. */
+@import '../foundations.css';
+.tkc-today { padding: var(--space-2) var(--margin-page) 40px; display: flex; flex-direction: column; min-width: 0; }
+.tkc-today__title { display: flex; flex-direction: column; }
+.tkc-today__date { appearance: none; background: none; border: 0; padding: 12px 0; margin: -12px 0 -4px; text-align: left; color: var(--ink-2); cursor: pointer; align-self: flex-start; }
+.tkc-today__tl { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; min-width: 0; }
+.tkc-today__tl h1 { margin: 0; }
+.tkc-today [data-tkc="TKC-023"] { margin-top: var(--space-3); }
+.tkc-today__stack { display: flex; flex-direction: column; margin-top: var(--space-5); }
+.tkc-today__stack > * + * { margin-top: var(--space-5); }
+.tkc-today__stack > [data-tkc="TKC-024"] + .tkc-today__walks, .tkc-today__stack > [data-tkc="TKC-033"] + .tkc-today__walks { margin-top: var(--space-3); }
+.tkc-today__stack > .tkc-today__ra { margin-top: var(--space-4); display: flex; justify-content: center; }
+.tkc-today__stack > [data-tkc="TKC-027"] { margin-top: var(--space-6); }
+/* One divider, not two (Creator, Nov 1): when Coming Up follows the walks, the last WalkLine's hairline is the divider,
+   so Coming Up drops its own line and the 16 px under it; its label sits 24 px under the WalkLine's line. */
+.tkc-today__walks + [data-tkc="TKC-027"] { border-top: 0; padding-top: 0; }

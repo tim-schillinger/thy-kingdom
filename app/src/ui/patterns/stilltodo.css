@@ -1,0 +1,12 @@
+/* Still Open (Review es-): the heading space-5 under the bar, the rows space-6 under it with a hairline above the first, the done list space-8 under the last row
+   (TKC-045's own margin), at least space-6 before the pinned foot (911). The foot is pinned like a step's. */
+@import './screen.css';
+@import '../foundations.css';
+.tkc-std > [data-tkc="TKC-002"] { position: sticky; top: 0; z-index: 5; }
+.tkc-std__main { flex: 1; min-width: 0; }
+.tkc-std__head { padding: var(--space-5) var(--margin-page) 0; }
+.tkc-std__h { margin: 0; text-wrap: balance; color: var(--ink); }
+.tkc-std__list { list-style: none; margin: var(--space-6) var(--margin-page) 0; padding: 0; border-top: 1px solid var(--line); }
+.tkc-std__done { margin: 0 var(--margin-page); }
+.tkc-std__end { height: var(--space-6); }
+.tkc-std > [data-tkc="TKC-003"] { position: sticky; bottom: 0; z-index: 4; }

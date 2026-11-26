@@ -1,0 +1,7 @@
+/* TKC-009 Toggle (spec C, 0.4): the iOS 26 switch (the Creator's picture, Nov 18): a 64 x 28 track and a wide 40 x 24 pill knob 2 px in. Off: a pale track (ink at 12% over the surface), a white knob with a soft shadow, left. On: a green track (--toggle-on, from the Creator's picture; replaces 1251's ink track), cream knob, right. */
+@import '../foundations.css';
+.tkc-toggle__sw { grid-column: 4; grid-row: 1; margin: calc((24px*var(--ts) - 28px)/2) 0 0 12px; flex: none; width: 64px; height: 28px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 12%, var(--surface)); position: relative; transition: background var(--motion-quick); }
+.tkc-toggle__sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 40px; height: 24px; border-radius: 999px; background: var(--toggle-knob); box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 35%, transparent); transition: transform var(--motion-calm) var(--ease-gentle); }
+.tkc-row[data-on] .tkc-toggle__sw { background: var(--toggle-on); }
+.tkc-row[data-on] .tkc-toggle__sw::after { transform: translateX(20px); }
+@media (prefers-reduced-motion: reduce) { .tkc-toggle__sw, .tkc-toggle__sw::after { transition: none; } }

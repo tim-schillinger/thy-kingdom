@@ -1,0 +1,10 @@
+@import '../foundations.css';
+/* TKC-039 AskYourself (C, G): the question 14 under the AnchorLine (anchorline-gap), 24 under a Meditate verse; Need ideas and the move 32 apart; 48 below. Side margins come from the set. */
+.tkc-ask-q { margin: 14px 0 0; font: 400 calc(24px*var(--ts))/calc(34px*var(--ts)) var(--f-reading); color: var(--ink); text-wrap: pretty; }   /* ask-question */
+.tkc-ask-q.is-after-verse { margin-top: var(--space-6); }
+.tkc-ask-act { margin: var(--space-8) 0 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }   /* ask-action */
+.tkc-ask-verse { margin: 0; padding: var(--space-3) var(--margin-page) 0; font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); text-align: left; }   /* reading */
+.tkc-ask-ideas { padding-top: var(--space-8); }   /* Need ideas sits 32 under the question (Review .er-ideas) */
+.tkc-ask-set { padding: 0 var(--margin-page) var(--space-12); display: flex; flex-direction: column; }
+.tkc-ask-set--meditate { padding: 0 0 var(--space-12); }
+.tkc-ask-set--meditate > .tkc-ask-q, .tkc-ask-set--meditate > .tkc-ask-act { margin-inline: var(--margin-page); }

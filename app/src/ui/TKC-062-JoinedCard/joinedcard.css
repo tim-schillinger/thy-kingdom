@@ -1,0 +1,88 @@
+/* TKC-062 JoinedCard 0.7 (Nov 18, 2026: `card-top` light #EFE5D4, 3308 A; the plate's sides 16 and its bottom 24, 3310, 3312 A), 0.6 (frame-lock-7 R1, R2, R3, R6; 3192, 3193: in dark the band's words, the quote and the Name's meaning line are `ink`): 12 from the screen's edges, radius-card, one shadow (`card-shadow`), top half or band on `card-top`, lower half or body on `surface`.
+   The label is `card-label` 14/20 SemiBold ink-2 (ink in dark, 0.5). Her turn is the biggest words in the card (R2): the question stays 24/34 (TKC-039). */
+@import '../foundations.css';
+.tkc-jc { margin: var(--space-4) var(--space-3) 0; border-radius: var(--radius-card); overflow: hidden; background: var(--surface); box-shadow: var(--card-shadow); }
+.tkc-jc__top, .tkc-jc__band { background: var(--card-top); padding: var(--space-2) var(--space-4); }
+.tkc-jc__low, .tkc-jc__body { padding: var(--space-4) var(--space-4) var(--space-4); display: flex; flex-direction: column; }   /* 0.3 (Build 7d, 3012): 16 below the last line, was 8: a card ending in a link or a line sat too close to its bottom edge (the People card) */
+.tkc-jc__label { margin: 0; font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* card-label */
+.tkc-jc__label.is-quiet { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.tkc-jc__low .tkc-ask-q { margin-top: var(--space-2); }
+.tkc-jc__low .tkc-ask-act { margin-top: var(--space-4); }
+.tkc-jc__low > .tkc-link, .tkc-jc__body > .tkc-link { align-self: flex-start; margin-top: var(--space-2); }
+
+/* single (R3): the band holds the heading, then the why line under it; the instruction and the words sit in the body. */
+.tkc-jc__band { padding: var(--space-4) var(--space-4) var(--space-3); }
+.tkc-jc__why { margin: var(--space-1) 0 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* body 16/24 */
+.tkc-jc__body { padding: var(--space-4) var(--space-4) var(--space-4); }
+/* the parts keep their own page margins elsewhere; inside a card the card's padding is the margin */
+.tkc-jc .tkc-hd-instr { margin: 0; }
+.tkc-jc__body > .tkc-hd-instr + .tkc-pw, .tkc-jc__body > .tkc-hd-instr + .tkc-vc { margin-top: var(--space-3); }
+.tkc-jc__body .tkc-pw { margin-top: var(--space-3); }
+.tkc-jc__body > [data-tkc="TKC-031"] { margin: var(--space-2) 0 0; }
+.tkc-jc__body > .tkc-src { margin: var(--space-2) 0 0; }
+/* Memorize: the verse card's own box and label are dropped inside the card (frame-lock-7 §2, R11 note) */
+.tkc-jc__body .tkc-vc { background: none; padding: 0; border-radius: 0; box-shadow: none; }   /* Nov 19, 2026: the verse's own edge drew a box inside the card (the Creator: "a weird outline") */
+.tkc-jc__body .tkc-vc__lab { display: none; }
+
+/* joined, Respond: the top half is the readings she just heard; the chips carry their own label */
+.tkc-jc__top .tkc-sp-cues { margin: 0; }
+.tkc-jc__top .tkc-sp-lab { color: var(--ink-2); }
+.tkc-jc__low .tkc-sp-say { margin-top: var(--space-3); }
+
+/* the card's top half is a quote: the row's own padding is the card's */
+.tkc-jc__top .tkc-anc { padding: 6px 0; }
+
+/* the plate (R6): the top half is TKC-061, centered, with room above the small line */
+.tkc-jc[data-plate] .tkc-jc__top { padding: var(--space-2) var(--space-4) var(--space-6); }   /* 0.7 (3310, 3312 A): left-aligned on the lower half's edge (16), 24 below the last line */
+.tkc-jc__body .tkc-step__own { margin: var(--space-3) 0 0; }   /* the My Own line inside the card (TKC-038) */
+
+/* Meditate on an ordinary night: the week's verse and its source line are the top half */
+.tkc-jc__top > .tkc-ask-verse { padding: var(--space-2) 0 0; }
+.tkc-jc__top > .tkc-src { margin: var(--space-1) 0 var(--space-1); }
+/* Prayer's People night: the count line is the thing to do, in the card */
+.tkc-jc__low .tkc-pk__sel { margin-top: var(--space-3); }
+.tkc-jc__low .tkc-pw-aim { margin-top: var(--space-2); }
+
+/* Respond (C3): the card is her turn only: the sentence and its helper sit in the body, as in the lower half */
+.tkc-jc__body .tkc-sp-say { margin-top: var(--space-3); }
+.tkc-jc__body .tkc-sp-help { margin-top: var(--space-3); }
+
+/* band lock (R15; R16 amended by the Creator, Nov 13, 10:38 pm: two sections, not three): the band (label, then the why line) and what she acts on
+   (the verse, the quote, the plate) are ONE tinted top section on `card-top`; her turn is the plain lower section. The change of background is the edge: no lines. */
+.tkc-jc[data-band] .tkc-jc__band + .tkc-jc__top { padding-top: var(--space-1); }
+.tkc-jc[data-band] .tkc-jc__band:has(+ .tkc-jc__top) { padding-bottom: var(--space-1); }
+.tkc-mh__head.is-bare { justify-content: flex-start; }
+
+/* 0.5 (Nov 15, 2026, 3192: 2): in dark mode the band's label and why line are `ink`, not the muted `ink-2` (4.6:1 on card-top: passes AA, read too dark). Light mode is unchanged. */
+:root[data-theme="dark"] .tkc-jc__label, :root[data-theme="dark"] .tkc-jc__why { color: var(--ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tkc-jc__label, :root:not([data-theme="light"]) .tkc-jc__why { color: var(--ink); } }
+
+/* 0.6 (Nov 15, 2026, 3193 y, lean c): on the tinted top section in dark, the quote she reads (Check-In, Prayer: its text and reference) and the Name's meaning line are `ink` too. The source line stays `ink-2`: a side fact. Light unchanged. */
+:root[data-theme="dark"] .tkc-jc__top .tkc-anc, :root[data-theme="dark"] .tkc-jc__top .tkc-wmean__mean { color: var(--ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tkc-jc__top .tkc-anc, :root:not([data-theme="light"]) .tkc-jc__top .tkc-wmean__mean { color: var(--ink); } }
+
+/* 0.9 (3-6c, 3434 a, 3435 y): sections alternate. Prayer: tinted top (card-top), plain lower half, then the rows on card-top again, with "Need words? ›" last inside it.
+   Meditate: the band on card-top, the verse on its own plain section (source line above it), her turn on card-top. The change of background is the edge: no lines.
+   Inside the rows section the pills take the plain `surface` fill, since `surface-tint` all but matches card-top there. */
+.tkc-jc__rows { background: var(--card-top); padding: var(--space-4) var(--space-4); display: flex; flex-direction: column; min-width: 0; }
+.tkc-jc__rows > .tkc-nl { margin-top: 0; }
+.tkc-jc__rows > .tkc-step__plh, .tkc-jc__rows > .tkc-step__plh[data-add] { margin-top: 0; }
+.tkc-jc__rows > .tkc-step__pverse { margin-top: 0; }
+.tkc-jc__rows > .tkc-link { align-self: flex-start; margin-top: var(--space-4); }
+.tkc-jc__rows .tkc-chip2[data-kind="toggle"] { background: var(--surface); }
+.tkc-jc__verse { background: var(--surface); padding: var(--space-4) var(--space-4); display: flex; flex-direction: column; }
+.tkc-jc__verse > .tkc-src { margin: 0 0 var(--space-2); }
+.tkc-jc__verse > .tkc-ask-verse { padding: 0; }
+.tkc-jc[data-verse] .tkc-jc__low { background: var(--card-top); }
+.tkc-jc[data-verse] .tkc-jc__band:has(+ .tkc-jc__verse) { padding-bottom: var(--space-4); }
+:root[data-theme="dark"] .tkc-jc[data-verse] .tkc-jc__low .tkc-ask-q, :root[data-theme="dark"] .tkc-jc[data-verse] .tkc-jc__low .tkc-ask-act { color: var(--ink); }
+
+/* 0.10 (3-6d, the Creator's notes of Nov 25): two neighbouring sections drawn as one, the rest still alternating.
+   top-low (Prayer, People): the band, the quote and the aim are one section on card-top; the rows are the plain section after it.
+   low-rows (Prayer, Kingdom): the aim and the nations are one plain section after the quote's card-top section. */
+.tkc-jc[data-merge="top-low"] .tkc-jc__top { padding-bottom: var(--space-1); }
+.tkc-jc[data-merge="top-low"] .tkc-jc__low { background: var(--card-top); padding-top: var(--space-3); }
+.tkc-jc[data-merge="top-low"] .tkc-jc__rows { background: var(--surface); }
+.tkc-jc[data-merge="top-low"] .tkc-jc__rows .tkc-chip2[data-kind="toggle"]:not([aria-pressed="true"]) { background: var(--surface-tint); }
+.tkc-jc[data-merge="low-rows"] .tkc-jc__low { padding-bottom: var(--space-2); }
+.tkc-jc[data-merge="low-rows"] .tkc-jc__rows { background: var(--surface); padding-top: var(--space-2); }

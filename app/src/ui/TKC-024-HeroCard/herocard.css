@@ -1,0 +1,13 @@
+/* TKC-024 HeroCard 0.3. Order (G): label, space-1, name, space-2, purpose, count line, space-5, button.
+   The Guide and Settings studios drew padding 18 and radius 24; the spec's space-5 and radius-card win (D-HC1). */
+@import '../foundations.css';
+.tkc-hero { display: flex; flex-direction: column; min-width: 0; padding: var(--space-5); border-radius: var(--radius-card);
+  background: var(--glow-sunrise), var(--surface); box-shadow: var(--card-edge), var(--shadow-soft); color: var(--ink); }
+:where(.tkc-hero) :where(p, h2) { margin: 0; }   /* zero specificity: the parts below set their own margins */
+.tkc-hero__lab { color: var(--accent-ink); }
+.tkc-hero__name { margin-top: var(--space-1); }   /* also with no label (a past day): the Review keeps the 4 (spec silent, D-HC2) */
+.tkc-hero__purpose, .tkc-hero__count { color: var(--ink-2); margin-top: var(--space-2); }
+.tkc-hero__count { margin-bottom: var(--space-5); }
+.tkc-hero__see { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; display: inline-block; padding: 12px 0; margin: -12px 0; }
+.tkc-hero__see:active, .tkc-hero__see.is-pressed { color: var(--ink); }
+.tkc-hero__see:focus-visible, .tkc-hero__see.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }

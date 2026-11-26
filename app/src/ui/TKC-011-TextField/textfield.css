@@ -1,0 +1,38 @@
+/* TKC-011 TextField, spec 0.2 (C, E). Field: `field-label` 15/22 SemiBold ink (+ "Optional" Regular ink-2); the box surface with a 1 px ink-2 inner edge, radius-sm, min 52, padding 12 16, 8 under the label;
+   text 17/26; the focus ring is a 2 px focus-ring inner edge with a caret; "N left" 14/20 ink-2 right-aligned 4 below; a message 14/20 ink 4 below.
+   Search: surface, 1 px ink-2 edge, radius-sm, min 48, a 20 px MagnifyingGlass, 12 gap, a 44 px clear (X 18) while there is text. */
+@import '../foundations.css';
+.tkc-field__label { margin: 0; font: 600 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-field__label span { font-weight: 400; color: var(--ink-2); }
+.tkc-field__box { margin-top: var(--space-2); min-height: 52px; display: flex; align-items: center; padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--ink-2); font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); overflow-wrap: anywhere; }
+.tkc-field__slot { margin-top: var(--space-2); }
+.tkc-field__box.no-label { margin-top: 0; }
+.tkc-field__box.is-focus { box-shadow: inset 0 0 0 2px var(--focus-ring); }
+.tkc-field__box .ph { color: var(--ink-2); }
+.tkc-field__caret { display: inline-block; width: 2px; height: calc(22px*var(--ts)); background: var(--ink); margin-left: 1px; vertical-align: text-bottom; }
+@media (prefers-reduced-motion: no-preference) { .tkc-field__caret { animation: tkc-blink 1s steps(1) infinite; } }
+@keyframes tkc-blink { 50% { opacity: 0; } }
+.tkc-field__counter { margin: 4px 0 0; font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); text-align: right; }
+.tkc-field__message { margin: 4px 0 0; font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-search { display: flex; align-items: center; gap: var(--space-3); min-height: 48px; padding: 0 var(--space-4); border-radius: var(--radius-sm); background: var(--surface); box-shadow: inset 0 0 0 1px var(--ink-2);
+  color: var(--ink-2); font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); text-align: left; width: 100%; }
+.tkc-search.is-typing { box-shadow: inset 0 0 0 2px var(--focus-ring); color: var(--ink); }
+.tkc-search__q { flex: 1; min-width: 0; overflow-wrap: anywhere; padding: var(--space-3) 0; }
+.tkc-search__q.is-ph { color: var(--ink-2); }
+.tkc-search__clr { appearance: none; border: 0; background: none; width: 44px; height: 44px; margin-right: -12px; flex: none; display: grid; place-items: center; color: var(--ink-2); border-radius: 50%; cursor: pointer; }
+.tkc-search__clr:active { background: var(--surface-tint); }
+.tkc-search__clr:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+
+/* Live search (Lists): the same box with a real input; the edge thickens while the input has focus or text. */
+.tkc-search.is-live:focus-within { box-shadow: inset 0 0 0 2px var(--focus-ring); color: var(--ink); }
+.tkc-search__in { appearance: none; flex: 1; min-width: 0; border: 0; background: none; margin: 0; padding: var(--space-3) 0; font: inherit; color: var(--ink); outline: none; }
+.tkc-search__in::placeholder { color: var(--ink-2); opacity: 1; }
+.tkc-search__in::-webkit-search-cancel-button { display: none; }
+
+/* Live field (the screens' sheets): the same box, with a real input inside. The edge thickens on focus; the caret is the system's. */
+.tkc-field__box.is-live { padding: 0; align-items: stretch; }
+.tkc-field__box.is-live:focus-within { box-shadow: inset 0 0 0 2px var(--focus-ring); }
+.tkc-field__in { appearance: none; border: 0; background: none; margin: 0; width: 100%; min-width: 0; font: inherit; color: inherit; padding: var(--space-3) var(--space-4); outline: none; border-radius: var(--radius-sm); resize: none; }
+textarea.tkc-field__in { padding-block: calc(var(--space-3) + 1px) calc(var(--space-3) - 1px); /* a textarea sets its text 1 px higher than an input centers it; the Review draws the field's text where the input puts it */ display: block; overflow-y: auto; max-height: calc(78px*var(--ts) + 24px); box-sizing: border-box; }
+.tkc-field__label { display: block; }

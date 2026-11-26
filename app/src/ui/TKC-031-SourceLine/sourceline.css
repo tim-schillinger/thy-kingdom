@@ -1,0 +1,16 @@
+/* TKC-031 SourceLine, scripture kind: values from the Review's .src, .seg and .tr rules. */
+@import '../foundations.css';
+.tkc-src { color: var(--ink-2); margin: 0; }
+.tkc-src > span:not(.tkc-src__dot) { white-space: nowrap; }
+.tkc-src__dot { white-space: pre-wrap; }
+/* 0.4.1: segments keep together. Only when one plain segment alone is wider than the line (Classic's book title at 200% text) does the line let it wrap inside itself. */
+.tkc-src.is-wrap > span.tkc-src__tx:not(.tkc-src__dot) { white-space: normal; }
+.tkc-src__tr { display: inline-block; color: var(--ink-2); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; padding: 13px 0; margin: -13px 0; white-space: nowrap; cursor: pointer; }
+.tkc-src__tr .tkc-icon { width: 12px; height: 12px; margin-left: 2px; vertical-align: -1px; display: inline-block; }
+.tkc-src__tr:active, .tkc-src__tr.is-pressed { color: var(--ink); }
+.tkc-src__tr:focus-visible, .tkc-src__tr.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+.tkc-src__chg { min-width: 44px; position: relative; z-index: 1; }   /* the 44 px tap target (G); above the name link's padding when a line wraps */
+/* 0.5 (frame-lock-12 §3): the first segment as a link to the source's About: underlined like Change, inline so a long title still wraps at 200%; the padding extends the tap past the line (44 px high) without moving the line. */
+.tkc-src__ab { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; padding: 12px 0 0; position: relative; z-index: 2; cursor: pointer; white-space: inherit; }
+.tkc-src__ab:active { color: var(--ink); }
+.tkc-src__ab:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }

@@ -1,0 +1,7 @@
+/* TKC-050 MetricTile 0.1: progress-card (surface, 1 px line inner edge, radius-card, no shadow), padding 12 / 16 / 14, number EB Garamond 34/40 Medium tabular, label 15/20 ink-2. Two columns, one at 200% (the studio's rule, the fit rule is a screen concern). */
+@import '../foundations.css';
+.tkc-mt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+[data-text-xl] .tkc-mt-grid { grid-template-columns: 1fr; }
+.tkc-mt { padding: 12px 16px 14px; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--card-edge); display: flex; flex-direction: column; min-width: 0; }
+.tkc-mt__n { font: 500 calc(34px*var(--ts))/calc(40px*var(--ts)) var(--f-display); color: var(--ink); font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+.tkc-mt__l { font: 400 calc(15px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }

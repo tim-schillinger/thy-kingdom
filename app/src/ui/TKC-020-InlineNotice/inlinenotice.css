@@ -1,0 +1,4 @@
+/* TKC-020 InlineNotice, spec 0.1 (C): `notice-text` 16/24 ink; a full-width secondary Button 12 below (52 tall). It pushes the next field down; nothing floats. */
+@import '../foundations.css';
+.tkc-notice p { margin: 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); overflow-wrap: anywhere; }
+.tkc-notice__btn { margin-top: var(--space-3); }

@@ -1,0 +1,33 @@
+/* TKC-059 StartHereCard 0.2, Today place: surface, radius-card, padding space-5, a 1 px line edge, no shadow (C).
+   Label, space-1, title, line (space-1; the 0.2 kinds space-2), space-4, button. ✕ 44 px, 10 px in. The title keeps 48 px clear of ✕. */
+@import '../foundations.css';
+.tkc-sh { position: relative; display: flex; flex-direction: column; min-width: 0; padding: var(--space-5); border-radius: var(--radius-card);
+  background: var(--surface); box-shadow: var(--card-edge); color: var(--ink); transition: opacity var(--motion-calm) var(--ease-gentle); }
+:where(.tkc-sh) :where(p, h2) { margin: 0; }
+.tkc-sh__lab { color: var(--accent-ink); letter-spacing: .02em; }
+.tkc-sh__lab + .tkc-sh__title { margin-top: var(--space-1); }
+.tkc-sh__title { padding-right: 48px; text-wrap: balance; }
+.tkc-sh__line { color: var(--ink-2); margin-top: var(--space-1); }
+.tkc-sh[data-kind="backup"] .tkc-sh__line { margin-top: var(--space-2); }
+.tkc-sh > .tkc-btn { margin-top: var(--space-4); }
+.tkc-sh__x { position: absolute; top: 10px; right: 10px; appearance: none; border: 0; margin: 0; padding: 0; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--surface-tint); color: var(--ink); cursor: pointer; transition: background var(--motion-quick); }
+.tkc-sh__x:active, .tkc-sh__x.is-pressed { background: color-mix(in srgb, var(--surface-tint) 78%, var(--ink) 22%); }   /* 1090 */
+.tkc-sh__x:focus-visible, .tkc-sh__x.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* Guide place and the Home Screen kind: the soft lift (starthere-card-raised), no edge. The title keeps 48 px clear only where a ✕ is. The 0.2 kinds' line sits space-2 under the title (8). */
+.tkc-sh[data-raised] { box-shadow: var(--card-edge), var(--starthere-raised); }
+.tkc-sh[data-place="guide"] .tkc-sh__title { padding-right: 0; }
+.tkc-sh[data-kind="home-screen"] .tkc-sh__line { margin-top: var(--space-2); }
+
+/* Outline button inside the card: the Review's outline is 48 with no vertical padding (the line, 22 x scale, fits inside). Keeps the card the same height at 200%. */
+.tkc-sh > .tkc-btn[data-kind="outline"] { padding-block: 0; }
+/* Settings preview of Start Here: the line sits space-2 under the title (8), like the 0.2 kinds. */
+.tkc-sh[data-place="settings"] .tkc-sh__line { margin-top: var(--space-2); }
+
+/* Start Here keeps the plain wrap (the Review's Guide Studio draws it so, at 200% too); the 0.2 kinds balance. */
+.tkc-sh[data-kind="start-here"] .tkc-sh__title { text-wrap: wrap; }
+/* Guide's primary Start: 6 above and below (the Review), so the card is 4 px shorter at 200% than TKC-006's 8. */
+.tkc-sh > .tkc-btn[data-kind="primary"] { padding-block: 6px; }
+.tkc-sh[data-half] { opacity: .5; }
+.tkc-sh[data-kind="start-here"][data-place="settings"] .tkc-sh__title { text-wrap: balance; }

@@ -1,0 +1,12 @@
+@import '../foundations.css';
+/* TKC-028 Stepper (C, G): a plain list, items 14 apart, ring-to-text 14. The ring and its digit grow to 1.5x at large text (E). */
+.tkc-stp { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; width: 100%; color: var(--ink); }
+.tkc-stp > li { display: flex; gap: 14px; align-items: flex-start; }
+.tkc-stp__num { --rs: calc(28px*min(var(--ts), 1.5)); flex: none; width: var(--rs); height: var(--rs); border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--ink-2); display: grid; place-items: center;
+  color: var(--ink-2); font: 600 calc(14px*min(var(--ts), 1.5))/1 var(--f-sans); padding: 0; }   /* steprow-number */
+.tkc-stp__body { min-width: 0; }
+.tkc-stp__name { display: block; font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }   /* stepper-name */
+.tkc-stp__line { display: block; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* stepper-line */
+.tkc-stp__btn { margin-top: var(--space-2); display: flex; }
+.tkc-stp__glyph { font-style: normal; display: inline-grid; place-items: center; min-width: 28px; height: 22px; padding: 0 5px; border-radius: 7px; background: var(--surface-tint); color: var(--ink);
+  font: 600 13px/1 var(--f-sans); vertical-align: 1px; letter-spacing: .08em; }

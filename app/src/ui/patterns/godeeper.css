@@ -1,0 +1,20 @@
+/* Go Deeper's pages (pattern). Spacing from claude/content/go-deeper.md (Nov 18, 2026): the prayer part as TKC-035 0.3 draws it, the area page with its circle and label
+   centered and fixed (4 apart, 32 under) over one card. No component styles here. */
+@import './guidepage.css';
+.tkc-gd__prog { margin: var(--space-4) 0 0; }
+.tkc-gd__anc { margin: var(--space-4) 0 0; }
+.tkc-gd__aim { margin: 14px 0 0; }   /* TKC-035 G: the aim sits 14 under the anchor (Creator, Oct 19) */
+.tkc-gd__aim > .tkc-pw-aim { margin: 0; }
+.tkc-gd__ways { margin: var(--space-6) 0 0; display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.tkc-gd__wh { margin: 0; font: 500 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-display); color: var(--ink); }
+.tkc-gd__ways .tkc-stp { margin: 0; }
+.tkc-gd__move { margin: var(--space-6) 0 0; }
+.tkc-gd__move > .tkc-pw-move { margin: 0; }
+.tkc-gd__bible { margin: var(--space-6) 0 0; }
+.tkc-gd__area, .tkc-gd__center { display: flex; flex-direction: column; min-width: 0; }
+.tkc-gd__where { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: var(--space-4) 0 0; }
+.tkc-gd__of { margin: 0; color: var(--ink-2); text-align: center; }
+.tkc-gd__area > .tkc-mh { margin-top: var(--space-8); }
+.tkc-gd__ct { margin: var(--space-4) 0 0; text-align: center; text-wrap: balance; }
+.tkc-gd__center > .tkc-anc, .tkc-gd__center > .tkc-ask-q, .tkc-gd__center > .tkc-ask-act { margin-top: var(--space-4); }
+.tkc-gd__circle { display: flex; justify-content: center; margin: var(--space-6) 0 var(--space-6); }

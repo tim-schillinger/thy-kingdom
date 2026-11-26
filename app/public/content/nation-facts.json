@@ -1,0 +1,1134 @@
+{
+"_about": "Nation facts for the nation page and the Kingdom rows, built by tools/build_nation_facts.py from tools/nation-facts.rq. Missing facts are left out of the page, never shown as unknown (TKC-016, TKC-041 E). Population is the raw number: the app rounds it (engine/nations.ts).",
+"sourceLine": "Facts from Wikidata",
+"pulledOn": "2026-11-03",
+"list": {
+"ABW": {
+"capital": "Oranjestad",
+"population": 106739,
+"language": "Papiamento"
+},
+"AFG": {
+"capital": "Kabul",
+"population": 41454761,
+"language": "Pashto"
+},
+"AGO": {
+"capital": "Luanda",
+"population": 36749906,
+"language": "Portuguese"
+},
+"AIA": {
+"capital": "The Valley",
+"population": 19079,
+"language": "English"
+},
+"ALB": {
+"capital": "Tirana",
+"population": 2811655,
+"language": "Albanian"
+},
+"AND": {
+"capital": "Andorra la Vella",
+"population": 89752,
+"language": "Catalan"
+},
+"ARE": {
+"capital": "Abu Dhabi",
+"population": 10100000,
+"language": "Arabic"
+},
+"ARG": {
+"capital": "Buenos Aires",
+"population": 47327407,
+"language": "Spanish"
+},
+"ARM": {
+"capital": "Yerevan",
+"population": 2930450,
+"language": "Armenian"
+},
+"ASM": {
+"capital": "Pago Pago",
+"population": 49710,
+"language": "Samoan"
+},
+"ATA": {
+"population": 4400
+},
+"ATF": {
+"capital": "Port-aux-Français",
+"population": 140,
+"language": "French"
+},
+"ATG": {
+"capital": "Q36262",
+"population": 101489,
+"language": "English"
+},
+"AUS": {
+"capital": "Canberra",
+"population": 27614411,
+"language": "English"
+},
+"AUT": {
+"capital": "Vienna",
+"population": 8979894,
+"language": "German"
+},
+"AZE": {
+"capital": "Baku",
+"population": 10180770,
+"language": "Azerbaijani"
+},
+"BDI": {
+"capital": "Gitega",
+"population": 13689450,
+"language": "Kirundi"
+},
+"BEL": {
+"capital": "Brussels",
+"population": 11825551,
+"language": "Dutch"
+},
+"BEN": {
+"capital": "Porto-Novo",
+"population": 14111034,
+"language": "French"
+},
+"BFA": {
+"capital": "Ouagadougou",
+"population": 23025776,
+"language": "Mooré"
+},
+"BGD": {
+"capital": "Dhaka",
+"population": 175686899,
+"language": "Bangla"
+},
+"BGR": {
+"capital": "Sofia",
+"population": 6423207,
+"language": "Bulgarian"
+},
+"BHR": {
+"capital": "Manama",
+"population": 2700000,
+"language": "Arabic"
+},
+"BHS": {
+"capital": "Nassau",
+"population": 399440,
+"language": "English"
+},
+"BIH": {
+"capital": "Sarajevo",
+"population": 3816459,
+"language": "Bosnian"
+},
+"BLR": {
+"capital": "Minsk",
+"population": 9056080,
+"language": "Russian"
+},
+"BLZ": {
+"capital": "Belmopan",
+"population": 411106,
+"language": "English"
+},
+"BMU": {
+"capital": "Hamilton",
+"population": 65024,
+"language": "English"
+},
+"BOL": {
+"capital": "La Paz, Sucre",
+"population": 12244159,
+"language": "Spanish"
+},
+"BRA": {
+"capital": "Brasília",
+"population": 214211951,
+"language": "Portuguese"
+},
+"BRB": {
+"capital": "Bridgetown",
+"population": 303431,
+"language": "English"
+},
+"BRN": {
+"capital": "Bandar Seri Begawan",
+"population": 458949,
+"language": "Malay"
+},
+"BTN": {
+"capital": "Thimphu",
+"population": 796682,
+"language": "Dzongkha"
+},
+"BWA": {
+"capital": "Gaborone",
+"population": 2480244,
+"language": "Setswana"
+},
+"CAF": {
+"capital": "Bangui",
+"population": 5152421,
+"language": "Sango"
+},
+"CAN": {
+"capital": "Ottawa",
+"population": 41798407,
+"language": "English"
+},
+"CCK": {
+"capital": "West Island",
+"population": 602,
+"language": "English"
+},
+"CHE": {
+"capital": "Bern",
+"population": 9104063,
+"language": "German"
+},
+"CHL": {
+"capital": "Santiago",
+"population": 19458000,
+"language": "Spanish"
+},
+"CHN": {
+"capital": "Beijing",
+"population": 1404890000,
+"language": "Mandarin Chinese"
+},
+"CIV": {
+"capital": "Yamoussoukro",
+"population": 31165654,
+"language": "French"
+},
+"CMR": {
+"capital": "Yaoundé",
+"population": 28372687,
+"language": "French"
+},
+"COD": {
+"capital": "Kinshasa",
+"population": 105789731,
+"language": "French"
+},
+"COG": {
+"capital": "Brazzaville",
+"population": 6278845,
+"language": "French"
+},
+"COK": {
+"capital": "Avarua",
+"population": 14222,
+"language": "Cook Islands Maori"
+},
+"COL": {
+"capital": "Bogotá",
+"population": 52321152,
+"language": "Spanish"
+},
+"COM": {
+"capital": "Moroni",
+"population": 900000,
+"language": "Comorian"
+},
+"CPV": {
+"capital": "Praia",
+"population": 555988,
+"language": "Cape Verdean Creole"
+},
+"CRI": {
+"capital": "San José",
+"population": 5265575,
+"language": "Spanish"
+},
+"CUB": {
+"capital": "Havana",
+"population": 10985974,
+"language": "Spanish"
+},
+"CXR": {
+"capital": "Flying Fish Cove",
+"population": 1692,
+"language": "English"
+},
+"CYM": {
+"capital": "George Town",
+"population": 88833,
+"language": "English"
+},
+"CYP": {
+"capital": "Nicosia",
+"population": 1344976,
+"language": "Greek"
+},
+"CZE": {
+"capital": "Prague",
+"population": 10909500,
+"language": "Czech"
+},
+"DEU": {
+"capital": "Berlin",
+"population": 83467117,
+"language": "German"
+},
+"DJI": {
+"capital": "Djibouti",
+"population": 1000000,
+"language": "Somali"
+},
+"DMA": {
+"capital": "Roseau",
+"population": 74656,
+"language": "English"
+},
+"DNK": {
+"capital": "Copenhagen",
+"population": 5822863,
+"language": "Danish"
+},
+"DOM": {
+"capital": "Santo Domingo",
+"population": 10760028,
+"language": "Spanish"
+},
+"DZA": {
+"capital": "Algiers",
+"population": 45600000,
+"language": "Arabic"
+},
+"ECU": {
+"capital": "Quito",
+"population": 16938986,
+"language": "Spanish"
+},
+"EGY": {
+"capital": "Cairo",
+"population": 114500000,
+"language": "Arabic"
+},
+"ERI": {
+"capital": "Asmara",
+"population": 3497000,
+"language": "Tigrinya"
+},
+"ESP": {
+"capital": "Madrid",
+"population": 48592909,
+"language": "Spanish"
+},
+"EST": {
+"capital": "Tallinn",
+"population": 1369995,
+"language": "Estonian"
+},
+"ETH": {
+"capital": "Addis Ababa",
+"population": 128691692,
+"language": "Amharic"
+},
+"FIN": {
+"capital": "Helsinki",
+"population": 5652881,
+"language": "Finnish"
+},
+"FJI": {
+"capital": "Suva",
+"population": 926276,
+"language": "Fijian"
+},
+"FLK": {
+"capital": "Stanley",
+"population": 3662,
+"language": "English"
+},
+"FRA": {
+"capital": "Paris",
+"population": 68605616,
+"language": "French"
+},
+"FRO": {
+"capital": "Tórshavn",
+"population": 54149,
+"language": "Faroese"
+},
+"FSM": {
+"capital": "Palikir",
+"population": 75817,
+"language": "English"
+},
+"GAB": {
+"capital": "Libreville",
+"population": 2300000,
+"language": "French"
+},
+"GBR": {
+"capital": "London",
+"population": 67326569,
+"language": "English"
+},
+"GEO": {
+"capital": "Tbilisi",
+"population": 3929581,
+"language": "Georgian"
+},
+"GHA": {
+"capital": "Accra",
+"population": 32833031,
+"language": "English"
+},
+"GIB": {
+"capital": "Gibraltar",
+"population": 37936,
+"language": "English"
+},
+"GIN": {
+"capital": "Conakry",
+"population": 17521167,
+"language": "Pular"
+},
+"GLP": {
+"capital": "Basse-Terre",
+"population": 384160
+},
+"GMB": {
+"capital": "Banjul",
+"population": 2639916,
+"language": "English"
+},
+"GNB": {
+"capital": "Bissau",
+"population": 1861283,
+"language": "Portuguese"
+},
+"GNQ": {
+"capital": "Ciudad de la Paz",
+"population": 1847549,
+"language": "Spanish"
+},
+"GRC": {
+"capital": "Athens",
+"population": 10566531,
+"language": "Greek"
+},
+"GRD": {
+"capital": "St. George's",
+"population": 114299,
+"language": "English"
+},
+"GRL": {
+"capital": "Nuuk",
+"population": 56542,
+"language": "Greenlandic"
+},
+"GTM": {
+"capital": "Guatemala City",
+"population": 17263239,
+"language": "Spanish"
+},
+"GUF": {
+"capital": "Cayenne",
+"population": 293996,
+"language": "French"
+},
+"GUM": {
+"capital": "Hagåtña",
+"population": 153836,
+"language": "English"
+},
+"GUY": {
+"capital": "Georgetown",
+"population": 878674,
+"language": "English"
+},
+"HKG": {
+"population": 7413070,
+"language": "Cantonese"
+},
+"HND": {
+"capital": "Tegucigalpa",
+"population": 11002356,
+"language": "Spanish"
+},
+"HRV": {
+"capital": "Zagreb",
+"population": 3871833,
+"language": "Croatian"
+},
+"HTI": {
+"capital": "Port-au-Prince",
+"population": 10981229,
+"language": "Haitian Creole"
+},
+"HUN": {
+"capital": "Budapest",
+"population": 9489000,
+"language": "Hungarian"
+},
+"IDN": {
+"capital": "Jakarta",
+"population": 275439000,
+"language": "Indonesian"
+},
+"IND": {
+"capital": "New Delhi",
+"population": 1326093247,
+"language": "Hindi"
+},
+"IRL": {
+"capital": "Dublin",
+"population": 5149139,
+"language": "English"
+},
+"IRN": {
+"capital": "Tehran",
+"population": 92417700,
+"language": "Persian"
+},
+"IRQ": {
+"capital": "Baghdad",
+"population": 43500000,
+"language": "Arabic"
+},
+"ISL": {
+"capital": "Reykjavík",
+"population": 376248,
+"language": "Icelandic"
+},
+"ISR": {
+"capital": "Jerusalem",
+"population": 9840000,
+"language": "Hebrew"
+},
+"ITA": {
+"capital": "Rome",
+"population": 58850717,
+"language": "Italian"
+},
+"JAM": {
+"capital": "Kingston",
+"population": 2734093,
+"language": "English"
+},
+"JOR": {
+"capital": "Amman",
+"population": 11300000,
+"language": "Arabic"
+},
+"JPN": {
+"capital": "Tokyo",
+"population": 123802000,
+"language": "Japanese"
+},
+"KAZ": {
+"capital": "Astana",
+"population": 20139914,
+"language": "Kazakh"
+},
+"KEN": {
+"capital": "Nairobi",
+"population": 47564296,
+"language": "Swahili"
+},
+"KGZ": {
+"capital": "Bishkek",
+"population": 7281800,
+"language": "Kyrgyz"
+},
+"KHM": {
+"capital": "Phnom Penh",
+"population": 17423880,
+"language": "Khmer"
+},
+"KIR": {
+"capital": "South Tarawa",
+"population": 134518,
+"language": "Gilbertese"
+},
+"KNA": {
+"capital": "Basseterre",
+"population": 46922,
+"language": "English"
+},
+"KOR": {
+"capital": "Seoul",
+"population": 51628117,
+"language": "Korean"
+},
+"KWT": {
+"capital": "Kuwait City",
+"population": 4300000,
+"language": "Arabic"
+},
+"LAO": {
+"capital": "Vientiane",
+"population": 6858160,
+"language": "Lao"
+},
+"LBN": {
+"capital": "Beirut",
+"population": 5300000,
+"language": "Arabic"
+},
+"LBR": {
+"capital": "Monrovia",
+"population": 5214030,
+"language": "English"
+},
+"LBY": {
+"capital": "Tripoli",
+"population": 7100000,
+"language": "Arabic"
+},
+"LCA": {
+"capital": "Castries",
+"population": 167591,
+"language": "English"
+},
+"LIE": {
+"capital": "Vaduz",
+"population": 38020,
+"language": "German"
+},
+"LKA": {
+"capital": "Colombo, Sri Jayawardenepura Kotte",
+"population": 22037000,
+"language": "Sinhala"
+},
+"LSO": {
+"capital": "Maseru",
+"population": 2233339,
+"language": "Sesotho"
+},
+"LTU": {
+"capital": "Vilnius",
+"population": 2860002,
+"language": "Lithuanian"
+},
+"LUX": {
+"capital": "Luxembourg",
+"population": 690959,
+"language": "Luxembourgish"
+},
+"LVA": {
+"capital": "Riga",
+"population": 1845096,
+"language": "Latvian"
+},
+"MAC": {
+"population": 682100,
+"language": "Cantonese"
+},
+"MAR": {
+"capital": "Rabat",
+"population": 38300000,
+"language": "Arabic"
+},
+"MCO": {
+"capital": "Monaco",
+"population": 38857,
+"language": "French"
+},
+"MDA": {
+"capital": "Chișinău",
+"population": 2409207,
+"language": "Romanian"
+},
+"MDG": {
+"capital": "Antananarivo",
+"population": 31964956,
+"language": "Malagasy"
+},
+"MDV": {
+"capital": "Malé",
+"population": 436330,
+"language": "Maldivian"
+},
+"MEX": {
+"capital": "Mexico City",
+"population": 132274416,
+"language": "Spanish"
+},
+"MHL": {
+"capital": "Majuro",
+"population": 54366,
+"language": "Marshallese"
+},
+"MKD": {
+"capital": "Skopje",
+"population": 1836713,
+"language": "Macedonian"
+},
+"MLI": {
+"capital": "Bamako",
+"population": 22395489,
+"language": "Bambara"
+},
+"MLT": {
+"capital": "Valletta",
+"population": 553214,
+"language": "Maltese"
+},
+"MMR": {
+"capital": "Naypyidaw",
+"population": 53370609,
+"language": "Burmese"
+},
+"MNE": {
+"capital": "Podgorica",
+"population": 617213,
+"language": "Montenegrin"
+},
+"MNG": {
+"capital": "Ulaanbaatar",
+"population": 3409939,
+"language": "Mongolian"
+},
+"MNP": {
+"capital": "Saipan",
+"population": 51475,
+"language": "Chamorro"
+},
+"MOZ": {
+"capital": "Maputo",
+"population": 29668834,
+"language": "Portuguese"
+},
+"MRT": {
+"capital": "Nouakchott",
+"population": 4900000,
+"language": "Arabic"
+},
+"MSR": {
+"capital": "Plymouth, Brades",
+"population": 5440,
+"language": "English"
+},
+"MTQ": {
+"capital": "Fort-de-France",
+"population": 360630
+},
+"MUS": {
+"capital": "Port Louis",
+"population": 1264613,
+"language": "Mauritian Creole"
+},
+"MWI": {
+"capital": "Lilongwe",
+"population": 17563749,
+"language": "Chewa"
+},
+"MYS": {
+"capital": "Kuala Lumpur",
+"population": 34231700,
+"language": "Malay"
+},
+"MYT": {
+"capital": "Mamoudzou, Dzaoudzi",
+"population": 320901,
+"language": "Shimaore"
+},
+"NAM": {
+"capital": "Windhoek",
+"population": 2533794,
+"language": "English"
+},
+"NCL": {
+"capital": "Nouméa",
+"population": 278500,
+"language": "French"
+},
+"NER": {
+"capital": "Niamey",
+"population": 21477348,
+"language": "Hausa"
+},
+"NGA": {
+"capital": "Abuja",
+"population": 211400708,
+"language": "English"
+},
+"NIC": {
+"capital": "Managua",
+"population": 7005764,
+"language": "Spanish"
+},
+"NIU": {
+"capital": "Alofi",
+"population": 1821,
+"language": "Niuean"
+},
+"NLD": {
+"capital": "Amsterdam",
+"population": 17100715,
+"language": "Dutch"
+},
+"NOR": {
+"capital": "Oslo",
+"population": 5627400,
+"language": "Norwegian"
+},
+"NPL": {
+"capital": "Kathmandu",
+"population": 29164578,
+"language": "Nepali"
+},
+"NRU": {
+"capital": "Yaren District",
+"population": 13650,
+"language": "Nauruan"
+},
+"NZL": {
+"capital": "Wellington",
+"population": 5307800,
+"language": "English"
+},
+"OMN": {
+"capital": "Muscat",
+"population": 5100000,
+"language": "Arabic"
+},
+"PAK": {
+"capital": "Islamabad",
+"population": 223773700,
+"language": "Punjabi"
+},
+"PAN": {
+"capital": "Panama City",
+"population": 4570133,
+"language": "Spanish"
+},
+"PCN": {
+"capital": "Adamstown",
+"population": 47,
+"language": "English"
+},
+"PER": {
+"capital": "Lima",
+"population": 34157732,
+"language": "Spanish"
+},
+"PHL": {
+"capital": "Manila",
+"population": 112729484,
+"language": "Filipino"
+},
+"PLW": {
+"capital": "Ngerulmud",
+"population": 21729,
+"language": "Palauan"
+},
+"PNG": {
+"capital": "Port Moresby",
+"population": 8935000,
+"language": "Tok Pisin"
+},
+"POL": {
+"capital": "Warsaw",
+"population": 37563071,
+"language": "Polish"
+},
+"PRI": {
+"capital": "San Juan",
+"population": 3285874,
+"language": "Spanish"
+},
+"PRK": {
+"capital": "Pyongyang",
+"population": 26418204,
+"language": "Korean"
+},
+"PRT": {
+"capital": "Lisbon",
+"population": 10347892,
+"language": "Portuguese"
+},
+"PRY": {
+"capital": "Asunción",
+"population": 6811297,
+"language": "Spanish"
+},
+"PSE": {
+"capital": "Ramallah, East Jerusalem",
+"population": 5400000,
+"language": "Arabic"
+},
+"PYF": {
+"capital": "Papeete",
+"population": 278786,
+"language": "French"
+},
+"QAT": {
+"capital": "Doha",
+"population": 2639211,
+"language": "Arabic"
+},
+"REU": {
+"capital": "Saint-Denis",
+"population": 889679,
+"language": "French"
+},
+"ROU": {
+"capital": "Bucharest",
+"population": 19053815,
+"language": "Romanian"
+},
+"RUS": {
+"capital": "Moscow",
+"population": 146119928,
+"language": "Russian"
+},
+"RWA": {
+"capital": "Kigali",
+"population": 14569341,
+"language": "Kinyarwanda"
+},
+"SAU": {
+"capital": "Riyadh",
+"population": 33000000,
+"language": "Arabic"
+},
+"SDN": {
+"capital": "Khartoum",
+"population": 48945000,
+"language": "Arabic"
+},
+"SEN": {
+"capital": "Dakar",
+"population": 18100000,
+"language": "Wolof"
+},
+"SGP": {
+"capital": "Singapore",
+"population": 5866139,
+"language": "English"
+},
+"SLB": {
+"capital": "Honiara",
+"population": 611343,
+"language": "English"
+},
+"SLE": {
+"capital": "Freetown",
+"population": 7557212,
+"language": "Krio"
+},
+"SLV": {
+"capital": "San Salvador",
+"population": 6029976,
+"language": "Spanish"
+},
+"SMR": {
+"capital": "San Marino",
+"population": 34167,
+"language": "Italian"
+},
+"SOM": {
+"capital": "Mogadishu",
+"population": 18100000,
+"language": "Somali"
+},
+"SRB": {
+"capital": "Belgrade",
+"population": 6605168,
+"language": "Serbian"
+},
+"SSD": {
+"capital": "Juba",
+"population": 12575714,
+"language": "English"
+},
+"STP": {
+"capital": "São Tomé",
+"population": 204327,
+"language": "Portuguese"
+},
+"SUR": {
+"capital": "Paramaribo",
+"population": 563402,
+"language": "Dutch"
+},
+"SVK": {
+"capital": "Bratislava",
+"population": 5409407,
+"language": "Slovak"
+},
+"SVN": {
+"capital": "Ljubljana",
+"population": 2116972,
+"language": "Slovene"
+},
+"SWE": {
+"capital": "Stockholm",
+"population": 10609460,
+"language": "Swedish"
+},
+"SWZ": {
+"capital": "Mbabane, Lobamba",
+"population": 1230506,
+"language": "Swazi"
+},
+"SYC": {
+"capital": "Victoria",
+"population": 119773,
+"language": "Seychellois Creole"
+},
+"SYR": {
+"capital": "Damascus",
+"population": 23000000,
+"language": "Arabic"
+},
+"TCD": {
+"capital": "N'Djamena",
+"population": 19319064,
+"language": "Arabic"
+},
+"TGO": {
+"capital": "Lomé",
+"population": 12400000,
+"language": "French"
+},
+"THA": {
+"capital": "Bangkok",
+"population": 66188503,
+"language": "Thai"
+},
+"TJK": {
+"capital": "Dushanbe",
+"population": 9504000,
+"language": "Tajik"
+},
+"TKL": {
+"population": 1499,
+"language": "Tokelauan"
+},
+"TKM": {
+"capital": "Ashgabat",
+"population": 6117933,
+"language": "Turkmen"
+},
+"TLS": {
+"capital": "Dili",
+"population": 1400638,
+"language": "Tetum"
+},
+"TON": {
+"capital": "Nukuʻalofa",
+"population": 105697,
+"language": "Tongan"
+},
+"TTO": {
+"capital": "Port of Spain",
+"population": 1369125,
+"language": "English"
+},
+"TUN": {
+"capital": "Tunis",
+"population": 37100000,
+"language": "Arabic"
+},
+"TUR": {
+"capital": "Ankara",
+"population": 85372377,
+"language": "Turkish"
+},
+"TUV": {
+"capital": "Funafuti",
+"population": 10643,
+"language": "Tuvaluan"
+},
+"TWN": {
+"capital": "Taipei",
+"population": 23262544,
+"language": "Mandarin Chinese"
+},
+"TZA": {
+"capital": "Dodoma",
+"population": 61741120,
+"language": "Swahili"
+},
+"UGA": {
+"capital": "Kampala",
+"population": 47123531,
+"language": "Luganda"
+},
+"UKR": {
+"capital": "Kyiv",
+"population": 41167335,
+"language": "Ukrainian"
+},
+"URY": {
+"capital": "Montevideo",
+"population": 3444263
+},
+"USA": {
+"capital": "Washington, D.C.",
+"population": 340110988,
+"language": "English"
+},
+"UZB": {
+"capital": "Tashkent",
+"population": 34915100,
+"language": "Uzbek"
+},
+"VAT": {
+"capital": "Vatican City",
+"population": 949,
+"language": "Italian"
+},
+"VCT": {
+"capital": "Kingstown",
+"population": 100804,
+"language": "English"
+},
+"VEN": {
+"capital": "Caracas",
+"population": 31250306,
+"language": "Spanish"
+},
+"VIR": {
+"capital": "Charlotte Amalie",
+"population": 104917,
+"language": "English"
+},
+"VNM": {
+"capital": "Hanoi",
+"population": 96208984,
+"language": "Vietnamese"
+},
+"VUT": {
+"capital": "Port Vila",
+"population": 300019,
+"language": "Bislama"
+},
+"WSM": {
+"capital": "Apia",
+"population": 200010,
+"language": "Samoan"
+},
+"YEM": {
+"capital": "Sanaa, Aden",
+"population": 34400000,
+"language": "Arabic"
+},
+"ZAF": {
+"capital": "Cape Town, Bloemfontein, Pretoria",
+"population": 62027503,
+"language": "Zulu"
+},
+"ZMB": {
+"capital": "Lusaka",
+"population": 19610769,
+"language": "English"
+},
+"ZWE": {
+"capital": "Harare",
+"population": 15178979,
+"language": "Shona"
+}
+}
+}

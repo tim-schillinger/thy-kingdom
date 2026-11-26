@@ -1,0 +1,13 @@
+/* TKC-053 Tabs, spec 0.2 (C): equal columns, a 1 px line under the row, min 48 per tab, label 17/24 Medium ink-2 (open: SemiBold ink),
+   a 3 px ink bar 16 px in from each side, count pill 24 tall. Placement (margin-page sides, 12 under the title) belongs to the screen. */
+@import '../foundations.css';
+.tkc-tabview { display: grid; grid-template-columns: repeat(var(--tabs, 2), 1fr); grid-auto-flow: column; grid-auto-columns: 1fr; border-bottom: 1px solid var(--line); }
+.tkc-tabview > [role=tab] { appearance: none; border: 0; background: none; min-height: 48px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; column-gap: 6px;
+  padding: 0 4px; position: relative; text-align: center; cursor: pointer; font: 500 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); transition: background var(--motion-quick); }
+.tkc-tabview > [aria-selected=true] { color: var(--ink); font-weight: 600; }
+.tkc-tabview > [aria-selected=true]::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: -1px; height: 3px; border-radius: 3px 3px 0 0; background: var(--ink); }
+.tkc-tabview > [role=tab]:active, .tkc-tabview > [role=tab].is-pressed { background: var(--surface-tint); }
+.tkc-tabview > [role=tab]:focus-visible, .tkc-tabview > [role=tab].is-focus { outline: 2px solid var(--focus-ring); outline-offset: -2px; border-radius: var(--radius-sm); }
+.tkc-tabview-count { display: inline-grid; place-items: center; min-width: calc(24px*var(--ts)); height: calc(24px*var(--ts)); padding: 0 var(--space-2); border-radius: 999px;
+  font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--success-ink); background: color-mix(in srgb, var(--success-fill) 18%, transparent); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .tkc-tabview > [role=tab] { transition: none; } }

@@ -1,0 +1,13 @@
+@import '../foundations.css';
+/* TKC-043 PersonPrayerRow (C, G): 16 px top and bottom, a hairline under. Name 22/28 display face Medium (Creator, Nov 11: bigger, from the type scale), 8 above and 8 below the request, ⋯ a 44 px target hanging into the padding, request 17/25 under it, pills 12 under that, 8 apart. */
+.tkc-pl { list-style: none; margin: var(--space-3) 0 0; padding: 0; }
+.tkc-pp { padding: var(--space-4) 0; border-bottom: 1px solid var(--line); }
+.tkc-pl > li:last-child > .tkc-pp { border-bottom: 0; }   /* 0.4 (3-6c): the last person has no line under it */
+.tkc-pp__nm { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-2); }
+.tkc-pp__nm b { min-width: 0; font: 500 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-display); color: var(--ink); overflow-wrap: break-word; }
+.tkc-pp__more { appearance: none; border: 0; background: none; flex: none; width: 44px; height: 44px; margin: -8px -10px -8px 0; border-radius: 50%; display: grid; place-items: center; color: var(--ink-2); cursor: pointer; transition: background var(--motion-quick); }
+.tkc-pp__more:active, .tkc-pp__more.is-pressed { background: var(--surface-tint); }
+.tkc-pp__more:focus-visible, .tkc-pp__more.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-pp__req { margin: var(--space-2) 0 var(--space-2); font: 400 calc(17px*var(--ts))/calc(25px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-pp__pch { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+@media (prefers-reduced-motion: reduce) { .tkc-pp__more { transition: none; } }

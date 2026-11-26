@@ -1,0 +1,4 @@
+/* TKC-017 Tag, spec 0.2 (C): `tag-label` 13/18 SemiBold, accent-ink, 0.02em, a 1 px accent-ink edge, fully round, padding 1 8. */
+@import '../foundations.css';
+.tkc-tag { display: inline-block; font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); letter-spacing: .02em; color: var(--accent-ink);
+  border: 1px solid var(--accent-ink); border-radius: var(--radius-pill); padding: 1px var(--space-2); white-space: nowrap; }

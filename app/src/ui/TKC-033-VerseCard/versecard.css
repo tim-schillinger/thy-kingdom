@@ -1,0 +1,7 @@
+/* TKC-033 VerseCard 0.1.4: surface-tint, radius-card, padding space-4 space-5; label, space-1, verse, space-1, reference (G).
+   The Guide's lesson verse cards drew 18 px bottom padding; the spec wins (D-VC1). */
+@import '../foundations.css';
+.tkc-vc { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; background: var(--surface-tint); border-radius: var(--radius-card);
+  padding: var(--space-4) var(--space-5); color: var(--ink); box-shadow: var(--card-edge); }
+:where(.tkc-vc) :where(p) { margin: 0; }
+.tkc-vc__lab { color: var(--accent-ink); }

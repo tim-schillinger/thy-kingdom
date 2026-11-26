@@ -1,0 +1,81 @@
+/* TKC-002 TopBar 0.10 (the step's name and caret, the menu, ring-active segments, 8 px apart); 0.9 (claude/design-system/specs/TKC-002-TopBar.md), step and end variants.
+   Values: spec G, checked against the Review's core rules (.tb, .tb-pill, .sg) by tools/reference.mjs. */
+@import '../foundations.css';
+.tkc-tb { position: relative; display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; gap: var(--space-1);
+  padding: var(--space-1) 10px 6px; row-gap: 0; background: var(--topbar-fill); color: var(--ink); box-sizing: border-box; }
+.tkc-tb[data-scrolled] { box-shadow: 0 1px 0 var(--line); }
+.tkc-tb__x { appearance: none; border: 0; margin: 0; padding: 0; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--iconbutton-fill); color: var(--ink); cursor: pointer; transition: background var(--motion-quick); }
+.tkc-tb__x:active, .tkc-tb.is-x-pressed .tkc-tb__x { background: var(--surface-tint); }
+.tkc-tb__x:focus-visible, .tkc-tb.is-x-focus .tkc-tb__x { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-tb__listen { position: relative; animation: tkc-tb-menu-fade var(--motion-calm) ease-out; }   /* 0.15 (frame-lock-9 2a): the ✕'s round button; the ring sits on its edge */
+.tkc-tb__about { background: var(--surface-tint); }   /* 0.12 (C1): mirrors the ✕, tinted so it reads as a second, quieter button */
+.tkc-tb__about:active, .tkc-tb.is-about-pressed .tkc-tb__about { background: var(--line); }
+.tkc-tb__about:focus-visible, .tkc-tb.is-about-focus .tkc-tb__about { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-tb__mid { appearance: none; border: 0; margin: 0; background: none; padding: 2px 8px; border-radius: 14px; width: 100%; font: inherit; color: inherit;
+  display: flex; flex-direction: column; align-items: center; min-width: 0; cursor: pointer; text-align: center; transition: background var(--motion-quick); }   /* 0.8: one target, 2 px top, 8 px sides, radius 14 */
+.tkc-tb__where { display: grid; width: 100%; min-height: calc(20px*var(--ts)); color: var(--ink-2); }
+/* 0.10: on a step the where-line is the step's name, 17/22 SemiBold ink (569); the end variant keeps the walk's name quiet. */
+.tkc-tb[data-variant="step"] .tkc-tb__where { min-height: calc(22px*var(--ts)); color: var(--ink); font: 600 calc(17px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); }
+.tkc-tb__nb { white-space: nowrap; }
+/* 0.13 (112): a reference too long for the bar is cut at its end with "…"; the caret stays. */
+.tkc-tb__where { grid-template-columns: minmax(0, 1fr); }
+.tkc-tb__w2 { min-width: 0; }
+.tkc-tb__w2 .tkc-tb__nb { display: flex; align-items: center; justify-content: center; min-width: 0; }
+.tkc-tb__rf { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tkc-tb__w2 .tkc-tb__car { flex: none; }
+.tkc-tb__car { display: inline-block; vertical-align: -0.1em; margin-left: 4px; width: calc(14px*var(--ts)); height: calc(14px*var(--ts)); transition: transform var(--motion-quick); }
+.tkc-tb__car .tkc-icon { display: block; width: 100%; height: 100%; }
+.tkc-tb__car[data-open] { transform: rotate(180deg); }   /* the caret shows what it will do now (569) */
+.tkc-tb__st { display: inline-flex; align-items: center; gap: var(--space-1); font-weight: 600; vertical-align: -0.12em; }
+.tkc-tb__menu { position: absolute; z-index: 8; left: 16px; right: 16px; top: calc(100% - 4px); background: var(--surface); border-radius: 14px; box-shadow: var(--shadow-soft), 0 0 0 1px var(--line); overflow: hidden;
+  transform-origin: 50% 0; animation: tkc-tb-menu var(--motion-short) var(--ease-settle); }
+.tkc-tb__mi { appearance: none; border: 0; margin: 0; background: none; width: 100%; min-height: 48px; padding: 0 16px; text-align: left; font: 400 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink); cursor: pointer; }
+.tkc-tb__mi + .tkc-tb__mi { box-shadow: 0 -1px 0 var(--line); }
+.tkc-tb__mi:active { background: var(--surface-tint); }
+.tkc-tb__mi:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+@keyframes tkc-tb-menu { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes tkc-tb-menu-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .tkc-tb__menu { animation: tkc-tb-menu-fade var(--motion-quick) both; } }   /* M4: with Reduce Motion the menu fades */
+.tkc-tb__w1.is-old { pointer-events: none; }
+.tkc-tb__gl { position: absolute; inset: -3px; border-radius: 6px; background: var(--walkpath-glow); filter: blur(4px); opacity: 0; pointer-events: none; }   /* M2 */
+.tkc-tb__where > span { grid-area: 1/1; text-wrap: balance; transition: opacity var(--motion-calm) var(--ease-gentle), transform var(--motion-calm) var(--ease-gentle); }
+.tkc-tb__w2 { opacity: 0; transform: translateY(6px); color: var(--ink); font-weight: 600; }
+.tkc-tb[data-scrolled][data-ref][data-variant="step"] .tkc-tb__w1 { opacity: 0; transform: translateY(-6px); }
+.tkc-tb[data-scrolled][data-ref] .tkc-tb__w2 { opacity: 1; transform: none; }
+.tkc-tb__pill { display: flex; align-items: center; gap: 8px; height: 28px; padding: 0 10px; margin-top: 2px; border-radius: var(--radius-pill); transition: background var(--motion-quick); }
+.tkc-tb__mid:active, .tkc-tb.is-mid-pressed .tkc-tb__mid { background: var(--surface-tint); }   /* E 0.8: the whole target fills */
+.tkc-tb__mid:focus-visible, .tkc-tb.is-mid-focus .tkc-tb__mid { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-tb__sg { position: relative; flex: none; width: 16px; height: 6px; border-radius: 3px; transition: width var(--motion-calm) var(--ease-gentle); }
+.tkc-tb__sg::after { content: ""; position: absolute; inset: 0; border-radius: 3px; box-shadow: inset 0 0 0 1.5px var(--walkpath-open-edge); }
+.tkc-tb__sg[data-seg="done"]::after { background: var(--walkpath-done); box-shadow: none; }
+.tkc-tb__sg[data-seg="skip"]::after { inset: 1.5px 0; background: var(--walkpath-skipped); box-shadow: none; border-radius: 2px; }
+.tkc-tb__sg[data-now] { width: 30px; }
+.tkc-tb__sg[data-now]::after { background: var(--walkpath-now-fill); box-shadow: none; outline: 1.5px solid var(--ring-active); outline-offset: 2px; }   /* 0.10 (570): honey with a ring-active ring, 2 px gap */
+.tkc-tb__sg[data-now][data-seg="done"]::after { background: var(--walkpath-done); box-shadow: none; }   /* a reopened, finished walk (E) */
+.tkc-tb__rl { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--readingline-track); opacity: 0; transition: opacity var(--motion-calm); }
+.tkc-tb[data-scrolled] .tkc-tb__rl { opacity: 1; }
+.tkc-tb__rl i { display: block; height: 100%; width: 0; background: var(--readingline-fill); border-radius: 0 2px 2px 0; }
+@media (prefers-reduced-motion: reduce) { .tkc-tb *, .tkc-tb *::after { transition-duration: 0s !important; } }
+
+/* Run variant (0.9): the same grid with the where-line alone in the middle; not a button, so no fill or pointer. */
+.tkc-tb__mid--run { cursor: default; padding: 0; }
+/* Page variant (0.6, 0.7): min 52, 4 px top and bottom, 10 px sides, fill topbar-fill; ‹ and the parent's name in a pill target at least 44 tall. */
+.tkc-pb { position: relative; display: flex; align-items: center; min-height: 52px; padding: var(--space-1) 10px; background: var(--topbar-fill); color: var(--ink); box-sizing: border-box; }
+.tkc-pb[data-scrolled] { box-shadow: 0 1px 0 var(--line); }
+.tkc-pb__back { appearance: none; border: 0; background: none; display: flex; align-items: center; gap: 2px; min-height: 44px; padding: 0 10px 0 4px; border-radius: var(--radius-pill);
+  font: 500 calc(17px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink); cursor: pointer; white-space: nowrap; text-align: left; transition: background var(--motion-quick); }
+.tkc-pb__back:active, .tkc-pb.is-back-pressed .tkc-pb__back { background: var(--surface-tint); }
+.tkc-pb__back:focus-visible, .tkc-pb.is-back-focus .tkc-pb__back { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-pb__more { appearance: none; border: 0; background: none; flex: none; width: 44px; height: 44px; margin-left: auto; border-radius: 50%; display: grid; place-items: center; color: var(--ink-2); cursor: pointer; }
+.tkc-pb__more:active, .tkc-pb.is-more-pressed .tkc-pb__more { background: var(--surface-tint); }
+.tkc-pb__more:focus-visible, .tkc-pb.is-more-focus .tkc-pb__more { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* 0.15: the song's progress as a 3 px ring on the button's edge: the unplayed part `line`, the played part `accent-ink`, round ends, from 12 o'clock clockwise. aria-hidden. */
+.tkc-tb__ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); pointer-events: none; }
+.tkc-tb__ring circle { fill: none; stroke-width: 3; }
+.tkc-tb__ring-b { stroke: var(--line); }
+.tkc-tb__ring-p { stroke: var(--accent-ink); stroke-linecap: round; }
+@media (prefers-reduced-motion: reduce) { .tkc-tb__listen { animation: none; } }
+
+/* 0.17 (frame-lock-12 §6, 3428 y): a step with no reference (Prayer) keeps its name in the middle when she scrolls; the reference swaps in only where there is one. */

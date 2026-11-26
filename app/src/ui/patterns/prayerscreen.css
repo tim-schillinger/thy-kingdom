@@ -1,0 +1,21 @@
+/* Prayer (Evening step 5): the wrappers that hold the spacing the Review's Prayer phones draw between the library's parts
+   (Review .pr-ib, .pr-isl, .pr-cbx, .pr-ptk, .pr-anc, .pr-end). No component styles here. */
+@import '../foundations.css';
+.tkc-step__pib { margin: var(--space-3) var(--margin-page) 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-step__pisl { margin: var(--space-5) var(--margin-page) 0; }
+.tkc-step__pcbx { margin: var(--space-6) var(--margin-page) var(--space-12); }
+.tkc-step__pprog { margin: 0 var(--margin-page); }
+.tkc-step__panc { margin: var(--space-4) var(--margin-page) 0; }
+.tkc-step__pend { height: var(--space-12); flex: none; }
+
+/* People: the list head (name · count, and the small outline Add button), Friday's verse and its source, the read-ahead line, the empty list's button. */
+.tkc-step__plh { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 var(--space-3); margin: var(--space-8) 0 0; padding-bottom: var(--space-2); border-bottom: 1px solid var(--line); }
+.tkc-step__plh[data-bare] { padding-bottom: 0; border-bottom: 0; }   /* an empty list: no hairline under the title */
+.tkc-step__plh[data-add] { margin-top: var(--space-12); padding-bottom: 0; border-bottom: 0; flex-wrap: wrap; }   /* with people (frame-lock-6 §5): 48 of room under the count line, the add on the same row, no hairline. Wraps (Nov 14, 2026): at 200% the add sat off the screen; when the two don't fit, the add drops under the title */
+.tkc-step__pprompt { margin: var(--space-3) 0 0; font: 400 calc(18px*var(--ts))/calc(27px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-step__pend2 { margin: var(--space-6) 0 0; }
+.tkc-step__pverse { margin: var(--space-4) 0 0; }
+.tkc-step__pverse .tkc-pw-starter { margin-top: 0; }
+.tkc-step__pvref { margin: var(--space-1) 0 0; color: var(--ink-2); }
+.tkc-step__pahead { margin: var(--space-4) 0 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-step__pbig { margin: var(--space-4) 0 0; }

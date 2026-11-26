@@ -1,0 +1,11 @@
+/* TKC-018 Toast, spec 0.3 (C): inverse fill, radius-sm (12), min 52, padding 8 8 8 16, 16/22 on-inverse; Undo 16/22 SemiBold underlined, 44 tall, padding 0 12.
+   Placement (16 from the sides, floating 16 above the foot) belongs to the screen pattern, not here. */
+@import '../foundations.css';
+.tkc-toast { display: flex; align-items: center; gap: var(--space-2); min-height: 52px; padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm); background: var(--inverse); color: var(--on-inverse); box-shadow: var(--toast-shadow); font: 400 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); }
+.tkc-toast > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.tkc-toast > button { appearance: none; border: 0; background: none; color: inherit; font: 600 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); text-decoration: underline;
+  text-decoration-thickness: 1px; text-underline-offset: 3px; min-height: 44px; padding: 0 var(--space-3); border-radius: 10px; cursor: pointer; flex: none; transition: background var(--motion-quick); }
+.tkc-toast > button:active, .tkc-toast > button.is-pressed { background: color-mix(in srgb, var(--on-inverse) 10%, transparent); }
+.tkc-toast > button:focus-visible, .tkc-toast > button.is-focus { outline: 2px solid var(--toast-ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tkc-toast > button { transition: none; } }

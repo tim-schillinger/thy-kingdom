@@ -1,0 +1,15 @@
+/* First run (pattern). Numbers from the Settings Studio v2.2 first-run phone (settings7 .frh, .chl, .frl, .frs, .go.frgo):
+   heading 28 under the status bar, 20 to the choices (12 apart), the line 24 under them, the small print 6 under that and 32 above the foot,
+   the foot 8 above, 4 between its parts, the bottom space-3 plus the phone's safe area. */
+@import '../foundations.css';
+.tkc-fr__main { padding: 28px var(--margin-page) 0; display: flex; flex-direction: column; min-width: 0; }
+.tkc-fr__main h1 { margin: 0; }
+.tkc-fr__choices { margin-top: 20px; display: flex; flex-direction: column; gap: var(--space-3); }
+.tkc-fr__line { margin: 24px 0 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-fr__print { margin: 6px 0 32px; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-fr__foot { position: sticky; bottom: 0; z-index: 4; background: var(--bg-plain); display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+  padding: 8px var(--margin-page) calc(var(--space-3) + var(--safe-bottom, env(safe-area-inset-bottom, 0px))); }
+.tkc-fr__foot::before { content: ""; position: absolute; left: 0; right: 0; top: -24px; height: 24px; pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-plain) 0%, transparent), var(--bg-plain)); }
+.tkc-fr__keep { margin: 0 0 6px; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); text-align: center; }
+.tkc-fr__foot > [data-tkc="TKC-007"] { align-self: center; }

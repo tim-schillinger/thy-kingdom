@@ -1,0 +1,14 @@
+@import '../foundations.css';
+/* TKC-030 StepHeader 0.7 (G): padding space-5 on top, margin-page at the sides. The label row is gone (569); the heading is the first thing under the bar. */
+.tkc-hd { padding: var(--space-5) var(--margin-page) 0; display: flex; flex-direction: column; color: var(--ink); }
+.tkc-hd__h { margin: 0; font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); color: var(--ink); text-wrap: balance; }
+.tkc-hd__why { margin: var(--space-3) 0 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-hd__more { margin-top: var(--space-2); }   /* the link sits space-2 under the why line; its 44 px target extends past the text */
+/* The instruction line: space-4 above, reading size, margin-page at the sides (Review .ms-instr). */
+.tkc-hd-instr { margin: var(--space-4) var(--margin-page) 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+/* Under a TKC-062 card (R4): 16 below the card, the why line, then the link; 48 below the last thing. */
+.tkc-hd--under { padding: var(--space-4) calc(var(--space-3) + var(--space-4)) var(--space-12); }   /* in line with the card's own text: 12 from the edge plus the card's 16 */
+.tkc-hd--under .tkc-hd__why { margin-top: 0; }
+
+.tkc-hd--under .tkc-pw-meaning { margin: 0 0 var(--space-3); }   /* Turn to God's meaning line sits under the card, before the link (1879) */
+.tkc-hd--under:has(.tkc-hd__more:only-child) { padding-top: var(--space-2); }   /* no line above the link: it sits closer to the card */

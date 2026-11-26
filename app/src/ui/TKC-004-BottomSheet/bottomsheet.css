@@ -1,0 +1,90 @@
+/* TKC-004 BottomSheet, spec 0.6 (C, G): surface, radius-card top corners, shadow-soft in light, handle 36 × 5, padding 8 / margin-page / 32.
+   Header by kind: pick one and read 44 · title · 44 (min 52, hanging 8); menu name + line + ✕. The screen places the sheet and its scrim. */
+@import '../foundations.css';
+.tkc-sheet { position: relative; background: var(--surface); color: var(--ink); border-radius: var(--radius-card) var(--radius-card) 0 0; padding: 0 var(--margin-page) var(--space-8);   /* the top 8 px is the handle's margin, so the header can stay pinned (A14) */
+  box-shadow: var(--shadow-soft); max-height: var(--sheet-max, none); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; }
+.tkc-sheet::-webkit-scrollbar { width: 0; }
+.tkc-sheet__grab { width: 36px; height: 5px; border-radius: 3px; background: color-mix(in srgb, var(--ink-2) 45%, transparent); margin: var(--space-2) auto 2px; }
+.tkc-sheet svg { flex: none; }
+.tkc-sheet__x { appearance: none; border: 0; width: 44px; height: 44px; border-radius: 50%; background: none; box-shadow: inset 0 0 0 1.5px var(--ink-2); color: var(--ink); display: grid; place-items: center; justify-self: end; cursor: pointer; flex: none; transition: background var(--motion-quick); }
+.tkc-sheet__x:active, .tkc-sheet__x.is-pressed { background: color-mix(in srgb, var(--ink) 10%, transparent); }   /* 607 (A7): a 1.5 px ink-2 edge, no fill; pressed is ink at 10% */
+.tkc-sheet__x:focus-visible, .tkc-sheet__x.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+/* A14 (Build 3): the header, and with it the ✕ or Cancel, stays pinned at the top while the body scrolls. */
+.tkc-sheet__pkh, .tkc-sheet__mhd, .tkc-sheet__fh { position: sticky; top: 0; z-index: 2; background: var(--surface); }
+/* pick one and read */
+.tkc-sheet__pkh { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; min-height: 52px; margin: 0 -8px; }
+.tkc-sheet__pkh h4 { margin: 0; font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); text-align: center; color: var(--ink); text-wrap: balance; }
+.tkc-sheet__pl { margin: 4px 0 0; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-sheet__choices { display: flex; flex-direction: column; list-style: none; padding: 0; }
+.tkc-sheet__choices[data-kind="full"] { margin: var(--space-2) 0 0; gap: var(--space-3); }
+.tkc-sheet__choices[data-kind="compact"] { margin: var(--space-3) 0 0; gap: var(--space-2); }
+/* read (0.5) */
+/* 0.8 (frame-lock-6 §6, 1811): every read sheet's section titles are in the display face, 22/28, ink, 12 above their text; 32 between sections, 12 between paragraphs. */
+.tkc-sheet__read section { margin-top: var(--space-8); }
+.tkc-sheet__read h5 { margin: 0 0 var(--space-3); font: 500 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-display); color: var(--ink); }
+.tkc-sheet__read p { margin: 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-sheet__read p + p { margin-top: var(--space-3); }
+/* The Learn More sheet: a hairline between the two sections (16 above it, 16 below, so 32 in all); an item's word and meaning, then the prayer's line 4 under, items 20 apart. */
+.tkc-sheet__learn { padding-bottom: var(--space-8); }
+.tkc-sheet__learn section + section { margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--line); }
+.tkc-sheet__items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-5); }
+.tkc-sheet__items b { font-weight: 600; }
+.tkc-sheet__items li p + p { margin-top: var(--space-1); }
+.tkc-sheet__items li p.tkc-sheet__pr { font: italic 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-reading); color: var(--ink-2); }
+.tkc-sheet__more { margin-top: var(--space-8); }
+/* menu */
+.tkc-sheet__mhd { display: flex; align-items: flex-start; gap: var(--space-2); margin-top: var(--space-2); }
+.tkc-sheet__mhd .tkc-sheet__x { margin: -4px -8px 0 0; }
+.tkc-sheet__lt { flex: 1; min-width: 0; }
+.tkc-sheet__lt b { display: block; font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); color: var(--ink); overflow-wrap: anywhere; }
+.tkc-sheet__lt span { display: block; font: 400 calc(17px*var(--ts))/calc(25px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-top: var(--space-1); }
+.tkc-sheet__acts { display: flex; flex-direction: column; gap: var(--space-3); margin: var(--space-6) 0 0; }
+.tkc-sheet__acts > [data-kind="quiet"] { align-self: center; width: auto; }
+/* confirm (0.4): left-aligned, no header row */
+.tkc-sheet__cf { display: flex; flex-direction: column; }
+.tkc-sheet__cf h3 { margin: var(--space-4) 0 0; font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); color: var(--ink); text-wrap: balance; }
+.tkc-sheet__cf p { margin: var(--space-2) 0 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-sheet__cf > [data-kind="primary"], .tkc-sheet__cf > [data-kind="secondary"] { margin-top: var(--space-6); width: 100%; }
+.tkc-sheet__cf > [data-kind="quiet"] { align-self: center; margin-top: var(--space-2); }
+@media (prefers-reduced-motion: reduce) { .tkc-sheet__x { transition: none; } }
+
+/* thanks (0.6): a small WinMark with hands, the heading, the line, Amen */
+.tkc-sheet__thx { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 0 0; }
+.tkc-sheet__thx h3 { font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); margin: 16px 0 0; color: var(--ink); }
+.tkc-sheet__thx p { font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); margin: 8px 0 0; }
+.tkc-sheet__thx .tkc-btn, .tkc-sheet__thx button:last-child { width: 100%; margin-top: 32px; }
+
+/* form (0.6 C4, C5): Cancel · title · an empty column, hanging 8 px into the margins; fields 16 apart; 32 above the one primary */
+.tkc-sheet__fh { display: grid; grid-template-columns: 1fr auto 1fr; column-gap: var(--space-2); align-items: center; min-height: 52px; margin: 0 -8px; }
+.tkc-sheet__fc { justify-self: start; }
+.tkc-sheet__fh h4 { margin: 0; font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); text-align: center; color: var(--ink); }
+.tkc-sheet__fld { margin-top: var(--space-4); }
+.tkc-sheet__notice { margin-top: var(--space-3); }
+.tkc-sheet__mq { margin: var(--space-4) 0 0; font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); color: var(--ink); }
+.tkc-sheet__mqh { margin: var(--space-2) 0 var(--space-3); font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-sheet__when { margin: var(--space-3) 0 0; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--space-1); }
+.tkc-sheet__note { margin: var(--space-2) 0 0; font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-sheet__go { margin-top: var(--space-8); }
+/* 0.7 read with three sections (frame-lock-4a/4b/4c): section titles 14/20 SemiBold ink-2 (above); line and bullets 17/26 ink; the verse in the reading face 19/30, then its reference and Bible in ink-2. */
+.tkc-sheet__rs { padding-bottom: var(--space-8); }
+.tkc-sheet__rs ul { margin: 0; padding-left: 20px; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); display: flex; flex-direction: column; gap: var(--space-2); }
+.tkc-sheet__rs p.tkc-sheet__rv { font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); }
+.tkc-sheet__rs p.tkc-sheet__rr { margin-top: var(--space-2); font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-sheet__rn { margin: var(--space-6) var(--margin-page) 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+
+/* 739: the Study Notes' notice: two links in the shared link color, underlined so they read as links. */
+.tkc-sheet__notice a { display: inline-block; min-height: 44px; padding: 10px 0; color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; font: 500 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); }
+
+/* 0.11 (frame-lock-7 R5, 1881): a page inside a list gets a back control in the header's left column (44 px, the ✕'s twin without the ring); the list is one column of "[word] ›" links, 44 tall. */
+.tkc-sheet__back { appearance: none; border: 0; width: 44px; height: 44px; border-radius: 50%; background: none; color: var(--ink); display: grid; place-items: center; justify-self: start; cursor: pointer; }
+.tkc-sheet__back:active { background: color-mix(in srgb, var(--ink) 10%, transparent); }
+.tkc-sheet__back:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-sheet__list { list-style: none; margin: var(--space-2) 0 0; padding: 0 0 var(--space-4); display: flex; flex-direction: column; }
+.tkc-sheet__list li { border-bottom: 1px solid var(--line); }
+.tkc-sheet__list li:last-child { border-bottom: 0; }
+.tkc-sheet__list .tkc-link[data-kind="more"] { width: 100%; justify-content: space-between; margin-left: 0; padding: 0; color: var(--ink); }
+/* Text Size's sample (0.6 item 9): 4 under the header; the choices' own 12 follows it */
+.tkc-sheet__sample { margin-top: var(--space-1); }
+/* 0.6 Steps (read kind, 1244, 1293): the steps `space-4` (16) under the line, and the full-width primary "Got It" `space-8` (32) under the last step. */
+.tkc-sheet__pl + .tkc-stp { margin-top: var(--space-4); }
+.tkc-sheet .tkc-stp + .tkc-btn { margin-top: var(--space-8); }

@@ -1,0 +1,54 @@
+# 3-5w (T24, T28): publish the app to GitHub Pages. NOT RUN YET: no repository is linked, so this file is untested until the first push.
+#   main    -> https://<user>.github.io/<repo>/          (the real app, her data lives here)
+#   preview -> https://<user>.github.io/<repo>/preview/  (a branch the Creator tries first; its own storage names, so it never touches her data)
+# Both are the same production bundle with relative paths (base ./), the one tools/subpath-walk.mjs proves installs and runs offline from a folder address.
+# The hymn recordings are not in git: the two LibriVox zips live in sources/librivox/ of the repo and tools/build-hymn-audio.mjs unpacks the 29 tracks at build time (393 y = A).
+name: Publish
+on:
+  push:
+    branches: [main, preview]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Real app (main)
+        uses: actions/checkout@v4
+        with: { ref: main, path: main }
+      - name: Preview (branch preview, when it exists)
+        id: prev
+        run: |
+          if git ls-remote --exit-code --heads "https://github.com/${{ github.repository }}.git" preview >/dev/null 2>&1; then echo "has=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.prev.outputs.has == 'true'
+        with: { ref: preview, path: preview }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Build one copy
+        shell: bash
+        run: |
+          build() { # $1 folder, $2 channel
+            (cd "$1" && (cd app && npm ci) \
+              && node tools/build-hymn-audio.mjs sources/librivox \
+              && cd app && VITE_TKC_CHANNEL="$2" npx vite build --base ./ --outDir dist-pages)
+          }
+          build main main
+          mkdir -p site && cp -r main/app/dist-pages/. site/
+          if [ -d preview ]; then build preview preview && mkdir -p site/preview && cp -r preview/app/dist-pages/. site/preview/; fi
+          touch site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: '${{ steps.deployment.outputs.page_url }}' }
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

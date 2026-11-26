@@ -1,0 +1,62 @@
+/* TKC-015 ListRow, setting and source rows (spec 0.5): one button, min 52 (source 72), padding 10/16 (source 12/16), gap 12. The panel and its hairlines belong to the group (spec C), not the row. */
+@import '../foundations.css';
+.tkc-row { appearance: none; border: 0; background: none; width: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-content: center; align-items: start; gap: 0; padding: 10px var(--space-4); min-height: 52px; color: var(--ink); text-align: left; font: inherit; cursor: pointer; position: relative; }
+.tkc-row[data-kind="source"] { padding: 12px var(--space-4); min-height: 72px; align-items: center; }
+.tkc-row__ic { grid-column: 1; grid-row: 1; width: 24px; height: 24px; color: var(--ink-2); display: grid; margin: calc((24px*var(--ts) - 24px)/2) 12px 0 0; }
+.tkc-row__nm { grid-column: 2; grid-row: 1; min-width: 0; display: flex; flex-direction: column; }
+.tkc-row__nm > b { font: 500 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); overflow-wrap: normal; }
+.tkc-row__nm > [data-part="sub"] { font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-row[data-kind="source"] [data-part="kind"] { font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); letter-spacing: .02em; color: var(--ink-2); }
+.tkc-row[data-kind="source"] .tkc-row__nm > b { margin-top: 2px; }
+.tkc-row[data-kind="source"] [data-part="edition"] { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-top: 2px; }
+.tkc-row__vl { grid-column: 3; grid-row: 1; margin: calc(1px*var(--ts)) 0 0 12px; text-align: right; max-width: 100%; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); flex: none; }
+.tkc-row[data-drop] .tkc-row__vl { grid-column: 2; grid-row: 2; margin: 0; text-align: left; }
+.tkc-row__ch { grid-column: 4; grid-row: 1 / span 2; align-self: center; margin-left: 12px; width: 16px; height: 16px; color: var(--ink-2); display: grid; }
+.tkc-row:active, .tkc-row.is-pressed { background: var(--settings-row-pressed, var(--surface-tint)); }
+.tkc-row:focus-visible, .tkc-row.is-focus { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+@media (prefers-reduced-motion: reduce) { .tkc-row { transition: none; } }
+
+/* numbered step row (Still Open): the step's own number in an outline ring, its name, a chevron. Min 60, a hairline under it. */
+.tkc-row-step { --ring: calc(28px*min(var(--ts), 1.5)); --chv: calc(18px*min(var(--ts), 1.5)); display: flex; align-items: flex-start; gap: 14px; min-height: 60px; padding: max(12px, calc((60px - 24px*var(--ts))/2)) 2px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-row-step:active, .tkc-row-step.is-pressed { background: var(--surface-tint); }
+.tkc-row-step:focus-visible, .tkc-row-step.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-row-step__no { flex: none; width: var(--ring); height: var(--ring); margin-block: calc((24px*var(--ts) - var(--ring))/2); border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--ink-2); display: grid; place-items: center; font: 600 calc(14px*var(--ts))/1 var(--f-sans); color: var(--ink-2); }   /* steprow-number */
+.tkc-row-step__nm { flex: 1; min-width: 0; font: 500 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); overflow-wrap: break-word; }   /* steprow-label */
+.tkc-row-step__cv { flex: none; width: var(--chv); height: var(--chv); margin-block: calc((24px*var(--ts) - var(--chv))/2); color: var(--ink-2); }
+.tkc-row-step__cv .tkc-icon { width: 100%; height: 100%; display: grid; }   /* the Review draws the chevron as the svg itself (es-cv): a block, not an inline box on the text's baseline, so it stays level with the name at 200% */
+
+/* list row, person row and search-result row (spec 0.2, 0.3): min 72, padding 12 / 2, a hairline under, gap 12, one target. The list around them (hairline above, 20 sides) is RowList. */
+.tkc-lrs { list-style: none; margin: var(--space-3) var(--margin-page) 0; padding: 0; border-top: 1px solid var(--line); }
+.tkc-lr { appearance: none; border: 0; background: none; width: 100%; display: flex; align-items: center; gap: var(--space-3); min-height: 72px; padding: var(--space-3) 2px; border-bottom: 1px solid var(--line); color: var(--ink); text-align: left; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-lr:active, .tkc-lr.is-pressed { background: var(--surface-tint); }
+.tkc-lr:focus-visible, .tkc-lr.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-lr__ch { flex: none; width: calc(18px*min(var(--ts), 1.5)); height: calc(18px*min(var(--ts), 1.5)); color: var(--ink-2); display: grid; }
+.tkc-wrapname { overflow-wrap: anywhere; }
+.tkc-lr__body { flex: 1; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-3); align-items: start; }
+.tkc-lr__title { grid-column: 1; grid-row: 1; display: flex; align-items: center; gap: 0 var(--space-2); flex-wrap: wrap; font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-lr__line { grid-column: 1 / -1; grid-row: 2; margin-top: 2px; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-lr__meta { grid-column: 2; grid-row: 1; margin-top: 1px; white-space: nowrap; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+[data-text-large] .tkc-lr__body { grid-template-columns: minmax(0, 1fr); }
+[data-text-large] .tkc-lr__meta { grid-column: 1; grid-row: 3; margin-top: 2px; }
+.tkc-lr__txt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.tkc-lr__name { display: flex; align-items: center; gap: 0 var(--space-2); flex-wrap: wrap; font: 600 calc(18px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-lr__req { display: block; font: 400 calc(17px*var(--ts))/calc(25px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-lr__where { display: flex; align-items: center; gap: 6px; margin-top: 2px; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-hit { font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .tkc-lr { transition: none; } }
+
+/* Guide rows (0.4). Lesson row: the step's number in a 28 px ring, name 17/24 SemiBold, the step's line 15/22 ink-2, min 64. Guide row: title and line (or the title alone), min 72, 12 apart. Done row: a 28 px done disc in front and "Read Again" before the chevron; at 200% the line under the title is dropped (1226). */
+.tkc-gr { appearance: none; border: 0; border-bottom: 1px solid var(--line); background: none; width: 100%; display: flex; align-items: center; gap: var(--space-3); min-height: 72px; padding: 12px 2px; color: var(--ink); text-align: left; cursor: pointer; font: inherit; transition: background var(--motion-quick); }
+.tkc-gr[data-kind="lesson"] { gap: 14px; min-height: 64px; padding: 8px 2px; }
+.tkc-gr:active, .tkc-gr.is-pressed { background: var(--surface-tint); }
+.tkc-gr:focus-visible, .tkc-gr.is-focus { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.tkc-gr__t { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+.tkc-gr[data-kind="guide"] .tkc-gr__t, .tkc-gr[data-kind="done"] .tkc-gr__t { gap: 2px; }
+.tkc-gr__t b { font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); }
+.tkc-gr__ln { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-gr__num { width: calc(28px*min(var(--ts), 1.5)); height: calc(28px*min(var(--ts), 1.5)); flex: 0 0 auto; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--ink-2); display: grid; place-items: center; font: 600 calc(14px*min(var(--ts), 1.5))/1 var(--f-sans); color: var(--ink-2); }
+.tkc-gr__disc { width: calc(28px*min(var(--ts), 1.5)); height: calc(28px*min(var(--ts), 1.5)); border-radius: 50%; background: var(--success-fill); color: var(--on-success); display: grid; place-items: center; flex: 0 0 auto; margin-right: 2px; }
+.tkc-gr__disc svg { width: 16px; height: 16px; }
+.tkc-gr__ct { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); white-space: nowrap; flex: 0 0 auto; margin-left: auto; }
+.tkc-gr__ch { width: 18px; height: 18px; color: var(--ink-2); flex: 0 0 auto; display: grid; }
+[data-text-xl] .tkc-gr[data-kind="done"] .tkc-gr__ln { display: none; }

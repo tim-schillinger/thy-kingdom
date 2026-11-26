@@ -1,0 +1,14 @@
+/* TKC-008 Chip, spec 0.2.1 (C, E): surface-tint, pill, min 44, 0 16 padding (16 sides; at 200% the link grows 8 per step of text size above 100%),
+   `chip-label` 15/20 Medium, ink. Link pressed: accent-fill with on-accent (instant with reduce motion). Toggle chosen: surface fill,
+   a 1.5 px success-ink inner ring, a praying-hands icon in success-ink before the label, 6 px apart; a toggle never goes honey (985). */
+@import '../foundations.css';
+.tkc-chip2 { appearance: none; border: 0; margin: 0; display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; max-width: 100%;
+  padding: calc(var(--space-2)*(var(--ts) - 1)) var(--space-4); border-radius: var(--radius-pill); background: var(--surface-tint); color: var(--ink); cursor: pointer; text-align: center;
+  font: 500 calc(15px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); transition: background var(--motion-quick), color var(--motion-quick); }
+.tkc-chip2[data-kind="toggle"] { padding-block: 12px; }
+.tkc-chip2[data-kind="link"]:active, .tkc-chip2[data-kind="link"].is-pressed { background: var(--accent-fill); color: var(--on-accent); }
+.tkc-chip2[data-kind="toggle"][aria-pressed="true"] { background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--success-ink); }
+.tkc-chip2__hands { color: var(--success-ink); }
+.tkc-chip2:focus-visible, .tkc-chip2.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+@media (max-width: 359px) { .tkc-chip2[data-kind="toggle"] { padding-inline: 12px; } }  /* narrow phones (993) */
+@media (prefers-reduced-motion: reduce) { .tkc-chip2 { transition: none; } }

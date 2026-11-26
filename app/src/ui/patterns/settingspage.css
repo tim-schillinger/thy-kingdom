@@ -1,0 +1,22 @@
+/* A Settings page (pattern): page title 24 under the top bar (as Lists), then one grouped panel, `margin-page` sides, `radius-sm` corners, hairlines from 16 px in,
+   none above the first row or under the last (TKC-015 spec C, the Settings Lock). No component styles here. */
+@import './screen.css';
+.tkc-settings { padding: 0 0 40px; display: flex; flex-direction: column; min-width: 0; }
+.tkc-settings__title { margin: var(--space-6) 0 0; padding: 0 var(--margin-page); }
+.tkc-settings__panel { margin: var(--space-4) var(--margin-page) 0; background: var(--surface); border-radius: var(--radius-sm, 12px); overflow: hidden; box-shadow: var(--card-edge); }
+.tkc-settings__panel > .tkc-row + .tkc-row::before { content: ''; position: absolute; top: 0; left: var(--space-4); right: 0; height: 1px; background: var(--line); }
+.tkc-settings__links { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-1, 4px); margin-top: var(--space-3); }
+/* The home's groups (TKC-015 spec C): a head 32 above and 8 below, inset 16 from the panel's edge; a print 8 under its panel, inset the same; a panel with no head 20 under the one before.
+   Rows that carry icons start their hairline at 52 (16 + 24 + 12). */
+.tkc-settings__head { margin: var(--space-8) 0 var(--space-2); padding: 0 calc(var(--margin-page) + var(--space-4)); font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); letter-spacing: .02em; color: var(--ink-2); }
+.tkc-settings__print { margin: var(--space-2) 0 0; padding: 0 calc(var(--margin-page) + var(--space-4)); font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-settings__head + .tkc-settings__panel { margin-top: 0; }
+.tkc-settings__panel + .tkc-settings__panel, .tkc-settings__print + .tkc-settings__panel { margin-top: var(--space-5); }
+.tkc-settings__panel[data-icons] > .tkc-row + .tkc-row::before { left: calc(var(--space-4) + 24px + 12px); }
+
+/* The Privacy page's panel (foundations `privacy-line`, 1281): the six lines in `lesson-body` (17/26 Regular, ink), `space-4` apart, 16 px padding in one panel (Builder's call: the Settings look, 1306). */
+.tkc-settings__panel[data-kind="privacy"] { padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
+.tkc-settings__panel[data-kind="privacy"] > p { margin: 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+/* The Home Screen card on Settings (TKC-059 0.2, spec C "placement"): `space-4` (16) under the title, the page's side margins, and `space-5` (20) to the first panel. */
+.tkc-settings > .tkc-sh { margin: var(--space-4) var(--margin-page) 0; }
+.tkc-settings > .tkc-sh + .tkc-settings__panel { margin-top: var(--space-5); }

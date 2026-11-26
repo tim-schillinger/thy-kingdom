@@ -1,0 +1,22 @@
+/* TKC-063 MovingHalf 0.1 (frame-lock-7 R7). The lower half of a TKC-062 that moves. Values from the lock chat's drawing (lock-draw, Stop 2); every one is a foundations token. */
+@import '../foundations.css';
+.tkc-mh { display: flex; flex-direction: column; touch-action: pan-y; }
+.tkc-mh__slide { display: flex; flex-direction: column; }
+.tkc-mh__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
+.tkc-mh__count { flex: none; font: 500 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-mh .tkc-ask-q { margin-top: var(--space-2); }
+.tkc-mh .tkc-ask-act { margin-top: var(--space-4); }
+.tkc-mh__nav { display: flex; align-items: center; justify-content: center; gap: var(--space-2); padding-top: var(--space-2); }
+.tkc-mh__b { appearance: none; border: 0; background: none; width: 44px; height: 44px; border-radius: var(--radius-pill); color: var(--ink-2); font: 500 28px/1 var(--f-sans); cursor: pointer; display: grid; place-items: center; }
+.tkc-mh__b:disabled { opacity: .35; cursor: default; }
+.tkc-mh__b:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-mh__b:active:not(:disabled) { background: var(--surface-tint); }
+.tkc-mh__dots { display: flex; gap: var(--space-2); }
+.tkc-mh__dots i { width: 8px; height: 8px; box-sizing: border-box; border-radius: var(--radius-pill); border: 1.5px solid var(--ink-2); }
+.tkc-mh__dots i[data-state="done"] { background: var(--ink-2); }
+.tkc-mh__dots i[data-state="on"] { background: var(--accent-fill); outline: 1.5px solid var(--ring-active); outline-offset: 2px; border-color: transparent; }
+
+/* 0.2 card kind (the Guide's Go Deeper areas, 3306, 3307, 3312 A): the whole joined card moves; the dots and ‹ › sit under it. The card keeps TKC-062's own 12 px from the screen's edges. */
+.tkc-mh--card .tkc-mh__slide { display: block; }
+.tkc-mh--card .tkc-jc { margin-top: 0; }
+.tkc-mh--card .tkc-mh__nav { padding-top: var(--space-2); }

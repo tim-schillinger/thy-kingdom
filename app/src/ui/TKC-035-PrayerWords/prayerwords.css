@@ -1,0 +1,12 @@
+@import '../foundations.css';
+/* TKC-035 PrayerWords (C, G). Vertical gaps are the Review's margins above each line; the part supplies the side margins. The 14 above the aim is the Creator's (Oct 19). */
+.tkc-pw { margin: 0; font: 600 calc(21px*var(--ts))/calc(32px*var(--ts)) var(--f-reading); color: var(--ink); }   /* prayerwords-text */
+.tkc-pw-aim { margin: 14px 0 0; font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); color: var(--ink); text-wrap: balance; }   /* display-m */
+.tkc-pw-aim.is-first { font-size: calc(23px*var(--ts)); line-height: calc(30px*var(--ts)); }   /* prayer-aim-first */
+.tkc-pw-move { margin: var(--space-4) 0 0; font: 400 calc(18px*var(--ts))/calc(27px*var(--ts)) var(--f-sans); color: var(--ink); }   /* prayer-move */
+.tkc-pw-leadin { margin: var(--space-8) 0 0; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* prayer-leadin */
+.tkc-pw-starter { margin: var(--space-2) 0 0; font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); }   /* reading */
+.tkc-pw-part { padding: 0 var(--margin-page); display: flex; flex-direction: column; }
+
+/* 0.4 (574): the meaning line under the SourceLine of a one-verse prayer: body 16/24 ink-2, space-3 above. */
+.tkc-pw-meaning { margin: var(--space-3) 0 0; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); }

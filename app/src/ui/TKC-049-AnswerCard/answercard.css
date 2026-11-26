@@ -1,0 +1,20 @@
+/* TKC-049 AnswerCard (C, G). List kind: tint card, 20 radius, padding 16 / 44 right / 16 / 16, answer Literata 19/28, asked 15/22 ink-2 8 under, meta 13/18 with the 18 px mini mark, chevron 18 px centered 16 from the right. Story kind: padding 16 16 20, labels 14/20, name 18/26, request 17/25, divider 16 around, answer Literata 22/32. The gutter and the 12 between cards belong to the screen. */
+@import '../foundations.css';
+.tkc-ans { appearance: none; border: 0; display: block; width: 100%; padding: 0; position: relative; overflow: hidden; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--card-shadow); color: var(--ink); text-align: left; cursor: pointer; transition: background var(--motion-quick, 150ms); }
+.tkc-ans__top { display: block; background: var(--card-top); padding: var(--space-3) var(--space-4); }
+.tkc-ans__low { display: block; position: relative; padding: var(--space-4) 44px var(--space-4) var(--space-4); }
+.tkc-ans:active, .tkc-ans.is-pressed { background: var(--surface-tint); }
+.tkc-ans:focus-visible, .tkc-ans.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-ans__cv { position: absolute; right: var(--space-4); top: 50%; width: calc(18px*min(var(--ts), 1.5)); height: calc(18px*min(var(--ts), 1.5)); margin-top: calc(-9px*min(var(--ts), 1.5)); color: var(--ink-2); display: grid; }
+.tkc-ans__a { display: block; font: 400 calc(19px*var(--ts))/calc(28px*var(--ts)) var(--f-reading); overflow-wrap: anywhere; }
+.tkc-ans.is-noa .tkc-ans__a { font-size: calc(18px*var(--ts)); }
+.tkc-ans__q { display: block; font: 600 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); overflow-wrap: anywhere; }
+.tkc-ans__m { display: flex; align-items: center; gap: var(--space-2); font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-top: var(--space-2); }
+.tkc-ans-story { border-radius: var(--radius-card); overflow: hidden; background: var(--surface); box-shadow: var(--card-shadow); text-align: left; }
+.tkc-ans-story__top { background: var(--card-top); padding: var(--space-4); }
+.tkc-ans-story__low { padding: var(--space-4) var(--space-4) var(--space-5); }
+.tkc-ans-story__l { font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); letter-spacing: .02em; margin: 0; overflow-wrap: anywhere; }
+.tkc-ans-story__n { font: 600 calc(18px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); margin: var(--space-1) 0 0; overflow-wrap: anywhere; }
+.tkc-ans-story__r { font: 400 calc(17px*var(--ts))/calc(25px*var(--ts)) var(--f-sans); color: var(--ink); margin: 0; overflow-wrap: anywhere; }
+.tkc-ans-story__a { font: 400 calc(22px*var(--ts))/calc(32px*var(--ts)) var(--f-reading); color: var(--ink); margin: var(--space-1) 0 0; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) { .tkc-ans { transition: none; } }

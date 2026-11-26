@@ -1,0 +1,20 @@
+/* TKC-007 TextLink, spec 0.2 (C): ink-2, underlined 1 px with a 3 px offset. In a line: 15/22, padded 13 above and below (44+ target
+   without moving the text). Under a primary (1274): its own 16/22 line, min 44, padding 0 12. */
+@import '../foundations.css';
+.tkc-link { appearance: none; border: 0; background: none; margin: 0; color: var(--ink-2); cursor: pointer; white-space: nowrap;
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: background var(--motion-quick); }
+.tkc-link[data-kind="line"] { display: inline-flex; align-items: center; min-height: 44px; padding: 13px 0; border-radius: 8px; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); }
+.tkc-link[data-kind="under-primary"] { display: block; min-height: 44px; padding: 0 var(--space-3); border-radius: 10px; font: 400 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); white-space: normal; text-align: center; }
+.tkc-link:active, .tkc-link.is-pressed { background: var(--surface-tint); }
+.tkc-link:focus-visible, .tkc-link.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* 0.3 (frame-lock-1 §2, 569, 573): "Why It Matters ›", a plain link under a step's why line: 16/22 accent-ink, a › after it, a 44 px target. 0.5 (docs chat 1f.1): one weight, 500, for why and more. */
+.tkc-link[data-kind="why"], .tkc-link[data-kind="more"] { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 44px; padding: 0 var(--space-2); margin-left: calc(-1*var(--space-2)); border-radius: 10px; color: var(--accent-ink); text-decoration: none;
+  font: 500 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); }
+.tkc-link[data-kind="why"] .tkc-icon, .tkc-link[data-kind="more"] .tkc-icon { width: calc(14px*var(--ts)); height: calc(14px*var(--ts)); }
+/* 0.4 (frame-lock-4b §1, 1733): "[words] ›" is one look for every link that opens more. Title size: the list's name, 22/28 SemiBold in ink; the › stays accent-ink; one line at 100% text, and from 0.6.1 it wraps between words at larger text so the › never leaves the screen. */
+.tkc-link[data-kind="more"] { font-weight: 500; white-space: nowrap; }
+.tkc-link[data-kind="more"][data-size="title"] { font: 600 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-sans); color: var(--ink); padding: 0 var(--space-2);
+  white-space: normal; text-align: left; max-width: 100%; }   /* 0.6.1 (Nov 14, 2026): the title wraps between words at larger text, so the › stays on the screen; one line at 100% on 390 and 320 (measured) */
+.tkc-link[data-kind="more"][data-size="title"] .tkc-icon { color: var(--accent-ink); width: calc(16px*var(--ts)); height: calc(16px*var(--ts)); }
+.tkc-link[data-kind="more"] .tkc-icon { color: var(--accent-ink); }

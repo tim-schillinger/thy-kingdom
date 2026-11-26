@@ -1,0 +1,30 @@
+@import '../foundations.css';
+/* TKC-022 WinMark: amber disc, glow and particles from the success tokens (898). */
+.tkc-wm { --rest: .45; position: relative; width: 64px; height: 64px; flex: none; }
+[data-theme="dark"] .tkc-wm, .D .tkc-wm { --rest: .22; }
+.tkc-wm.is-lg { width: 96px; height: 96px; }
+.tkc-wm__burst { position: absolute; inset: -25%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--success-fill) 85%, transparent) 0, color-mix(in srgb, var(--success-fill) 0%, transparent) 70%); opacity: var(--rest); }
+.tkc-wm__disc { position: absolute; inset: 0; border-radius: 50%; background: var(--success-fill); display: grid; place-items: center; color: var(--on-success); }
+.tkc-wm__disc .tkc-icon { width: 34px; height: 34px; }
+.tkc-wm.is-lg .tkc-wm__disc .tkc-icon { width: 48px; height: 48px; }
+.tkc-wm__ck { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tkc-wm__ck path { fill: none; stroke: var(--on-success); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; stroke-dashoffset: 0; }
+.tkc-wm.is-lg .tkc-wm__ck path { stroke-width: 4; }
+.tkc-wm__pt { position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px; border-radius: 50%; background: color-mix(in srgb, var(--success-fill) 70%, var(--success-ink)); opacity: 0; }
+.tkc-wm-mini { display: inline-grid; place-items: center; width: calc(18px*min(var(--ts), 1.5)); height: calc(18px*min(var(--ts), 1.5)); border-radius: 50%; background: var(--success-fill); color: var(--on-success); flex: none; }
+.tkc-wm-mini .tkc-icon { width: calc(13px*min(var(--ts), 1.5)); height: calc(13px*min(var(--ts), 1.5)); }
+@keyframes tkc-wm-grow { from { transform: scale(.8); } to { transform: none; } }
+@keyframes tkc-wm-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes tkc-wm-hands { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+@keyframes tkc-wm-burst { 0% { opacity: 0; transform: scale(.5); } 40% { opacity: 1; transform: scale(1.12); } 100% { opacity: var(--rest); transform: scale(1); } }
+@keyframes tkc-wm-pt { 0% { opacity: 0; transform: translate(0, 0); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)); } }
+/* M10: the disc settles (500 ms, ease-settle), the check draws (motion-win), the burst and 14 dots go out. Every time is a token multiple, so the 4× walk slows it all.
+   With Reduce Motion the disc and check are shown at once: no burst, no dots. */
+@media (prefers-reduced-motion: no-preference) {
+  .tkc-wm.is-play .tkc-wm__disc { animation: tkc-wm-grow calc(var(--motion-calm) * 5 / 3) var(--ease-settle) both; }
+  .tkc-wm.is-play:not(.is-still) .tkc-wm__ck path { animation: tkc-wm-draw var(--motion-win) var(--ease-gentle) var(--motion-quick) both; }
+  .tkc-wm.is-play:not(.is-still) .tkc-wm__disc .tkc-icon { animation: tkc-wm-hands calc(var(--motion-calm) * 2) var(--ease-gentle) var(--motion-quick) both; }
+  .tkc-wm.is-play .tkc-wm__burst { animation: tkc-wm-burst calc(var(--motion-win) * 2) var(--ease-gentle) both; }
+  .tkc-wm.is-play .tkc-wm__pt { animation: tkc-wm-pt calc(var(--motion-win) * 1.6) var(--ease-gentle) both; }
+}
+@media (prefers-reduced-motion: reduce) { .tkc-wm__pt, .tkc-wm__burst { display: none; } }

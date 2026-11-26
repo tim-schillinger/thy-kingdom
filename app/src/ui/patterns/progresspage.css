@@ -1,0 +1,17 @@
+/* Progress and Open Days (Hi-Fi Studio 7 v2.1, locked 1168): one column on the page margin, `space-3` between cards. No component styles here (the plant, the streak card, the milestones,
+   the counts and the open-day rows are the library's); only the page's own parts. */
+@import './screen.css';
+.tkc-progress { padding: 0 var(--margin-page) 40px; display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+.tkc-screen > [data-tkc="TKC-058"] { position: sticky; bottom: 0; z-index: 4; }
+.tkc-progress__title { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); margin-top: var(--space-6); }
+.tkc-progress__title h1 { margin: 0; min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+.tkc-progress__title > span { flex: none; }
+.tkc-progress__title + * { margin-top: var(--space-2); }
+.tkc-progress__line { margin: var(--space-2) 0 0; color: var(--ink-2); }
+.tkc-progress__verse { margin: var(--space-8) 0 0; padding: 0; text-align: center; }
+.tkc-progress__verse blockquote { margin: 0; font: 400 calc(17px*var(--ts))/calc(27px*var(--ts)) var(--f-reading); color: var(--ink-2); }
+.tkc-progress__verse figcaption { margin-top: var(--space-2); font: 400 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-progress__join { display: flex; align-items: center; gap: 10px; background: var(--progress-wash); border-radius: var(--radius-card); padding: 14px 16px; font: 500 calc(16px*var(--ts))/calc(23px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-progress__btns { display: flex; gap: var(--space-3); } .tkc-progress__btns > * { flex: 1 1 0; min-width: 0; }
+.tkc-progress__month { margin: var(--space-6) 0 var(--space-3); color: var(--ink-2); font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); letter-spacing: .02em; }
+.tkc-progress__settled { margin-top: 64px; }

@@ -1,0 +1,58 @@
+@import '../foundations.css';
+/* TKC-032 ReadingBlock (C, G). The passage, prose and helps carry their own side padding (the Review draws them full width). Titles, credits and the helps' spacing are margins. */
+.tkc-rb { margin: 0; padding: var(--space-3) var(--margin-page) var(--space-12); font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); text-align: left; }   /* reading */
+.tkc-rb.is-joins { padding-bottom: var(--space-3); }
+.tkc-rb.is-after { padding-top: var(--space-2); }
+.tkc-rb__v { font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-right: var(--space-1); vertical-align: 1px; }   /* reading-verse-number */
+.tkc-rb__pt { display: block; margin-bottom: var(--space-3); font: italic 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-reading); color: var(--ink-2); }   /* psalm-title (0.5, 1800): italic reading face, 12 below, no verse number */
+.tkc-rb__j { color: var(--ink-jesus); }   /* Jesus' words (0.5, 1802): plain text color, not a state */
+.tkc-rb__lord b { font-weight: inherit; font-size: .82em; letter-spacing: .04em; }
+.tkc-rb-ct { margin: 0 var(--margin-page); padding-top: var(--space-5); font: 500 calc(22px*var(--ts))/calc(28px*var(--ts)) var(--f-display); color: var(--ink); }   /* reading-chapter-title */
+.tkc-rb-ct--fold { padding-top: var(--space-2); margin-top: var(--space-3); }   /* a folding chapter title: the whole row is the target (736) */
+.tkc-rb-ct--fold.is-first { margin-top: 0; }
+.tkc-rb-ct--fold button { display: flex; align-items: center; gap: var(--space-2); width: 100%; min-height: 44px; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.tkc-rb-ct--fold button .tkc-icon { color: var(--accent-ink); flex: none; transition: transform var(--motion-calm) var(--ease-gentle); }
+.tkc-rb-ct--fold button[aria-expanded="true"] .tkc-icon { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) { .tkc-rb-ct--fold button .tkc-icon { transition: none; } }
+.tkc-rb-credit.is-link { margin-top: var(--space-2); }
+/* The Study Notes credit is long ("Aquifer Open Study Notes · CC BY-SA 4.0"): it wraps between words, left-aligned, › kept at the end of the last line, so no part of the license credit is cut at 320 or at 200% text (3-3z measure). */
+.tkc-rb-credit.is-link .tkc-link { white-space: normal; text-align: left; max-width: calc(100% + var(--space-2)); padding-block: var(--space-2); }
+.tkc-rb-credit.is-link .tkc-link .tkc-icon { flex: none; }
+.tkc-rb-ct.is-first { padding-top: var(--space-3); }
+.tkc-rb-prose { overflow-wrap: break-word; padding: var(--space-3) var(--margin-page) 0; font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); text-align: left; }
+.tkc-rb-prose p { margin: 0 0 var(--space-4); white-space: pre-line; }   /* a new line inside a paragraph is a line of verse (0.3.2, Books 2) */
+.tkc-rb-prose p:last-child { margin-bottom: 0; }
+.tkc-rb-prose .tkc-rb-prose__h { margin: var(--space-2) 0 var(--space-2); font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); white-space: normal; }   /* a head inside a classic's talk: the small label the helps' section line uses (0.7.5, 3224) */
+.tkc-rb-credit { margin: var(--space-4) 0 var(--space-12); font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* caption */
+.tkc-rb-helps { overflow-wrap: break-word; padding: 0 var(--margin-page); font: 400 calc(17px*var(--ts))/calc(27px*var(--ts)) var(--f-sans); color: var(--ink); }   /* helps-text */
+.tkc-rb-helps.is-after { padding-top: var(--space-2); }
+.tkc-rb-helps.is-joins { padding-bottom: var(--space-3); }
+.tkc-rb-helps__note { margin: 0 0 var(--space-4); }
+.tkc-rb-helps__note:last-child { margin-bottom: 0; }
+.tkc-rb-helps__p { margin: 0 0 var(--space-2); }   /* a paragraph inside a rich note */
+.tkc-rb-helps__p:last-child { margin-bottom: 0; }
+.tkc-rb-helps__list { margin: 0 0 var(--space-2); padding-left: var(--space-5); }
+.tkc-rb-helps__list li { margin: 0 0 var(--space-2); }
+.tkc-rb-helps__list li:last-child { margin-bottom: 0; }
+.tkc-rb-helps__vl { display: block; font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); letter-spacing: .02em; margin-bottom: var(--space-1); }   /* helps-verse-label */
+.tkc-rb-helps__lem { font-weight: 600; }   /* helps-lemma */
+.tkc-rb-helps__sl { margin: 0 0 var(--space-1); font: 600 calc(14px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* helps-section */
+.tkc-rb-helps__sl:not(:first-child) { margin-top: var(--space-4); }
+
+/* 0.4 loading: past 1 s, quiet lines hold the place of the text (same line height, so nothing moves when it arrives); they breathe gently, and stay still with Reduce Motion. */
+.reading-wait { display: grid; gap: 0; }
+.reading-wait i { display: block; height: 0.62em; margin: calc((var(--reading-lh, 26px) - 0.62em) / 2) 0; border-radius: 4px; background: var(--surface-tint); animation: tkc-rb-breathe calc(var(--motion-calm) * 6) ease-in-out infinite alternate; }
+.reading-wait i:nth-child(1) { width: 100%; } .reading-wait i:nth-child(2) { width: 92%; } .reading-wait i:nth-child(3) { width: 96%; } .reading-wait i:nth-child(4) { width: 70%; }
+@keyframes tkc-rb-breathe { from { opacity: 0.55; } to { opacity: 1; } }
+.reading-in { animation: tkc-rb-in var(--motion-calm) var(--ease-gentle) both; }
+@keyframes tkc-rb-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .reading-wait i { animation: none; } .reading-in { animation-duration: var(--motion-quick); } }
+
+/* letter (0.7, C2, 3014 y): Psalm 119's part is a card on card-top, centered, 12 from the screen's edges like TKC-062. Small line `plate-eyebrow`, mark 44 px Hebrew ink-2, name `display-name`, meaning in the plate's meaning role (32 characters wide at most), then the link. */
+.tkc-rb-letter { margin: var(--space-4) var(--space-3) 0; padding: var(--space-5) var(--space-5) var(--space-3); border-radius: var(--radius-card); background: var(--card-top); box-shadow: var(--card-shadow);
+  display: flex; flex-direction: column; align-items: center; text-align: center; container-type: inline-size; }
+.tkc-rb-letter__plain { margin: 0; font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--accent-ink); }   /* plate-eyebrow */
+.tkc-rb-letter__mark { display: block; margin-top: var(--space-1); font: 400 calc(44px*var(--ts))/1.3 var(--f-hebrew); color: var(--ink-2); }
+.tkc-rb-letter__word { margin: var(--space-1) 0 0; max-width: 100%; font: 500 min(calc(40px*min(var(--ts), 1.2)), 17.5cqi)/1.1 var(--f-display); color: var(--ink); text-wrap: balance; }   /* display-name */
+.tkc-rb-letter__meaning { margin: var(--space-3) auto 0; max-width: 32ch; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink-2); text-wrap: pretty; }
+.tkc-rb-letter > .tkc-link { margin-top: var(--space-1); }

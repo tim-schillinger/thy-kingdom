@@ -1,0 +1,27 @@
+/* TKC-014 Disclosure, spec 0.3 (C): the row is a button the content width, hairlines above and below, padding 0 2, label `disclosure-label` 16/22 Medium ink,
+   a 44 px caret box (CaretDown 20, ink-2) that turns 180 degrees when open. Body: bulleted list `body` ink-2, items 8 apart, 12 below the row;
+   two-column list: no bullets, columns 16 apart, items 30 tall, never split, one column at 200%. */
+@import '../foundations.css';
+.tkc-ds__row { appearance: none; border: 0; background: none; display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-2); width: 100%; margin: 0; padding: 0 2px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font: 500 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink); text-align: left; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-ds__label { padding: 13px 0; }
+.tkc-ds__caret { flex: none; width: 44px; height: 44px; margin: 2px -10px 0 0; display: grid; place-items: center; color: var(--ink-2); }
+.tkc-ds__caret .tkc-icon { transition: transform var(--motion-calm) var(--ease-gentle); }
+.tkc-ds__row[aria-expanded="true"] .tkc-ds__caret .tkc-icon { transform: rotate(180deg); }
+/* Chat 18 (Creator, Nov 4): open, the bottom hairline moves below the content. The row keeps its 1 px (transparent) so nothing shifts. */
+.tkc-ds__row[aria-expanded="true"]:has(+ .tkc-fold) { border-bottom-color: transparent; }
+.tkc-ds__row:active, .tkc-ds__row.is-pressed { background: var(--surface-tint); }
+.tkc-ds__row:focus-visible, .tkc-ds__row.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+.tkc-ds__body { margin: var(--space-3) 0 0; padding-left: 20px; font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink-2); display: flex; flex-direction: column; gap: var(--space-2); padding-bottom: var(--space-4); border-bottom: 1px solid var(--line); }
+.tkc-ds__body[data-cols="2"] { display: block; padding-left: 0; list-style: none; columns: 2; column-gap: var(--space-4); }
+.tkc-ds__body[data-cols="2"] li { padding: 3px 0; break-inside: avoid; }
+/* 0.4 tappable items (frame-lock-4a §3, 1689): each is a TKC-007 "more" link, 44 px tall, ink-2 word kept on one line. */
+.tkc-ds__body li .tkc-link { padding: 0; margin: 0; min-height: 44px; font-size: calc(16px*var(--ts)); }
+[data-text-large] .tkc-ds__body[data-cols="2"] { columns: 1; }
+@media (prefers-reduced-motion: reduce) { .tkc-ds__caret .tkc-icon { transition: none; } }
+
+/* 0.6 prose body (the Guide's "In the Bible", 3302): one short paragraph in `lesson-body` 17/26, then the verse card, `space-4` apart; the row's bottom hairline is transparent while open (above) and this one closes the block under the verse.
+   The card is inset 2 px a side, as the row is, so the Fold's clip never cuts the card's edge ring. */
+.tkc-ds__prose { margin: var(--space-3) 0 0; padding-bottom: var(--space-4); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.tkc-ds__line { margin: 0; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-ds__prose .tkc-vc { margin: 0 2px; }

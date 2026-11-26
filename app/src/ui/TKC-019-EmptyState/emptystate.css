@@ -1,0 +1,15 @@
+/* TKC-019 EmptyState, spec 0.3 (C): the verse is flat, `reading` 19/30 ink, its reference `caption` ink-2 8 below, the line `emptystate-prompt` 18/27 ink 24 below the reference
+   (the search kind: the line only), the action 24 below the line. Settled kind: centred, heading `display-m`, line 17/26 ink-2 6 below. Placement belongs to the screen. */
+@import '../foundations.css';
+.tkc-empty p, .tkc-empty b, .tkc-empty span { margin: 0; }
+.tkc-empty__verse { font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); }
+.tkc-empty__ref { font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-top: var(--space-2) !important; }
+.tkc-empty__line { font: 400 calc(18px*var(--ts))/calc(27px*var(--ts)) var(--f-sans); color: var(--ink); overflow-wrap: anywhere; }
+.tkc-empty__verse + .tkc-empty__ref + .tkc-empty__line { margin-top: var(--space-6) !important; }
+.tkc-empty__action { margin-top: var(--space-6); }
+.tkc-empty[data-kind="settled"] { text-align: center; }
+.tkc-empty[data-kind="settled"] b { display: block; font: 500 calc(28px*var(--ts))/calc(34px*var(--ts)) var(--f-display); color: var(--ink); }
+.tkc-empty[data-kind="settled"] span { display: block; font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-top: 6px; }
+
+/* 0.4 (575): the missing use: body 17/26 ink, the secondary button space-6 under it. */
+.tkc-empty__line--missing { font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); }

@@ -1,0 +1,6 @@
+/* TKC-047 ListPickerRow (C, G): tint row, 12 radius, min 64, padding 12/16, gap 12. Name 17/24 SemiBold, its line 15/22 ink-2, Change (TKC-007) at the right and wrapping under when it must. The "List" label above belongs to the form. */
+@import '../foundations.css';
+.tkc-lpick { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--space-3); row-gap: 0; min-height: 64px; padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--card-top); box-shadow: var(--card-edge); }
+.tkc-lpick__t { flex: 1 1 9em; min-width: 0; display: flex; flex-direction: column; }
+.tkc-lpick__t b { font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-lpick__t > span { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }

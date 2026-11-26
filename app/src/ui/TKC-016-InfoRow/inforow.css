@@ -1,0 +1,11 @@
+/* TKC-016 InfoRow (spec C): min 48, padding 8/0, a 1 px line under it; label 15/22 ink-2 never wraps; value 16/24 Medium ink right-aligned, wraps under itself, 16 apart. At 200% the row stacks (spec E). Person kind centres label and value (the Lists, Guide and Settings pages). */
+@import '../foundations.css';
+.tkc-info { margin: 0; display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); min-height: 48px; padding: 8px 0; border-bottom: 1px solid var(--line); box-sizing: border-box; }
+.tkc-info[data-kind="person"] { align-items: center; }
+/* Nov 19, 2026 (the Creator: right-aligned values "look weird and are hard to read"): the Guide's lines stack, label over value, both left-aligned on the page's edge; replaces 1392's centred row with the value held to 62%. */
+.tkc-info[data-kind="guide"] { flex-direction: column; align-items: flex-start; gap: 2px; padding: 12px 0; }
+.tkc-info[data-kind="guide"] dd { text-align: left; text-wrap: pretty; }
+.tkc-info dt { flex: none; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); white-space: nowrap; }
+.tkc-info dd { margin: 0; min-width: 0; font: 500 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); text-align: right; overflow-wrap: break-word; }
+[data-text-xl] .tkc-info { flex-direction: column; align-items: flex-start; gap: 0; }
+[data-text-xl] .tkc-info dd { text-align: left; }

@@ -1,0 +1,23 @@
+/* TKC-012 ChoiceRow, spec 0.3 (C, E): one button, radius-card (20: the Settings studio's 16 is drift, spec K), gap 12. Full: padding 14 16 16; compact: 12 16.
+   Not chosen: surface, a 1 px line inner edge, an empty ring. Chosen: surface-tint, a 1.5 px ink inner edge, a filled ink ring with a check. Pressed (not chosen): fill line. */
+@import '../foundations.css';
+.tkc-choice { appearance: none; border: 0; margin: 0; width: 100%; display: flex; align-items: flex-start; gap: var(--space-3); padding: 14px var(--space-4) var(--space-4); border-radius: var(--radius-card);
+  background: var(--surface); box-shadow: var(--card-edge); color: var(--ink); text-align: left; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-choice[data-kind="compact"] { padding: var(--space-3) var(--space-4); }
+.tkc-choice__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.tkc-choice__name { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--space-2); font: 600 calc(17px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); overflow-wrap: anywhere; }
+.tkc-choice__line { font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-choice__sample { font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-reading); color: var(--ink); margin-top: var(--space-2); }
+.tkc-choice__ref { font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); margin-top: 4px; }
+.tkc-choice__ring { flex: none; width: 24px; height: 24px; margin-top: calc(2px + (24px*var(--ts) - 24px)/2); border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--ink-2); display: grid; place-items: center; color: var(--surface); }
+.tkc-choice[aria-checked="true"] { background: var(--surface-tint); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.tkc-choice[aria-checked="true"] .tkc-choice__ring { background: var(--ink); box-shadow: none; }
+.tkc-choice:active, .tkc-choice.is-pressed { background: var(--line); }
+.tkc-choice[aria-checked="true"]:active, .tkc-choice[aria-checked="true"].is-pressed { background: var(--surface-tint); }
+.tkc-choice:focus-visible, .tkc-choice.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tkc-choice { transition: none; } }
+/* Text Size (0.3, 1256): each name at its own size, NOT scaled by the app's text size (1391, Nov 1), line height 1.4; the ring is centred on the row. */
+.tkc-choice[data-sized] { align-items: center; }
+.tkc-choice[data-sized] .tkc-choice__name { font-size: var(--ns); line-height: calc(var(--ns)*1.4); }
+.tkc-choice[data-sized] .tkc-choice__ring { margin-top: 0; }
+.tkc-choice[data-ring-top] .tkc-choice__ring { margin-top: 2px; } /* Settings rows: the ring sits at the top of a two-line row */

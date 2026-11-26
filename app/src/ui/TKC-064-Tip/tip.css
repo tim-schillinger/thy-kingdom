@@ -1,0 +1,17 @@
+/* TKC-064 Tip, spec 0.1 (frame-lock-11 §4, §4a): TKC-018 Toast's family (inverse fill, on-inverse 16/22 text, radius-sm, toast shadow) placed in the flow, one row under the bar's three columns.
+   The bar's content width is already inset 10 px each side, so the tip is "full width less 10 px each side". A 12 px arrow sits on its top edge, centered under the book button: the book is 44 wide and 10 from the
+   screen's edge, so its center is 22 from the tip's right edge; the arrow (12 wide) starts 16 in. */
+@import '../foundations.css';
+.tkc-tip { grid-column: 1 / -1; display: grid; grid-template-rows: 1fr; }
+.tkc-tip[data-leaving] { pointer-events: none; }
+.tkc-tip__room { min-height: 0; padding-top: 6px; }                       /* the 6 px is the arrow's room */
+.tkc-tip[data-moving] .tkc-tip__room { overflow: hidden; }                 /* a clip only while the room opens or closes, so the shadow is never cut off at rest */
+.tkc-tip__box { position: relative; display: flex; align-items: center; gap: var(--space-1); box-sizing: border-box; min-height: 44px; padding: 6px 4px 6px 14px;
+  border-radius: var(--radius-sm); background: var(--inverse); color: var(--on-inverse); box-shadow: var(--toast-shadow); font: 400 calc(16px*var(--ts))/calc(22px*var(--ts)) var(--f-sans);
+  transform-origin: calc(100% - 22px) 0; }                                 /* the move grows out of the arrow (the menu's move, M4) */
+.tkc-tip__box::before { content: ""; position: absolute; top: -6px; right: 16px; width: 0; height: 0; border: 6px solid transparent; border-top-width: 0; border-bottom-color: var(--inverse); }
+.tkc-tip__text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.tkc-tip__x { appearance: none; border: 0; margin: -6px 0; padding: 0; flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: none; color: inherit; cursor: pointer; transition: background var(--motion-quick); }
+.tkc-tip__x:active, .tkc-tip__x.is-pressed { background: color-mix(in srgb, var(--on-inverse) 10%, transparent); }
+.tkc-tip__x:focus-visible, .tkc-tip__x.is-focus { outline: 2px solid var(--toast-ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tkc-tip__x { transition: none; } }

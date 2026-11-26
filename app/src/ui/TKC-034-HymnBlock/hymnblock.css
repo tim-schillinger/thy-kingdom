@@ -1,0 +1,12 @@
+@import '../foundations.css';
+/* TKC-034 HymnBlock (C, G): stanzas 24 apart, a 24 px hanging indent that grows 8 px per whole step of text size, wrapped lines tuck in 16 under their own start. */
+.tkc-hy { padding: var(--space-2) var(--margin-page) 0; font: 400 calc(19px*var(--ts))/calc(30px*var(--ts)) var(--f-reading); color: var(--ink); --hy-ind: calc(24px + 8px*(var(--ts) - 1)); }   /* reading */
+.tkc-hy__s { position: relative; margin: 0 0 var(--space-6); padding-left: var(--hy-ind); }
+.tkc-hy__s:last-child { margin-bottom: 0; }
+.tkc-hy-w:not(.tkc-hy-c):has(+ .tkc-step__about) { margin-bottom: var(--space-6); }   /* 3166 y: the Doxology has no credit line, so the link sits closer */
+.tkc-hy-w:has(+ .tkc-hy-c) { margin-bottom: var(--space-1); }   /* 0.3: the writer line and its credit read as one */
+.tkc-hy-c { margin: 0 0 var(--space-2); }
+.tkc-hy__r { font-style: italic; }   /* 0.2: the refrain, once, after verse 1 (113) */
+.tkc-hy__n { position: absolute; left: 0; top: calc(7px*var(--ts)); font: 600 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* reading-verse-number */
+.tkc-hy__l { display: block; padding-left: var(--space-4); text-indent: calc(-1*var(--space-4)); }
+.tkc-hy-w { margin: var(--space-6) 0 var(--space-12); font: 400 calc(13px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); }   /* caption */

@@ -1,0 +1,10 @@
+/* TKC-060 AreaCircle 0.1.1: passed arcs success-fill, the current arc accent-fill, open arcs line. The count stays 15/20 SemiBold at every text size (1224). The lesson's "12" is EB Garamond 34/38 with "areas" 14/18 under it. The screen owns the margins. */
+@import '../foundations.css';
+.tkc-ac { position: relative; display: grid; place-items: center; width: max-content; }
+.tkc-ac .rd { stroke: var(--success-fill); } .tkc-ac .rc { stroke: var(--accent-fill); } .tkc-ac .ro { stroke: var(--line); }
+.tkc-ac__c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; font: 600 15px/20px var(--f-sans); color: var(--ink); font-variant-numeric: tabular-nums; }
+.tkc-ac__c small { font: 400 calc(14px*var(--ts))/calc(18px*var(--ts)) var(--f-sans); color: var(--ink-2); }
+.tkc-ac[data-size="168"] .tkc-ac__c { font: 500 calc(34px*var(--ts))/calc(38px*var(--ts)) var(--f-display); }
+.tkc-ac__c svg { width: 24px; height: 24px; color: var(--ink); }
+.tkc-ac .rc, .tkc-ac .rd, .tkc-ac .ro { transition: stroke var(--motion-calm); }
+@media (prefers-reduced-motion: reduce) { .tkc-ac path { transition: none; } }

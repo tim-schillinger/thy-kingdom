@@ -1,0 +1,4 @@
+/* Fold (M15, frame-lock-6 §4): the body stays mounted; rows 0fr ↔ 1fr gives the height, the inner box clips it. foldMotion (motion.ts) animates the change. */
+.tkc-fold { display: grid; grid-template-rows: 0fr; }
+.tkc-fold[data-fold="open"] { grid-template-rows: 1fr; }
+.tkc-fold__in { min-height: 0; overflow: hidden; }

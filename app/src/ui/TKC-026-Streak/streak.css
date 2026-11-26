@@ -1,0 +1,30 @@
+/* TKC-026 Streak 0.3. Chip: 44 px tall, no fill, no chevron; space-1 between plant and label. Badge: surface-tint pill, space-2 / space-5 / space-2 / space-3, parts space-2 apart.
+   Card: progress-wash, radius-card, padding 18 / 20 / 20, a centered column, number EB Garamond 72/76 Medium in success-ink, the longest line over a 1 px hairline. */
+@import '../foundations.css';
+.tkc-chip { appearance: none; background: none; border: 0; margin: 0; color: var(--ink); display: inline-flex; align-items: center; gap: var(--space-1);
+  min-height: 44px; padding: 0 4px; border-radius: var(--radius-pill); cursor: pointer; transition: color var(--motion-quick); }
+.tkc-chip:active, .tkc-chip.is-pressed { color: var(--ink-2); }
+.tkc-chip:focus-visible, .tkc-chip.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.tkc-badge { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--space-2); background: var(--surface-tint); border-radius: var(--radius-pill); padding: var(--space-2) var(--space-5) var(--space-2) var(--space-3); }
+.tkc-badge__n { font: 500 calc(34px*var(--ts))/calc(40px*var(--ts)) var(--f-display); color: var(--success-ink); font-variant-numeric: tabular-nums; }
+.tkc-badge__u { font: 400 calc(16px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-scard { align-self: stretch; position: relative; padding: 18px 20px 20px; border-radius: var(--radius-card); text-align: center; display: flex; flex-direction: column; align-items: center; background: var(--progress-wash); box-shadow: var(--card-edge); }
+.tkc-scard__nw { position: relative; display: inline-grid; place-items: center; margin-top: 2px; }
+.tkc-scard__n { font: 500 calc(72px*var(--ts))/calc(76px*var(--ts)) var(--f-display); color: var(--success-ink); font-variant-numeric: tabular-nums; }
+.tkc-scard__u { font: 500 calc(18px*var(--ts))/calc(24px*var(--ts)) var(--f-sans); color: var(--ink); }
+.tkc-scard__g { font: 400 calc(17px*var(--ts))/calc(26px*var(--ts)) var(--f-sans); color: var(--ink); margin: 10px 0 0; max-width: 26ch; text-wrap: balance; }
+.tkc-scard__l { align-self: stretch; font: 400 calc(15px*var(--ts))/calc(22px*var(--ts)) var(--f-sans); color: var(--ink-2); margin: 12px 0 0; padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--ink-2) 22%, transparent); }
+/* 3-5u, H (motion only, a join): a 150 px round glow of success-fill behind the number (70% at the center, clear by 70% out) that grows from 50% and clear to full at 40% of the way (110%),
+   then clears, from 500 ms for 1600 ms; and eight winmark-particle dots that fly out 64 / 74 px (alternating) for 1200 ms each, from 600 ms, 30 ms apart (set in the markup). Not drawn with Reduce Motion (592). */
+.tkc-scard__n { position: relative; z-index: 1; }
+.tkc-scard__glow { position: absolute; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; pointer-events: none; opacity: 0;
+  background: radial-gradient(circle, color-mix(in srgb, var(--success-fill) 70%, transparent) 0, color-mix(in srgb, var(--success-fill) 0%, transparent) 70%); }
+.tkc-scard__pt { position: absolute; left: 50%; top: 50%; width: 5px; height: 5px; margin: -2.5px; border-radius: 50%; pointer-events: none; z-index: 2; opacity: 0;
+  background: color-mix(in srgb, var(--success-fill) 70%, var(--success-ink)); }
+@keyframes tkc-sc-glow { 0% { opacity: 0; transform: scale(.5); } 40% { opacity: 1; transform: scale(1.1); } 100% { opacity: 0; transform: scale(1); } }
+@keyframes tkc-sc-pt { 0% { opacity: 0; transform: translate(0, 0); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)); } }
+@media (prefers-reduced-motion: no-preference) {
+  .tkc-scard__glow { animation: tkc-sc-glow 1600ms var(--ease-gentle) 500ms both; }
+  .tkc-scard__pt { animation: tkc-sc-pt 1200ms var(--ease-gentle) both; }
+}
+@media (prefers-reduced-motion: reduce) { .tkc-scard__glow, .tkc-scard__pt { display: none; } }

@@ -1,0 +1,7 @@
+/* TKC-048 SortMenu (C): pill target min 44, padding 0 6 0 12, no fill at rest. Label 15/20 Medium ink, caret 16 px ink-2, 6 apart. The screen puts it on the margin (-6 px right). */
+@import '../foundations.css';
+.tkc-sort { appearance: none; border: 0; background: none; min-height: var(--tap); padding: 0 6px 0 12px; display: inline-flex; align-items: center; gap: 6px; font: 500 calc(15px*var(--ts))/calc(20px*var(--ts)) var(--f-sans); color: var(--ink); cursor: pointer; border-radius: var(--radius-pill); transition: background var(--motion-quick); }
+.tkc-sort__cv { display: grid; width: calc(16px*min(var(--ts), 1.5)); height: calc(16px*min(var(--ts), 1.5)); color: var(--ink-2); }
+.tkc-sort:active, .tkc-sort.is-pressed { background: var(--surface-tint); }
+.tkc-sort:focus-visible, .tkc-sort.is-focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tkc-sort { transition: none; } }

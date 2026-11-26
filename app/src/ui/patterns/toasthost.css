@@ -1,0 +1,5 @@
+/* Where a toast sits: above the foot, inside the page margins. */
+@import '../foundations.css';
+.tkc-toasthost { position: fixed; left: var(--margin-page); right: var(--margin-page); bottom: calc(var(--space-6) + var(--safe-bottom, env(safe-area-inset-bottom, 0px))); z-index: 30; display: flex; justify-content: center; }
+
+.tkc-toasthost.is-lifted { bottom: calc(var(--space-4) + 84px + var(--safe-bottom, env(safe-area-inset-bottom, 0px))); }
