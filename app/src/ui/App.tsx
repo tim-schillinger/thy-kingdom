@@ -36,7 +36,6 @@ import { ListRow } from './TKC-015-ListRow/ListRow';
 import { Toggle } from './TKC-009-Toggle/Toggle';
 import { SettingsShell, SettingsTitle, SettingsPanel, SettingsHead, SettingsPrint, type Place } from './patterns/SettingsPage';
 import { EveningSheet, AppearanceSheet, TextSizeSheet, ReminderSheet, AddHomeSheet, reminderNow } from './screens/SettingsSheets';
-import { askToPersist } from '../data/db';
 import { homeScreenOffered } from '../data/platform';
 import { StartHereCard } from './TKC-059-StartHereCard/StartHereCard';
 
@@ -205,7 +204,7 @@ function RestoreLink({ label, cls, row, onError, after }: { label: string; cls?:
 }
 
 /** The test build's name, shown at the foot of Settings so a screenshot says which build it is (A23). Alpha only: retired before v1. */
-const BUILD = 'Alpha 3-6j';
+const BUILD = 'Alpha 3-6k';
 type SettingsOpen = null | 'evening' | 'appearance' | 'textSize' | 'reminder' | 'addhome';
 function Settings({ nav }: { nav: Nav }) {
   const her = useHer();

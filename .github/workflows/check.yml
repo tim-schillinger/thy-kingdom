@@ -1,0 +1,26 @@
+# 3-6k: build and test a pull request (Dependabot's, or any) without publishing anything. Read-only token, pinned actions, no install scripts.
+name: Check
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with: { node-version: 22 }
+      - name: Build and test
+        shell: bash
+        run: |
+          cd app && npm ci --ignore-scripts --no-audit --no-fund \
+            && node ../tools/build-hymn-audio.mjs ../sources/librivox \
+            && npm run build -- --base ./ --outDir dist-check \
+            && npm test

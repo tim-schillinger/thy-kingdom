@@ -56,5 +56,26 @@ export async function replaceAll(her: HerData | null) {
   await tx.done;
 }
 
-/** Ask the browser to keep her data (Data Ownership §C). Nothing shows. */
-export async function askToPersist() { try { return await navigator.storage?.persist?.(); } catch { return false; } }
+type PersistApi = { persist?: () => Promise<boolean>; persisted?: () => Promise<boolean> };
+type Memory = Pick<Storage, 'getItem' | 'setItem'>;
+const ASKED = storageName('tkc.persist-asked');
+
+/**
+ * Ask the browser to keep her data (Data Ownership §C). Nothing shows.
+ * 3-6k (engineering frame 505 y): asked at every start until the browser says yes, not only when she taps Start on first run.
+ * Safari erases a site's data after 7 days without a visit unless the phone agrees to keep it, and a phone that said no on day one may say yes later
+ * (once the app is on the Home Screen). Already kept: nothing is asked. Not kept: asked at most once a day on this device, so a browser that asks her
+ * (Firefox) is not nagging; first run's Start always asks. A failure, or a browser with no such call, is quiet and returns false.
+ */
+export async function askToPersist(opts: { force?: boolean; storage?: PersistApi; day?: string; memory?: Memory } = {}): Promise<boolean> {
+  try {
+    const storage = opts.storage ?? (typeof navigator !== 'undefined' ? (navigator.storage as PersistApi | undefined) : undefined);
+    if (!storage?.persist) return false;
+    if (await storage.persisted?.()) return true;
+    const day = opts.day ?? new Date().toISOString().slice(0, 10);
+    const memory = opts.memory ?? (typeof localStorage !== 'undefined' ? localStorage : undefined);
+    if (!opts.force && memory?.getItem(ASKED) === day) return false;
+    try { memory?.setItem(ASKED, day); } catch { /* private mode: ask again next start, nothing lost */ }
+    return !!(await storage.persist());
+  } catch { return false; }
+}

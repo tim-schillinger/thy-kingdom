@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run tests/engine.test.ts tests/nations.test.ts tests/verses.test.ts",
+    "test": "vitest run --no-file-parallelism .test.ts",
     "build": "vite build",
     "build:test": "vite build --mode test",
     "preview": "vite preview",

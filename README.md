@@ -4,8 +4,11 @@ A daily devotional app. It works offline, needs no account, and makes no calls t
 
 ## Build
 
-    cd app && npm ci
+    cd app && npm ci --ignore-scripts
     node ../tools/build-hymn-audio.mjs ../sources/librivox   # unpacks the hymn recordings
-    npx vite build --base ./
+    npm run build -- --base ./                               # lints, then builds into app/dist
+    npm test                                                 # every test the repo keeps
+
+Dependabot proposes updates weekly; .github/workflows/check.yml builds and tests each one, and a merge to main publishes.
 
 The hymn recordings are public domain, from LibriVox (Selections from The Army and Navy Hymnal, volumes 1 and 2).

@@ -1,8 +1,14 @@
-# 3-5w (T24, T28): publish the app to GitHub Pages. NOT RUN YET: no repository is linked, so this file is untested until the first push.
+# Publish the app to GitHub Pages.
 #   main    -> https://<user>.github.io/<repo>/          (the real app, her data lives here)
 #   preview -> https://<user>.github.io/<repo>/preview/  (a branch the Creator tries first; its own storage names, so it never touches her data)
 # Both are the same production bundle with relative paths (base ./), the one tools/subpath-walk.mjs proves installs and runs offline from a folder address.
 # The hymn recordings are not in git: the two LibriVox zips live in sources/librivox/ of the repo and tools/build-hymn-audio.mjs unpacks the 29 tracks at build time (393 y = A).
+#
+# 3-6k (safety pack; engineering frame 505 y, Nov 26, 2026):
+#   - every action is pinned to a full commit (the tag it was taken from is in the comment); Dependabot (.github/dependabot.yml) proposes updates, after a 7-day wait
+#   - the token is read-only everywhere except the deploy job, the only job that needs pages and id-token write
+#   - the build job runs the tests the public repo keeps, after the build, for each copy it builds; a failing test stops the publish
+#   - npm ci runs with --ignore-scripts: nothing a package ships runs on the build machine (npm worms spread through install scripts)
 name: Publish
 on:
   push:
@@ -10,45 +16,49 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Real app (main)
-        uses: actions/checkout@v4
-        with: { ref: main, path: main }
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with: { ref: main, path: main, persist-credentials: false }
       - name: Preview (branch preview, when it exists)
         id: prev
         run: |
           if git ls-remote --exit-code --heads "https://github.com/${{ github.repository }}.git" preview >/dev/null 2>&1; then echo "has=true" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         if: steps.prev.outputs.has == 'true'
-        with: { ref: preview, path: preview }
-      - uses: actions/setup-node@v4
+        with: { ref: preview, path: preview, persist-credentials: false }
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with: { node-version: 22 }
-      - name: Build one copy
+      - name: Build one copy, then run its tests
         shell: bash
         run: |
           build() { # $1 folder, $2 channel
-            (cd "$1" && (cd app && npm ci) \
-              && node tools/build-hymn-audio.mjs sources/librivox \
-              && cd app && VITE_TKC_CHANNEL="$2" npx vite build --base ./ --outDir dist-pages)
+            (cd "$1/app" && npm ci --ignore-scripts --no-audit --no-fund \
+              && node ../tools/build-hymn-audio.mjs ../sources/librivox \
+              && VITE_TKC_CHANNEL="$2" npm run build -- --base ./ --outDir dist-pages \
+              && npm test)
           }
           build main main
           mkdir -p site && cp -r main/app/dist-pages/. site/
           if [ -d preview ]; then build preview preview && mkdir -p site/preview && cp -r preview/app/dist-pages/. site/preview/; fi
           touch site/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with: { path: site }
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
     environment: { name: github-pages, url: '${{ steps.deployment.outputs.page_url }}' }
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

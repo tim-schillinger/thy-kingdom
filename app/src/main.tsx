@@ -10,6 +10,7 @@ import '@fontsource/atkinson-hyperlegible-next/latin-600.css';
 import './styles.css';
 import { App, navigate } from './ui/App';
 import { init } from './data/store';
+import { askToPersist } from './data/db';
 import { loadContent } from './data/content';
 import { TEST_CONTROLS, setNow } from './data/clock';
 import { registerSW } from 'virtual:pwa-register';
@@ -21,6 +22,7 @@ registerSW({ immediate: true });
 
 async function boot() {
   await Promise.all([loadContent(), init(), fontsReady()]);
+  void askToPersist(); // every start until the phone agrees to keep her data (3-6k); nothing shows
   if (import.meta.env.VITE_TEST_CONTROLS === 'true' && TEST_CONTROLS) {
     const { playStory } = await import('./data/stories');
     (window as any).__tkc = {

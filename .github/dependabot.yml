@@ -1,0 +1,15 @@
+# 3-6k (engineering frame 505 y): weekly update proposals for the actions the workflows use and for the app's npm packages.
+# A 7-day cooldown: a version must be a week old before Dependabot proposes it, so a hijacked release is usually pulled before it reaches us.
+# Nothing here merges itself. Each proposal is a pull request that .github/workflows/check.yml builds and tests; the Creator's go merges it, and a merge to main publishes.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly, day: monday }
+    cooldown: { default-days: 7 }
+    open-pull-requests-limit: 3
+  - package-ecosystem: npm
+    directory: /app
+    schedule: { interval: weekly, day: monday }
+    cooldown: { default-days: 7 }
+    open-pull-requests-limit: 5

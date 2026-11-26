@@ -28,7 +28,7 @@ export function FirstRun({ nav }: { nav: Nav }) {
   const start = () => {
     setBible(pick);
     setReminders({ firstRunDone: true, firstDay: her.reminders.firstDay ?? todayFn() });
-    void askToPersist();
+    void askToPersist({ force: true });
     nav({ s: 'today' });
   };
   return <FirstRunView heading="Choose Your Bible"
