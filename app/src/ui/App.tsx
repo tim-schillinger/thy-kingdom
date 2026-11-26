@@ -204,7 +204,7 @@ function RestoreLink({ label, cls, row, onError, after }: { label: string; cls?:
 }
 
 /** The test build's name, shown at the foot of Settings so a screenshot says which build it is (A23). Alpha only: retired before v1. */
-const BUILD = 'Alpha 3-6k';
+const BUILD = 'Alpha 3-6l';
 type SettingsOpen = null | 'evening' | 'appearance' | 'textSize' | 'reminder' | 'addhome';
 function Settings({ nav }: { nav: Nav }) {
   const her = useHer();
